@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
@@ -13,9 +15,24 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        Font font = Font.loadFont(getClass().getResourceAsStream("/fonts/InfiniumGuardian.ttf"), 16);
+        if (font != null) {
+            System.out.println("Font loaded: " + font.getName());
+        } else {
+            System.out.println("Font not loaded.");
+        }
+
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/MainLayout.fxml"));
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Lenden");
+
+        String css = this.getClass().getResource("/css/style.css").toExternalForm();
+        scene.getStylesheets().add(css);
+
+        Image icon = new Image("/images/icon1.png");
+        primaryStage.getIcons().add(icon);
+
+        primaryStage.setTitle("Lenden - Simulated Mobile Financial System");
+
         primaryStage.setScene(scene);
         primaryStage.show();
     }

@@ -1,0 +1,89 @@
+* {
+}
+
+.button {
+	-fx-background-color: #46a2d6;
+	-fx-text-fill: white;
+	-fx-font-size: 16;
+	-fx-background-radius: 100;
+	-fx-padding: 7 30;
+	-fx-cursor: hand;
+}
+
+.button:hover {
+	-fx-background-color: #3a8cb8;
+}
+
+.balance-btn {
+	-fx-background-color: white;
+	-fx-text-fill: #26204e;
+}
+
+.balance-btn:hover {
+	-fx-background-color: #f2f2f2;
+}
+
+.menu-btn {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+}
+
+.menu-btn .glyph-icon {
+	-fx-fill: white;
+	-fx-text-fill: white;
+	-glyph-size: 30;
+}
+.menu-btn .text {
+	-fx-text-alignment: right;
+	-fx-translate-x: 10;
+}
+
+.menu-btn:hover {
+	-fx-background-color: transparent;
+	-fx-text-fill: #46a2d6;
+}
+
+.menu-btn:hover .glyph-icon {
+	-fx-fill: #46a2d6;
+}
+
+.account-btn {
+	-fx-background-color: rgba(255, 255, 255, 0.1);
+	-fx-text-fill: white;
+	-fx-padding: 5 5;
+}
+
+.account-btn .image-view {
+	-fx-background-radius: 100;
+}
+
+.account-btn:hover {
+	-fx-background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sign-out-btn {
+	-fx-background-color: rgba(255, 255, 255, 0.1);
+	-fx-pref-height: 60;
+	-fx-padding: 0 17;
+}
+
+.sign-out-btn:hover {
+	-fx-background-color: rgb(170, 0, 0);
+}
+
+.sign-out-btn .glyph-icon {
+	-fx-fill: white;
+	-glyph-size: 30;
+}
+
+.sidebar {
+	-fx-background-color: #26204e;
+}
+
+.header {
+	-fx-background-color: #46a2d6;
+}
+
+.footer {
+	-fx-background-color: #46a2d6;
+}
