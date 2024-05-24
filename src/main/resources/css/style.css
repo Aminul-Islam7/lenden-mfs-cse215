@@ -1,6 +1,3 @@
-* {
-}
-
 .button {
 	-fx-background-color: #46a2d6;
 	-fx-text-fill: white;
@@ -30,8 +27,8 @@
 
 .menu-btn .glyph-icon {
 	-fx-fill: white;
-	-fx-text-fill: white;
-	-glyph-size: 30;
+	-fx-glyph-size: 30;
+	-fx-size: 30;
 }
 .menu-btn .text {
 	-fx-text-alignment: right;

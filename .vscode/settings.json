@@ -5,7 +5,5 @@
 		"**/desktop.ini": true
 	},
 	"cSpell.words": ["lenden", "notfound"],
-	"java.project.referencedLibraries": {
-		"include": ["lib/**/*.jar"]
-	}
+	"java.project.referencedLibraries": ["lib/**/*.jar"]
 }

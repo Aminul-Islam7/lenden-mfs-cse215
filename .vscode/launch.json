@@ -1,7 +1,4 @@
 {
-	// Use IntelliSense to learn about possible attributes.
-	// Hover to view descriptions of existing attributes.
-	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
 	"version": "0.2.0",
 	"configurations": [
 		{
@@ -9,22 +6,17 @@
 			"name": "Main",
 			"request": "launch",
 			"mainClass": "com.notfound404.lenden.Main",
-			"projectName": "lenden-mfs-cse215_ed23ce26"
-		},
-		{
-			"type": "java",
-			"name": "Current File",
-			"request": "launch",
-			"mainClass": "${file}"
+			"projectName": "lenden-mfs-cse215_ed23ce26",
+			"vmArgs": "--module-path \"C:\\Program Files\\Java\\javafx-sdk-22.0.1\\lib\" --add-modules javafx.controls,javafx.fxml"
 		},
 		{
 			"type": "java",
 			"name": "App",
 			"request": "launch",
-			"mainClass": "com.notfound404.lenden.App",
+			"mainClass": "com.notfound404.lenden.Main",
 			"projectName": "lenden-mfs-cse215_ed23ce26",
 			"vmArgs": "--module-path \"C:\\Program Files\\Java\\javafx-sdk-22.0.1\\lib\" --add-modules javafx.controls,javafx.fxml",
-			"classpath": ["${workspaceFolder}/src/main/java", "${workspaceFolder}/src/main/resources"]
+			"classpath": ["${workspaceFolder}/src/main/java", "${workspaceFolder}/src/main/resources", "${workspaceFolder}/lib/fontawesomefx-8.2.jar"]
 		}
 	]
 }
