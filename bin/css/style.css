@@ -81,6 +81,22 @@
 	-fx-background-color: #46a2d6;
 }
 
+.nav-btn {
+	-fx-background-color: #46a2d6;
+	-fx-text-fill: white;
+	-fx-font-size: 16;
+	-fx-background-radius: 100;
+	-fx-padding: 7 10;
+}
+
+.nav-btn:hover {
+	-fx-background-color: #3a8cb8;
+}
+
+.nav-btn .glyph-icon {
+	-fx-fill: white;
+}
+
 .footer {
 	-fx-background-color: #46a2d6;
 }
