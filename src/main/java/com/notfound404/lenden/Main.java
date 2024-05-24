@@ -23,6 +23,8 @@ public class Main extends Application {
 
         primaryStage.setTitle("Lenden - Simulated Mobile Financial System");
 
+        primaryStage.setResizable(false);
+
         primaryStage.setScene(scene);
         primaryStage.show();
     }
