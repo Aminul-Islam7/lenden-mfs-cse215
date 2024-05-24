@@ -102,7 +102,7 @@
                         </Button>
                      </left>
                      <center>
-                        <Label text="Label" BorderPane.alignment="CENTER" />
+                        <Label fx:id="sceneLabel" styleClass="scene-label" text="Welcome" BorderPane.alignment="CENTER" />
                      </center>
                      <right>
                         <Button fx:id="forwardButton" mnemonicParsing="false" onAction="#goForward" styleClass="nav-btn" BorderPane.alignment="CENTER">

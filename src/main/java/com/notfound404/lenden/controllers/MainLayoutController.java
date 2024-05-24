@@ -3,6 +3,7 @@ package com.notfound404.lenden.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 public class MainLayoutController {
@@ -14,21 +15,26 @@ public class MainLayoutController {
   private Button backButton, forwardButton;
 
   @FXML
+  private Label sceneLabel;
+
+  @FXML
   public void initialize() {
     SceneController.setContentPane(contentPane);
     SceneController.setMainLayoutController(this);
-    SceneController.setScene("Home.fxml");
+    SceneController.setScene("Home.fxml", "Welcome");
     updateNavButtonsVisibility();
+  }
+
+  public void setSceneLabel(String label) {
+    sceneLabel.setText(label);
   }
 
   public void goBack(ActionEvent e) {
     SceneController.back();
-    // SceneController.printViewLists();
   }
 
   public void goForward(ActionEvent e) {
     SceneController.forward();
-    // SceneController.printViewLists();
   }
 
   public void updateNavButtonsVisibility() {

@@ -16,8 +16,8 @@ public class HomeController {
   @FXML
   private Label label;
 
-  public void loadContent(ActionEvent e) {
-    SceneController.setScene("Content.fxml");
+  public void visitAddMoney(ActionEvent e) {
+    SceneController.setScene("AddMoney.fxml", "Add Money");
   }
 
 }
