@@ -1,12 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.AddMoneyController">
    <children>
-      <Label layoutX="63.0" layoutY="88.0" styleClass="heading" text="Enter your Card Information" />
-      <VBox layoutX="63.0" layoutY="138.0" prefHeight="224.0" prefWidth="486.0" />
+      <Label layoutX="50.0" layoutY="52.0" styleClass="heading" text="Enter your Card Information" />
+      <VBox layoutX="50.0" layoutY="94.0" prefWidth="500.0" styleClass="form">
+         <children>
+            <Label text="Name on Card">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <TextField>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Card Number" />
+            <GridPane prefHeight="36.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="145.0" minWidth="130.0" prefWidth="130.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ImageView fitHeight="27.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                     <image>
+                        <Image url="@../images/credit-card-networks.png" />
+                     </image>
+                  </ImageView>
+                  <TextField />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </GridPane>
+            <GridPane prefHeight="63.0" prefWidth="450.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <VBox maxWidth="120.0">
+                     <children>
+                        <Label text="Expiration Date" />
+                        <HBox alignment="CENTER">
+                           <children>
+                              <TextField promptText="MM" />
+                              <Label text="/">
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField promptText="YY" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox maxWidth="120.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label text="Security Code" />
+                        <TextField />
+                     </children>
+                  </VBox>
+                  <VBox maxWidth="120.0" GridPane.columnIndex="2">
+                     <children>
+                        <Label text="Postal Code" />
+                        <TextField />
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+         </children></VBox>
+      <GridPane layoutX="50.0" layoutY="392.0" prefWidth="500.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField promptText="Enter your Lenden PIN" />
+            <Button mnemonicParsing="false" onAction="#visitAMFromCardSuccess" prefWidth="240.0" text="Add Money" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <Label layoutX="141.0" layoutY="449.0" styleClass="error-message" text="Validation errors / Exceptions will be displayed here" />
    </children>
 </AnchorPane>

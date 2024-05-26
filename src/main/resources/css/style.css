@@ -1,6 +1,18 @@
 * {
 	-fx-background-color: transparent;
 }
+
+.shadow {
+	-fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.2), 30, 0, 3, 2);
+}
+.text-field {
+	-fx-background-color: #e0e0e0;
+	-fx-text-fill: #505050;
+	-fx-background-radius: 5;
+	-fx-padding: 7 10;
+	-fx-font-size: 16;
+}
+
 .button {
 	-fx-background-color: #46a2d6;
 	-fx-text-fill: white;
@@ -23,6 +35,20 @@
 .normal {
 	-fx-font-size: 16;
 	-fx-text-fill: rgba(0, 0, 0, 0.7);
+}
+
+.success-text {
+	-fx-text-fill: white;
+	-fx-background-color: #008200;
+	-fx-font-size: 18;
+	-fx-font-weight: bold;
+	-fx-padding: 5 15;
+	-fx-background-radius: 5;
+}
+
+.error-message {
+	-fx-text-fill: red;
+	-fx-font-size: 14;
 }
 
 . .balance-btn {
@@ -129,6 +155,37 @@
 .feature-btn:hover {
 	-fx-background-color: #f2f2f2;
 	-fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.05), 30, 0, 3, 2);
+}
+
+.form {
+	-fx-background-color: white;
+	-fx-background-radius: 10;
+	-fx-padding: 25;
+	-fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.2), 30, 0, 3, 2);
+}
+
+.form .label {
+	-fx-text-fill: #505050;
+	-fx-font-size: 16;
+	-fx-margin: 10;
+}
+
+.trx-info-box {
+	-fx-background-color: white;
+	-fx-background-radius: 10;
+	-fx-padding: 10;
+	-fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.2), 30, 0, 3, 2);
+}
+
+.trx-info-box .info-title {
+	-fx-text-fill: #909090;
+	-fx-font-size: 13;
+	-fx-font-weight: bold;
+}
+
+.trx-info-box .info {
+	-fx-text-fill: black;
+	-fx-font-size: 14;
 }
 
 .footer {

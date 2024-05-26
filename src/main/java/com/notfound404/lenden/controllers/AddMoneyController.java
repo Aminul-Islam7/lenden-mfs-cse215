@@ -20,4 +20,8 @@ public class AddMoneyController {
     SceneController.setScene("AMFromCard.fxml", "Add Money from Card");
   }
 
+  public void visitAMFromCardSuccess(ActionEvent e) {
+    SceneController.setScene("AMFromCardSuccess.fxml", "Add Money from Card");
+  }
+
 }
