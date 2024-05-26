@@ -105,7 +105,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label fx:id="sceneLabel" styleClass="scene-label" text="Welcome" GridPane.columnIndex="1" />
+                        <Label fx:id="sceneLabel" styleClass="scene-label" text="Scene Label" GridPane.columnIndex="1" />
                         <Button fx:id="forwardButton" mnemonicParsing="false" onAction="#goForward" styleClass="nav-btn" GridPane.columnIndex="2">
                            <graphic>
                               <FontAwesomeIcon glyphName="ARROW_RIGHT" size="20" />
