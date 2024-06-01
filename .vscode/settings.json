@@ -13,5 +13,7 @@
 			"path": "C:\\Program Files\\Java\\jdkfx-22",
 			"default": true
 		}
-	]
+	],
+	"files.autoSave": "onWindowChange",
+	"editor.renderWhitespace": "all"
 }
