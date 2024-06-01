@@ -1,193 +1,218 @@
 * {
-	-fx-background-color: transparent;
+  -fx-background-color: transparent;
 }
 
 .shadow {
-	-fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.2), 30, 0, 3, 2);
+  -fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.2), 30, 0, 3, 2);
 }
 .text-field {
-	-fx-background-color: #e0e0e0;
-	-fx-text-fill: #505050;
-	-fx-background-radius: 5;
-	-fx-padding: 7 10;
-	-fx-font-size: 16;
+  -fx-background-color: #e0e0e0;
+  -fx-text-fill: #505050;
+  -fx-background-radius: 5;
+  -fx-padding: 7 10;
+  -fx-font-size: 16;
+}
+
+.choice-box {
+  -fx-background-color: #e0e0e0;
+  -fx-text-fill: #505050;
+  -fx-background-radius: 5;
+  -fx-padding: 3 10;
+  -fx-font-size: 16;
+}
+
+.choice-box .arrow {
+  -fx-background-color: #707070;
+}
+
+.choice-box .context-menu {
+  -fx-background-color: #e0e0e0;
+  -fx-background-radius: 5;
+  -fx-text-fill: #505050;
+  -fx-font-size: 16;
+  -fx-pref-width: 250;
+}
+
+.choice-box .menu-item:focused {
+  -fx-background-color: #46a2d6;
+  -fx-text-fill: #26204e;
 }
 
 .button {
-	-fx-background-color: #46a2d6;
-	-fx-text-fill: white;
-	-fx-font-size: 16;
-	-fx-background-radius: 100;
-	-fx-padding: 7 30;
-	-fx-cursor: hand;
+  -fx-background-color: #46a2d6;
+  -fx-text-fill: white;
+  -fx-font-size: 16;
+  -fx-background-radius: 100;
+  -fx-padding: 7 30;
+  -fx-cursor: hand;
 }
 
 .button:hover {
-	-fx-background-color: #3a8cb8;
+  -fx-background-color: #3a8cb8;
 }
 
 .heading {
-	-fx-text-fill: #26204e;
-	-fx-font-size: 20;
-	-fx-font-weight: bold;
+  -fx-text-fill: #26204e;
+  -fx-font-size: 20;
+  -fx-font-weight: bold;
 }
 
 .normal {
-	-fx-font-size: 16;
-	-fx-text-fill: rgba(0, 0, 0, 0.7);
+  -fx-font-size: 16;
+  -fx-text-fill: rgba(0, 0, 0, 0.7);
 }
 
 .success-text {
-	-fx-text-fill: white;
-	-fx-background-color: #008200;
-	-fx-font-size: 18;
-	-fx-font-weight: bold;
-	-fx-padding: 5 15;
-	-fx-background-radius: 5;
+  -fx-text-fill: white;
+  -fx-background-color: #008200;
+  -fx-font-size: 18;
+  -fx-font-weight: bold;
+  -fx-padding: 5 15;
+  -fx-background-radius: 5;
 }
 
 .error-message {
-	-fx-text-fill: red;
-	-fx-font-size: 14;
+  -fx-text-fill: red;
+  -fx-font-size: 14;
 }
 
 . .balance-btn {
-	-fx-background-color: white;
-	-fx-text-fill: #26204e;
+  -fx-background-color: white;
+  -fx-text-fill: #26204e;
 }
 
 .balance-btn:hover {
-	-fx-background-color: #f2f2f2;
+  -fx-background-color: #f2f2f2;
 }
 
 .menu-btn {
-	-fx-background-color: transparent;
-	-fx-text-fill: white;
+  -fx-background-color: transparent;
+  -fx-text-fill: white;
 }
 
 .menu-btn .glyph-icon {
-	-fx-fill: white;
-	-fx-glyph-size: 30;
-	-fx-size: 30;
+  -fx-fill: white;
+  -fx-glyph-size: 30;
+  -fx-size: 30;
 }
 .menu-btn .text {
-	-fx-text-alignment: right;
-	-fx-translate-x: 10;
+  -fx-text-alignment: right;
+  -fx-translate-x: 10;
 }
 
 .menu-btn:hover {
-	-fx-background-color: transparent;
-	-fx-text-fill: #46a2d6;
+  -fx-background-color: transparent;
+  -fx-text-fill: #46a2d6;
 }
 
 .menu-btn:hover .glyph-icon {
-	-fx-fill: #46a2d6;
+  -fx-fill: #46a2d6;
 }
 
 .account-btn {
-	-fx-background-color: rgba(255, 255, 255, 0.1);
-	-fx-text-fill: white;
-	-fx-padding: 5 5;
+  -fx-background-color: rgba(255, 255, 255, 0.1);
+  -fx-text-fill: white;
+  -fx-padding: 5 5;
 }
 
 .account-btn .image-view {
-	-fx-background-radius: 100;
+  -fx-background-radius: 100;
 }
 
 .account-btn:hover {
-	-fx-background-color: rgba(255, 255, 255, 0.2);
+  -fx-background-color: rgba(255, 255, 255, 0.2);
 }
 
 .sign-out-btn {
-	-fx-background-color: rgba(255, 255, 255, 0.1);
-	-fx-pref-height: 60;
-	-fx-padding: 0 17;
+  -fx-background-color: rgba(255, 255, 255, 0.1);
+  -fx-pref-height: 60;
+  -fx-padding: 0 17;
 }
 
 .sign-out-btn:hover {
-	-fx-background-color: rgb(170, 0, 0);
+  -fx-background-color: rgb(170, 0, 0);
 }
 
 .sign-out-btn .glyph-icon {
-	-fx-fill: white;
-	-glyph-size: 30;
+  -fx-fill: white;
+  -glyph-size: 30;
 }
 
 .sidebar {
-	-fx-background-color: #26204e;
-	-fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.2), 15, 0, 5, 0);
+  -fx-background-color: #26204e;
+  -fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.2), 15, 0, 5, 0);
 }
 
 .header {
-	-fx-background-color: #46a2d6;
-	-fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.2), 15, 0, 0, 5);
+  -fx-background-color: #46a2d6;
+  -fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.2), 15, 0, 0, 5);
 }
 
 .nav-btn {
-	-fx-background-color: #46a2d6;
-	-fx-text-fill: white;
-	-fx-font-size: 16;
-	-fx-background-radius: 100;
-	-fx-padding: 7 10;
+  -fx-background-color: #46a2d6;
+  -fx-text-fill: white;
+  -fx-font-size: 16;
+  -fx-background-radius: 100;
+  -fx-padding: 7 10;
 }
 
 .nav-btn:hover {
-	-fx-background-color: #3a8cb8;
+  -fx-background-color: #3a8cb8;
 }
 
 .nav-btn .glyph-icon {
-	-fx-fill: white;
+  -fx-fill: white;
 }
 
 .scene-label {
-	-fx-font-size: 22;
-	-fx-text-fill: white;
-	-fx-font-weight: bold;
+  -fx-font-size: 22;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
 }
 
 .feature-btn {
-	-fx-background-color: white;
-	-fx-background-radius: 10;
-	-fx-padding: 5 5;
-	-fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.2), 30, 0, 3, 2);
+  -fx-background-color: white;
+  -fx-background-radius: 10;
+  -fx-padding: 5 5;
+  -fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.2), 30, 0, 3, 2);
 }
 
 .feature-btn:hover {
-	-fx-background-color: #f2f2f2;
-	-fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.05), 30, 0, 3, 2);
+  -fx-background-color: #f2f2f2;
+  -fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.05), 30, 0, 3, 2);
 }
 
 .form {
-	-fx-background-color: white;
-	-fx-background-radius: 10;
-	-fx-padding: 25;
-	-fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.2), 30, 0, 3, 2);
+  -fx-background-color: white;
+  -fx-background-radius: 10;
+  -fx-padding: 25;
+  -fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.2), 30, 0, 3, 2);
 }
 
 .form .label {
-	-fx-text-fill: #505050;
-	-fx-font-size: 16;
-	-fx-margin: 10;
+  -fx-text-fill: #505050;
+  -fx-font-size: 16;
+  -fx-margin: 10;
 }
 
 .trx-info-box {
-	-fx-background-color: white;
-	-fx-background-radius: 10;
-	-fx-padding: 10;
-	-fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.2), 30, 0, 3, 2);
+  -fx-background-color: white;
+  -fx-background-radius: 10;
+  -fx-padding: 10;
+  -fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.2), 30, 0, 3, 2);
 }
 
 .trx-info-box .info-title {
-	-fx-text-fill: #909090;
-	-fx-font-size: 13;
-	-fx-font-weight: bold;
+  -fx-text-fill: #909090;
+  -fx-font-size: 13;
+  -fx-font-weight: bold;
 }
 
 .trx-info-box .info {
-	-fx-text-fill: black;
-	-fx-font-size: 14;
+  -fx-text-fill: black;
+  -fx-font-size: 14;
 }
 
 .footer {
-	-fx-background-color: #46a2d6;
+  -fx-background-color: #46a2d6;
 }
