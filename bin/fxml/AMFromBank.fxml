@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" styleClass="form" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutX="132.0" layoutY="25.0" prefHeight="348.0" prefWidth="336.0" styleClass="form" stylesheets="@../css/style.css">
+         <children>
+            <TextField alignment="TOP_LEFT" promptText="Select a Bank" styleClass="text-field" stylesheets="@../css/style.css" />
+            <TextField alignment="TOP_LEFT" promptText="Account Holder Name" styleClass="text-field" stylesheets="@../css/style.css" translateY="10.0" />
+            <TextField alignment="TOP_LEFT" promptText="Account Number" stylesheets="@../css/style.css" translateY="20.0" />
+            <Label prefHeight="53.0" prefWidth="286.0" styleClass="text" stylesheets="@../css/style.css" text="An OTP will be sent to the phone number&#10;that is registered to your Bank Account" textAlignment="CENTER" translateX="1.0" translateY="35.0" translateZ="1.0" />
+            <HBox prefHeight="38.0" prefWidth="286.0" translateY="40.0">
+               <children>
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#visitAMFromCardSuccess" prefHeight="39.0" prefWidth="132.0" text="Send OTP" textAlignment="CENTER" />
+                  <TextField alignment="TOP_LEFT" prefHeight="40.0" prefWidth="134.0" promptText="Enter the OTP" stylesheets="@../css/style.css" translateX="16.0" />
+               </children>
+            </HBox>
+            <TextField alignment="TOP_LEFT" prefHeight="39.0" prefWidth="268.0" promptText="Transfer Amount" stylesheets="@../css/style.css" translateY="50.0" />
+         </children>
+      </VBox>
+      <TextField alignment="TOP_LEFT" layoutX="133.0" layoutY="391.0" prefHeight="12.0" prefWidth="336.0" promptText="Enter your Lenden PIN" stylesheets="@../css/style.css" />
+      <Button layoutX="130.0" layoutY="439.0" mnemonicParsing="false" onAction="#visitAMFromCardSuccess" prefHeight="39.0" prefWidth="336.0" text="Add Money" />
+      <Label layoutX="116.0" layoutY="487.0" styleClass="error-message" text="Validation errors / Exceptions will be displayed here" />
+   </children>
+</AnchorPane>

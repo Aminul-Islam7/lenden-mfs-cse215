@@ -6,6 +6,13 @@
 			"name": "Main",
 			"request": "launch",
 			"mainClass": "com.notfound404.lenden.Main",
+			"projectName": "lenden-mfs-cse215_3d39c6b5"
+		},
+		{
+			"type": "java",
+			"name": "Main",
+			"request": "launch",
+			"mainClass": "com.notfound404.lenden.Main",
 			"projectName": "lenden-mfs-cse215_ed23ce26",
 			"vmArgs": "--module-path \"..\\lib\\javafx\" --add-modules javafx.controls,javafx.fxml"
 		},
@@ -16,7 +23,11 @@
 			"mainClass": "com.notfound404.lenden.Main",
 			"projectName": "lenden-mfs-cse215_ed23ce26",
 			"vmArgs": "--module-path \"..\\lib\\javafx\" --add-modules javafx.controls,javafx.fxml",
-			"classpath": ["${workspaceFolder}/src/main/java", "${workspaceFolder}/src/main/resources", "${workspaceFolder}/lib/fontawesomefx-8.2.jar"]
+			"classpath": [
+				"${workspaceFolder}/src/main/java",
+				"${workspaceFolder}/src/main/resources",
+				"${workspaceFolder}/lib/fontawesomefx-8.2.jar"
+			]
 		}
 	]
 }

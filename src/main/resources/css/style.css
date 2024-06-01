@@ -37,6 +37,10 @@
 	-fx-text-fill: rgba(0, 0, 0, 0.7);
 }
 
+.custom-text{
+	-fx-font-size: 12 !important;
+}
+
 .success-text {
 	-fx-text-fill: white;
 	-fx-background-color: #008200;
@@ -47,7 +51,7 @@
 }
 
 .error-message {
-	-fx-text-fill: red;
+	-fx-text-fill: red !important;
 	-fx-font-size: 14;
 }
 
