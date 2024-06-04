@@ -147,8 +147,9 @@
                               </Button>
                            </children>
                         </GridPane>
-                        <Text layoutX="186.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="scene-label" text="Select a Utility to Pay for" />
-                     </children></AnchorPane>
+                        <Text fill="#26204e" layoutX="186.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="scene-label" text="Select a Utility to Pay for" />
+                     </children>
+                  </AnchorPane>
                   <HBox layoutY="571.0" prefHeight="30.0" prefWidth="600.0" styleClass="footer" stylesheets="@../css/style.css">
                      <children>
                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Terms &amp; Conditions" textAlignment="CENTER" translateX="18.0" translateY="5.0">
@@ -166,7 +167,8 @@
                               <Font size="14.0" />
                            </font>
                         </Text>
-                     </children></HBox>
+                     </children>
+                  </HBox>
                   <GridPane prefHeight="50.0" prefWidth="600.0" styleClass="header">
                      <columnConstraints>
                         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
