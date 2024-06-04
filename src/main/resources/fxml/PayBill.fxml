@@ -1,200 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <BorderPane prefHeight="600.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <left>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="300.0" styleClass="sidebar" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fitHeight="170.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+      <GridPane layoutX="47.0" layoutY="94.0" prefHeight="377.0" prefWidth="506.0" stylesheets="@../css/style.css">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#visitPayBillElectricity" styleClass="feature-btn">
+               <graphic>
+                  <ImageView fitHeight="116.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/logo.png" />
+                        <Image url="@../images/feature_buttons/12.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" styleClass="balance-btn" stylesheets="@../css/style.css" text="View Balance">
-                     <VBox.margin>
-                        <Insets top="15.0" />
-                     </VBox.margin>
-                  </Button>
-                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <Button mnemonicParsing="false" styleClass="menu-btn" text="Home">
-                           <graphic>
-                              <FontAwesomeIcon glyphName="HOME" size="30" />
-                           </graphic>
-                        </Button>
-                        <Button mnemonicParsing="false" styleClass="menu-btn" text="Transactions">
-                           <graphic>
-                              <FontAwesomeIcon glyphName="TH_LIST" size="25" />
-                           </graphic>
-                        </Button>
-                        <Button mnemonicParsing="false" styleClass="menu-btn" text="Account Summary">
-                           <graphic>
-                              <FontAwesomeIcon glyphName="PIE_CHART" size="25" />
-                           </graphic>
-                        </Button>
-                        <Button mnemonicParsing="false" styleClass="menu-btn" text="Transaction Limits">
-                           <graphic>
-                              <FontAwesomeIcon glyphName="DASHBOARD" size="25" />
-                           </graphic>
-                        </Button>
-                        <Button mnemonicParsing="false" styleClass="menu-btn" text="Withdraw Locations">
-                           <graphic>
-                              <FontAwesomeIcon glyphName="LOCATION_ARROW" size="30" />
-                           </graphic>
-                        </Button>
-                     </children>
-                     <VBox.margin>
-                        <Insets top="20.0" />
-                     </VBox.margin>
-                     <padding>
-                        <Insets left="30.0" />
-                     </padding>
-                  </VBox>
-                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
-                     <VBox.margin>
-                        <Insets top="20.0" />
-                     </VBox.margin>
-                     <children>
-                        <Button mnemonicParsing="false" styleClass="account-btn" text=" My Account   ">
-                           <graphic>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/user.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button mnemonicParsing="false" styleClass="sign-out-btn">
-                           <HBox.margin>
-                              <Insets left="5.0" />
-                           </HBox.margin>
-                           <graphic>
-                              <FontAwesomeIcon glyphName="SIGN_OUT" size="30" />
-                           </graphic>
-                        </Button>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </left>
-         <center>
-            <AnchorPane prefHeight="200.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-               <children>
-                  <AnchorPane fx:id="contentPane" layoutY="50.0" prefHeight="520.0" prefWidth="600.0">
-                     <children>
-                        <GridPane layoutX="62.0" layoutY="118.0" prefHeight="377.0" prefWidth="506.0">
-                           <columnConstraints>
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <Button mnemonicParsing="false" onAction="#visitAddMoney" styleClass="feature-btn">
-                                 <graphic>
-                                    <ImageView fitHeight="116.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../../../../Downloads/Electricity%20Button.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button mnemonicParsing="false" styleClass="feature-btn" GridPane.columnIndex="1">
-                                 <graphic>
-                                    <ImageView fitHeight="116.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true" translateX="1.0">
-                                       <image>
-                                          <Image url="@../../../../../../../Downloads/Gas%20Button.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button mnemonicParsing="false" styleClass="feature-btn" GridPane.rowIndex="1">
-                                 <graphic>
-                                    <ImageView fitHeight="116.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true" translateX="1.0">
-                                       <image>
-                                          <Image url="@../../../../../../../Downloads/Water%20Button.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button mnemonicParsing="false" styleClass="feature-btn" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                 <graphic>
-                                    <ImageView fitHeight="116.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../../../../Downloads/Internet%20Button.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                           </children>
-                        </GridPane>
-                        <Text fill="#26204e" layoutX="186.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="scene-label" text="Select a Utility to Pay for" />
-                     </children>
-                  </AnchorPane>
-                  <HBox layoutY="571.0" prefHeight="30.0" prefWidth="600.0" styleClass="footer" stylesheets="@../css/style.css">
-                     <children>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Terms &amp; Conditions" textAlignment="CENTER" translateX="18.0" translateY="5.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Credits" textAlignment="CENTER" translateX="165.0" translateY="5.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Exit" textAlignment="CENTER" translateX="389.0" translateY="5.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </HBox>
-                  <GridPane prefHeight="50.0" prefWidth="600.0" styleClass="header">
-                     <columnConstraints>
-                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="450.0" prefWidth="100.0" />
-                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <Label fx:id="sceneLabel" styleClass="scene-label" stylesheets="@../css/style.css" text="Pay Bill" GridPane.columnIndex="1" />
-                        <Button fx:id="forwardButton" mnemonicParsing="false" onAction="#goForward" styleClass="nav-btn" GridPane.columnIndex="2">
-                           <graphic>
-                              <FontAwesomeIcon glyphName="ARROW_RIGHT" size="20" />
-                           </graphic>
-                        </Button>
-                        <Button fx:id="backButton" alignment="CENTER" mnemonicParsing="false" onAction="#goBack" styleClass="nav-btn">
-                           <graphic>
-                              <FontAwesomeIcon glyphName="ARROW_LEFT" size="20" />
-                           </graphic>
-                        </Button>
-                     </children>
-                  </GridPane>
-               </children>
-            </AnchorPane>
-         </center>
-      </BorderPane>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#visitPayBillGas" styleClass="feature-btn" GridPane.columnIndex="1">
+               <graphic>
+                  <ImageView fitHeight="116.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true" translateX="1.0">
+                     <image>
+                        <Image url="@../images/feature_buttons/13.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#visitPayBillWater" styleClass="feature-btn" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="116.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true" translateX="1.0">
+                     <image>
+                        <Image url="@../images/feature_buttons/14.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#visitPayBillInternet" styleClass="feature-btn" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="116.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/feature_buttons/15.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </GridPane>
+      <Text fill="#26204e" layoutX="148.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="scene-label" text="Select a Utility to Pay for" textAlignment="CENTER" wrappingWidth="303.9677734375" />
    </children>
 </AnchorPane>
