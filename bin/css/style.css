@@ -62,6 +62,10 @@
   -fx-text-fill: rgba(0, 0, 0, 0.7);
 }
 
+.custom-text{
+	-fx-font-size: 12 !important;
+}
+
 .success-text {
   -fx-text-fill: white;
   -fx-background-color: #008200;
@@ -72,11 +76,11 @@
 }
 
 .error-message {
-  -fx-text-fill: red;
-  -fx-font-size: 14;
+	-fx-text-fill: red !important;
+	-fx-font-size: 14;
 }
 
-. .balance-btn {
+.balance-btn {
   -fx-background-color: white;
   -fx-text-fill: #26204e;
 }

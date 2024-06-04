@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" styleClass="form" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox layoutX="132.0" layoutY="25.0" prefHeight="348.0" prefWidth="336.0" styleClass="form" stylesheets="@../css/style.css">
@@ -15,7 +14,7 @@
             <TextField alignment="TOP_LEFT" promptText="Select a Bank" styleClass="text-field" stylesheets="@../css/style.css" />
             <TextField alignment="TOP_LEFT" promptText="Account Holder Name" styleClass="text-field" stylesheets="@../css/style.css" translateY="10.0" />
             <TextField alignment="TOP_LEFT" promptText="Account Number" stylesheets="@../css/style.css" translateY="20.0" />
-            <Label prefHeight="53.0" prefWidth="286.0" styleClass="text" stylesheets="@../css/style.css" text="An OTP will be sent to the phone number&#10;that is registered to your Bank Account" textAlignment="CENTER" translateX="1.0" translateY="35.0" translateZ="1.0" />
+            <Label prefHeight="53.0" prefWidth="286.0" styleClass="custom-text" stylesheets="@../css/style.css" text="An OTP will be sent to the phone number&#10;that is registered to your Bank Account" textAlignment="CENTER" translateX="1.0" translateY="35.0" translateZ="1.0" />
             <HBox prefHeight="38.0" prefWidth="286.0" translateY="40.0">
                <children>
                   <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#visitAMFromCardSuccess" prefHeight="39.0" prefWidth="132.0" text="Send OTP" textAlignment="CENTER" />
