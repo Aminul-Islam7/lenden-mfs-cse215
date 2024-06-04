@@ -15,7 +15,7 @@
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="183.0" layoutY="213.0" styleClass="success-text" text="Lenden to Bank Successful" />
       <ImageView fitHeight="170.0" fitWidth="170.0" layoutX="225.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/logo.png" />
+            <Image url="@../images/icon2.png" />
          </image>
       </ImageView>
       <GridPane layoutX="38.0" layoutY="272.0" prefHeight="220.0" prefWidth="525.0">

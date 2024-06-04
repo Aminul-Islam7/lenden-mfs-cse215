@@ -11,13 +11,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="153.0" layoutY="216.0" prefHeight="30.0" prefWidth="295.0" styleClass="success-text" stylesheets="@../css/style.css" text="Mobile Top-Up Successful" textAlignment="CENTER" />
       <ImageView fitHeight="153.0" fitWidth="161.0" layoutX="224.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/logo.png" />
+            <Image url="@../images/icon2.png" />
          </image>
       </ImageView>
       <GridPane layoutX="48.0" layoutY="260.0" prefHeight="126.0" prefWidth="525.0">

@@ -10,13 +10,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="212.0" layoutY="214.0" styleClass="success-text" text="Payment Successful" />
       <ImageView fitHeight="170.0" fitWidth="170.0" layoutX="225.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/logo.png" />
+            <Image url="@../images/icon2.png" />
          </image>
       </ImageView>
       <GridPane layoutX="38.0" layoutY="272.0" prefHeight="220.0" prefWidth="525.0">
@@ -62,7 +61,7 @@
             </VBox>
             <VBox maxHeight="90.0" maxWidth="162.0" styleClass="trx-info-box" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
-                  <Label styleClass="info-title" text="Referenceme" />
+                  <Label styleClass="info-title" text="Reference" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="Bought some flowers" />
                </children>
             </VBox>

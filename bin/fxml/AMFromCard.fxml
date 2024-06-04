@@ -103,6 +103,6 @@
             <Button mnemonicParsing="false" prefWidth="240.0" text="Add Money" GridPane.columnIndex="1" />
          </children>
       </GridPane>
-      <Label layoutX="141.0" layoutY="449.0" styleClass="error-message" text="Validation errors / Exceptions will be displayed here" />
+      <Label layoutX="50.0" layoutY="448.0" prefHeight="20.0" prefWidth="500.0" styleClass="error-message" />
    </children>
 </AnchorPane>

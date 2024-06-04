@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox layoutX="167.0" layoutY="69.0" prefHeight="232.0" prefWidth="300.0" spacing="5.0" styleClass="form">
+      <VBox layoutX="150.0" layoutY="70.0" prefHeight="232.0" prefWidth="300.0" spacing="5.0" styleClass="form">
          <children>
             <TextField promptText="Select a Bank">
                <VBox.margin>
@@ -30,8 +30,8 @@
             </TextField>
          </children>
       </VBox>
-      <TextField layoutX="217.0" layoutY="349.0" promptText="Lenden PIN" />
-      <Button layoutX="230.0" layoutY="405.0" mnemonicParsing="false" text="Transfer to Bank" />
-      <Label alignment="CENTER" layoutX="116.0" layoutY="460.0" prefHeight="20.0" prefWidth="403.0" styleClass="error-message" />
+      <TextField alignment="CENTER" layoutX="150.0" layoutY="342.0" prefHeight="39.0" prefWidth="300.0" promptText="Lenden PIN" />
+      <Button layoutX="150.0" layoutY="395.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="300.0" text="Transfer to Bank" />
+      <Label alignment="CENTER" layoutX="74.0" layoutY="451.0" prefHeight="20.0" prefWidth="452.0" styleClass="error-message" />
    </children>
 </AnchorPane>
