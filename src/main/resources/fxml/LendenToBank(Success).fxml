@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="183.0" layoutY="213.0" styleClass="success-text" text="Lenden to Bank Successful" />
+      <ImageView fitHeight="170.0" fitWidth="170.0" layoutX="225.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo.png" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="38.0" layoutY="272.0" prefHeight="220.0" prefWidth="525.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox maxHeight="90.0" maxWidth="162.0" styleClass="trx-info-box">
+               <children>
+                  <Label styleClass="info-title" text="Time" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="12:01 AM 01/06/2024" wrappingWidth="123.779296875" />
+               </children>
+            </VBox>
+            <VBox maxHeight="90.0" maxWidth="162.0" styleClass="trx-info-box" GridPane.columnIndex="1">
+               <children>
+                  <Label styleClass="info-title" text="Transaction ID" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="A23F94FFD0" />
+               </children>
+            </VBox>
+            <VBox maxHeight="90.0" maxWidth="162.0" styleClass="trx-info-box" GridPane.columnIndex="2">
+               <children>
+                  <Label styleClass="info-title" text="Bank Name" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="Eastern Bank PLC." />
+               </children>
+            </VBox>
+            <VBox maxHeight="90.0" maxWidth="162.0" styleClass="trx-info-box" GridPane.rowIndex="1">
+               <children>
+                  <Label styleClass="info-title" text="Total" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="৳ 10100.00       ৳ 10000 + ৳ 100" wrappingWidth="97.0" />
+               </children>
+            </VBox>
+            <VBox maxHeight="90.0" maxWidth="162.0" styleClass="trx-info-box" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label styleClass="info-title" text="New Balance" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="৳ 13036.68" />
+               </children>
+            </VBox>
+            <VBox maxHeight="90.0" maxWidth="162.0" styleClass="trx-info-box" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <Label styleClass="info-title" text="Bank Account No." />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="2156354897852656" />
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
