@@ -31,7 +31,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" styleClass="feature-btn" GridPane.columnIndex="1">
+            <Button mnemonicParsing="false" onAction="#visitMakePayment" styleClass="feature-btn" GridPane.columnIndex="1">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -40,7 +40,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" styleClass="feature-btn" GridPane.columnIndex="2">
+            <Button mnemonicParsing="false" onAction="#visitSendMoney" styleClass="feature-btn" GridPane.columnIndex="2">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -49,7 +49,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" styleClass="feature-btn" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#visitMobileTopUp" styleClass="feature-btn" GridPane.rowIndex="1">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -58,7 +58,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" styleClass="feature-btn" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#visitLendenToBank" styleClass="feature-btn" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -67,7 +67,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" styleClass="feature-btn" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#visitWithdrawCash" styleClass="feature-btn" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -76,7 +76,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" styleClass="feature-btn" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#visitPayBill" styleClass="feature-btn" GridPane.rowIndex="2">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -85,7 +85,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" styleClass="feature-btn" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#visitBookTickets" styleClass="feature-btn" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -94,7 +94,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" styleClass="feature-btn" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#visitCalculators" styleClass="feature-btn" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>

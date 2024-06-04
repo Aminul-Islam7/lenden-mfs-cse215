@@ -11,17 +11,22 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.AddMoneyController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="190.0" layoutY="215.0" styleClass="success-text" stylesheets="@../css/style.css" text="Add Money Successful" />
-      <GridPane layoutX="38.0" layoutY="268.0" prefHeight="220.0" prefWidth="525.0">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="153.0" layoutY="216.0" prefHeight="30.0" prefWidth="295.0" styleClass="success-text" stylesheets="@../css/style.css" text="Mobile Top-Up Successful" textAlignment="CENTER" />
+      <ImageView fitHeight="153.0" fitWidth="161.0" layoutX="224.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo.png" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="48.0" layoutY="260.0" prefHeight="126.0" prefWidth="525.0">
          <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
          <rowConstraints>
-            <RowConstraints vgrow="SOMETIMES" />
             <RowConstraints vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
@@ -35,7 +40,7 @@
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="12:01 AM                 01/06/2024" wrappingWidth="140.0" />
                </children>
             </VBox>
-            <VBox maxHeight="90.0" maxWidth="162.0" styleClass="trx-info-box" GridPane.columnIndex="1">
+            <VBox maxHeight="90.0" maxWidth="162.0" prefWidth="162.0" styleClass="trx-info-box" GridPane.columnIndex="1">
                <children>
                   <Label styleClass="info-title" text="Transaction ID">
                      <VBox.margin>
@@ -47,50 +52,46 @@
             </VBox>
             <VBox maxHeight="90.0" maxWidth="162.0" styleClass="trx-info-box" GridPane.columnIndex="2">
                <children>
-                  <Label styleClass="info-title" text="Source">
+                  <Label styleClass="info-title" text="Top-Up Mobile No.">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Label>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="Bank                           Eastern Bank PLC." wrappingWidth="140.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="01979856423" wrappingWidth="140.0" />
                </children>
             </VBox>
-            <VBox maxHeight="90.0" maxWidth="162.0" styleClass="trx-info-box" GridPane.rowIndex="1">
+         </children>
+      </GridPane>
+      <GridPane layoutX="48.0" layoutY="371.0" prefHeight="126.0" prefWidth="525.0">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <VBox maxHeight="90.0" maxWidth="162.0" styleClass="trx-info-box" translateX="40.0">
                <children>
                   <Label styleClass="info-title" text="Total">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Label>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="৳ 15000.00                    + No charge" wrappingWidth="140.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="৳ 200.00                    + No charge" wrappingWidth="140.0" />
                </children>
             </VBox>
-            <VBox maxHeight="90.0" maxWidth="162.0" styleClass="trx-info-box" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <VBox maxHeight="90.0" maxWidth="162.0" styleClass="trx-info-box" translateX="-40.0" GridPane.columnIndex="1">
                <children>
                   <Label styleClass="info-title" text="New Balance">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Label>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="৳ 27336.68" wrappingWidth="140.0" />
-               </children>
-            </VBox>
-            <VBox maxHeight="90.0" maxWidth="162.0" styleClass="trx-info-box" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <children>
-                  <Label styleClass="info-title" text="Source Card No.">
-                     <VBox.margin>
-                        <Insets bottom="5.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="2156354897852656" wrappingWidth="140.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="৳ 23136.68" wrappingWidth="140.0" />
                </children>
             </VBox>
          </children>
       </GridPane>
-      <ImageView fitHeight="176.0" fitWidth="170.0" layoutX="215.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/logo.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

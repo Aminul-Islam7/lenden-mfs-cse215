@@ -100,7 +100,7 @@
         </rowConstraints>
          <children>
             <TextField promptText="Enter your Lenden PIN" />
-            <Button mnemonicParsing="false" onAction="#visitAMFromCardSuccess" prefWidth="240.0" text="Add Money" GridPane.columnIndex="1" />
+            <Button mnemonicParsing="false" prefWidth="240.0" text="Add Money" GridPane.columnIndex="1" />
          </children>
       </GridPane>
       <Label layoutX="141.0" layoutY="449.0" styleClass="error-message" text="Validation errors / Exceptions will be displayed here" />

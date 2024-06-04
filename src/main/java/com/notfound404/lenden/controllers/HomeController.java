@@ -1,23 +1,45 @@
 package com.notfound404.lenden.controllers;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
-import java.io.IOException;
-import java.util.ArrayList;
-
-import javax.swing.Action;
-
 public class HomeController {
 
-  @FXML
-  private Label label;
-
-  public void visitAddMoney(ActionEvent e) {
+  public void visitAddMoney() {
     SceneController.setScene("AddMoney.fxml", "Add Money");
+  }
+
+  public void visitMakePayment() {
+    SceneController.setScene("MakePayment.fxml", "Make Payment");
+  }
+
+  public void visitSendMoney() {
+    SceneController.setScene("SendMoney.fxml", "Send Money");
+  }
+
+  public void visitMobileTopUp() {
+    SceneController.setScene("MobileTopUp.fxml", "Mobile Top Up");
+  }
+
+  public void visitLendenToBank() {
+    SceneController.setScene("LendenToBank.fxml", "Lenden To Bank");
+  }
+
+  public void visitWithdrawCash() {
+    SceneController.setScene("WithdrawCash.fxml", "Withdraw Cash");
+  }
+
+  public void visitPayBill() {
+    SceneController.setScene("PayBill.fxml", "Pay Bill");
+  }
+
+  public void visitBookTickets() {
+    SceneController.setScene("BookTickets.fxml", "Book Tickets");
+  }
+
+  public void visitCalculators() {
+    SceneController.setScene("Calculators.fxml", "Calculators");
+  }
+
+  public void visitTransactionHistory() {
+    SceneController.setScene("TransactionHistory.fxml", "Transaction History");
   }
 
 }
