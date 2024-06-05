@@ -24,7 +24,7 @@ public class MainLayoutController {
   public void initialize() {
     SceneController.setContentPane(contentPane);
     SceneController.setMainLayoutController(this);
-    SceneController.setScene("Home.fxml", "Welcome");
+    SceneController.setScene("Home.fxml", "Welcome, " + new UserService().getCurrentUser().getName());
     updateNavButtonsVisibility();
   }
 
