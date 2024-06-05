@@ -4,6 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -84,6 +85,9 @@
                            <graphic>
                               <FontAwesomeIcon glyphName="SIGN_OUT" size="30" />
                            </graphic>
+                           <tooltip>
+                              <Tooltip text="Logout" />
+                           </tooltip>
                         </Button>
                      </children>
                   </HBox>
@@ -110,11 +114,17 @@
                            <graphic>
                               <FontAwesomeIcon glyphName="ARROW_RIGHT" size="20" />
                            </graphic>
+                           <tooltip>
+                              <Tooltip text="Forward" />
+                           </tooltip>
                         </Button>
                         <Button fx:id="backButton" alignment="CENTER" mnemonicParsing="false" onAction="#goBack" styleClass="nav-btn">
                            <graphic>
                               <FontAwesomeIcon glyphName="ARROW_LEFT" size="20" />
                            </graphic>
+                           <tooltip>
+                              <Tooltip text="Back" />
+                           </tooltip>
                         </Button>
                      </children>
                   </GridPane>

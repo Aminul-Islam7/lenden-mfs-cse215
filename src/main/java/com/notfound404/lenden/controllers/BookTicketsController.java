@@ -5,20 +5,22 @@ import javafx.fxml.FXML;
 public class BookTicketsController {
 
   @FXML
-
-  public void visitBookTicketsBus() {
+  private void visitBookTicketsBus() {
     SceneController.setScene("BookTicketsBus.fxml", "Book Tickets - Bus");
   }
 
-  public void visitBookTicketsTrain() {
+  @FXML
+  private void visitBookTicketsTrain() {
     SceneController.setScene("BookTicketsTrain.fxml", "Book Tickets - Train");
   }
 
-  public void visitBookTicketsPlane() {
+  @FXML
+  private void visitBookTicketsPlane() {
     SceneController.setScene("BookTicketsPlane.fxml", "Book Tickets - Plane");
   }
 
-  public void visitBookTicketsLaunch() {
+  @FXML
+  private void visitBookTicketsLaunch() {
     SceneController.setScene("BookTicketsLaunch.fxml", "Book Tickets - Launch");
   }
 
