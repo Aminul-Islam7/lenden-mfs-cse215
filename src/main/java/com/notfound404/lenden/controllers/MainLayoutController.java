@@ -52,4 +52,26 @@ public class MainLayoutController {
     SceneController.showAuthenticationStage();
   }
 
+  @FXML
+  private void viewBalance() {
+    UserService userService = new UserService();
+    double balance = userService.getCurrentUser().getBalance();
+    balanceButton.setText("৳ " + balance);
+
+    Task<Void> sleeper = new Task<Void>() {
+      @Override
+      public Void call() throws Exception {
+        try {
+          Thread.sleep(5000);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+        return null;
+      }
+    };
+    sleeper.setOnSucceeded(e -> balanceButton.setText("View Balance"));
+
+    new Thread(sleeper).start();
+  }
+
 }

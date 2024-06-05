@@ -25,7 +25,7 @@
                         <Image url="@../images/logo.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="balanceButton" mnemonicParsing="false" styleClass="balance-btn" text="View Balance">
+                  <Button fx:id="balanceButton" mnemonicParsing="false" onAction="#viewBalance" styleClass="balance-btn" text="View Balance">
                      <VBox.margin>
                         <Insets top="15.0" />
                      </VBox.margin>
