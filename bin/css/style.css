@@ -85,6 +85,19 @@
 	-fx-font-size: 14;
 }
 
+.tooltip {
+	-fx-background-color: #26204e;
+	-fx-text-fill: white;
+	-fx-font-size: 12;
+	-fx-font-weight: bold;
+	-fx-background-radius: 3;
+	-fx-border-color: white;
+	-fx-border-width: 1;
+	-fx-border-radius: 3;
+	-fx-padding: 5 10;
+	-fx-opacity: 0.8;
+}
+
 .balance-btn {
 	-fx-background-color: white;
 	-fx-text-fill: #26204e;
@@ -129,19 +142,15 @@
 .account-btn .image-view {
 	-fx-background-radius: 100;
 }
-
+/* 
 .account-btn:hover {
 	-fx-background-color: rgba(255, 255, 255, 0.2);
-}
+} */
 
 .sign-out-btn {
 	-fx-background-color: rgba(255, 255, 255, 0.1);
 	-fx-pref-height: 60;
 	-fx-padding: 0 17;
-}
-
-.sign-out-btn:hover {
-	-fx-background-color: rgb(170, 0, 0);
 }
 
 .sign-out-btn .glyph-icon {

@@ -5,6 +5,7 @@ import com.notfound404.lenden.services.UserService;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
@@ -41,8 +42,15 @@ public class MainLayoutController {
   }
 
   public void updateNavButtonsVisibility() {
-    backButton.setVisible(SceneController.viewList.size() > 1);
-    forwardButton.setVisible(SceneController.visitedViewList.size() > 0);
+    if (SceneController.isBookTicketsWebView()) {
+      backButton.setVisible(SceneController.bookTicketsWebViewController.webHistory.getCurrentIndex() >= 0);
+      forwardButton.setVisible(SceneController.bookTicketsWebViewController.webHistory
+          .getCurrentIndex() < SceneController.bookTicketsWebViewController.webEngine.getHistory().getEntries().size()
+              - 1);
+    } else {
+      backButton.setVisible(SceneController.viewList.size() > 1);
+      forwardButton.setVisible(SceneController.visitedViewList.size() > 0);
+    }
   }
 
   @FXML

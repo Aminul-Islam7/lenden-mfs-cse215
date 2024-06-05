@@ -23,6 +23,7 @@ public class SceneController {
   private static HashMap<String, String> sceneLabels = new HashMap<>();
 
   private static MainLayoutController mainLayoutController;
+  public static BookTicketsWebViewController bookTicketsWebViewController;
 
   public static Stage getStage() {
     return currentStage;
@@ -36,23 +37,31 @@ public class SceneController {
     SceneController.mainLayoutController = controller;
   }
 
+  public static void setBookTicketsWebViewController(BookTicketsWebViewController controller) {
+    SceneController.bookTicketsWebViewController = controller;
+  }
+
   public static void back() {
-    if (viewList.size() > 1) {
+    if (isBookTicketsWebView() && bookTicketsWebViewController.webHistory.getCurrentIndex() > 0) {
+      bookTicketsWebViewController.goBack();
+    } else if (viewList.size() > 1) {
       String currentView = viewList.remove(viewList.size() - 1);
       visitedViewList.add(currentView);
       String previousView = viewList.get(viewList.size() - 1);
       loadScene(previousView, sceneLabels.get(previousView));
-      mainLayoutController.updateNavButtonsVisibility();
     }
+    mainLayoutController.updateNavButtonsVisibility();
   }
 
   public static void forward() {
-    if (visitedViewList.size() > 0) {
+    if (isBookTicketsWebView()) {
+      bookTicketsWebViewController.goForward();
+    } else if (visitedViewList.size() > 0) {
       String nextView = visitedViewList.remove(visitedViewList.size() - 1);
       viewList.add(nextView);
       loadScene(nextView, sceneLabels.get(nextView));
-      mainLayoutController.updateNavButtonsVisibility();
     }
+    mainLayoutController.updateNavButtonsVisibility();
   }
 
   public static String getCurrentView() {
@@ -81,6 +90,10 @@ public class SceneController {
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
+
+  public static void setSceneLabel(String label) {
+    mainLayoutController.setSceneLabel(label);
   }
 
   public static void setStages() {
@@ -149,6 +162,13 @@ public class SceneController {
 
   public static void closeSecondaryStage() {
     secondaryStage.close();
+  }
+
+  public static boolean isBookTicketsWebView() {
+    return getCurrentView() == "BookTicketsBus.fxml"
+        || getCurrentView() == "BookTicketsTrain.fxml"
+        || getCurrentView() == "BookTicketsPlane.fxml"
+        || getCurrentView() == "BookTicketsLaunch.fxml";
   }
 
 }
