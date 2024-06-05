@@ -267,6 +267,10 @@
 	-fx-text-fill: white;
 }
 
+#transactionsFlowPane {
+	padding: 25;
+}
+
 .footer {
 	-fx-background-color: #46a2d6;
 }
