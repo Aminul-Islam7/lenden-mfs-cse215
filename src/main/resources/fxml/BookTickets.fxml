@@ -9,9 +9,10 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.PayBillController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.BookTicketsController">
    <children>
-      <GridPane layoutX="105.0" layoutY="110.0" prefHeight="340.0" prefWidth="390.0" stylesheets="@../css/style.css">
+      <Text fill="#26204e" layoutX="142.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="scene-label" text="Select Mode of Transportation" />
+      <GridPane layoutX="105.0" layoutY="120.0" prefHeight="340.0" prefWidth="390.0" stylesheets="@../css/style.css">
          <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -21,44 +22,43 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" onAction="#visitPayBillElectricity" styleClass="feature-btn">
+            <Button mnemonicParsing="false" onAction="#visitBookTicketsBus" styleClass="feature-btn">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/feature_buttons/12.png" />
+                        <Image url="@../images/feature_buttons/16.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" onAction="#visitPayBillGas" styleClass="feature-btn" GridPane.columnIndex="1">
+            <Button mnemonicParsing="false" onAction="#visitBookTicketsTrain" styleClass="feature-btn" GridPane.columnIndex="1">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" translateX="1.0">
                      <image>
-                        <Image url="@../images/feature_buttons/13.png" />
+                        <Image url="@../images/feature_buttons/17.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" onAction="#visitPayBillWater" styleClass="feature-btn" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#visitBookTicketsPlane" styleClass="feature-btn" GridPane.rowIndex="1">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" translateX="1.0">
                      <image>
-                        <Image url="@../images/feature_buttons/14.png" />
+                        <Image url="@../images/feature_buttons/18.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" onAction="#visitPayBillInternet" styleClass="feature-btn" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#visitBookTicketsLaunch" styleClass="feature-btn" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/feature_buttons/15.png" />
+                        <Image url="@../images/feature_buttons/19.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
          </children>
       </GridPane>
-      <Text fill="#26204e" layoutX="148.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="scene-label" text="Select a Utility to Pay for" textAlignment="CENTER" wrappingWidth="303.9677734375" />
    </children>
 </AnchorPane>

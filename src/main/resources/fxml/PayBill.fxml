@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.PayBillController">
    <children>
-      <GridPane layoutX="47.0" layoutY="94.0" prefHeight="377.0" prefWidth="506.0" stylesheets="@../css/style.css">
+      <GridPane layoutX="105.0" layoutY="110.0" prefHeight="340.0" prefWidth="390.0" stylesheets="@../css/style.css">
          <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -23,7 +23,7 @@
          <children>
             <Button mnemonicParsing="false" onAction="#visitPayBillElectricity" styleClass="feature-btn">
                <graphic>
-                  <ImageView fitHeight="116.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/feature_buttons/12.png" />
                      </image>
@@ -32,7 +32,7 @@
             </Button>
             <Button mnemonicParsing="false" onAction="#visitPayBillGas" styleClass="feature-btn" GridPane.columnIndex="1">
                <graphic>
-                  <ImageView fitHeight="116.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true" translateX="1.0">
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" translateX="1.0">
                      <image>
                         <Image url="@../images/feature_buttons/13.png" />
                      </image>
@@ -41,7 +41,7 @@
             </Button>
             <Button mnemonicParsing="false" onAction="#visitPayBillWater" styleClass="feature-btn" GridPane.rowIndex="1">
                <graphic>
-                  <ImageView fitHeight="116.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true" translateX="1.0">
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" translateX="1.0">
                      <image>
                         <Image url="@../images/feature_buttons/14.png" />
                      </image>
@@ -50,7 +50,7 @@
             </Button>
             <Button mnemonicParsing="false" onAction="#visitPayBillInternet" styleClass="feature-btn" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <graphic>
-                  <ImageView fitHeight="116.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/feature_buttons/15.png" />
                      </image>
@@ -59,6 +59,6 @@
             </Button>
          </children>
       </GridPane>
-      <Text fill="#26204e" layoutX="148.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="scene-label" text="Select a Utility to Pay for" textAlignment="CENTER" wrappingWidth="303.9677734375" />
+      <Text fill="#26204e" layoutX="148.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="scene-label" text="Select a Utility to Pay for" textAlignment="CENTER" wrappingWidth="303.9677734375" />
    </children>
 </AnchorPane>
