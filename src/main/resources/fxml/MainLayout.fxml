@@ -25,7 +25,7 @@
                         <Image url="@../images/logo.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" styleClass="balance-btn" text="View Balance">
+                  <Button fx:id="balanceButton" mnemonicParsing="false" styleClass="balance-btn" text="View Balance">
                      <VBox.margin>
                         <Insets top="15.0" />
                      </VBox.margin>
@@ -74,7 +74,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button mnemonicParsing="false" styleClass="sign-out-btn">
+                        <Button mnemonicParsing="false" onAction="#logoutUser" styleClass="sign-out-btn">
                            <!-- <graphic>
                               <FontAwesomeIconView glyphName="SIGN_OUT" />
                            </graphic> -->

@@ -80,9 +80,16 @@
 	-fx-font-size: 14;
 }
 
+.error-message-light {
+	-fx-text-fill: #ff7777;
+	-fx-font-size: 14;
+}
+
 .balance-btn {
 	-fx-background-color: white;
 	-fx-text-fill: #26204e;
+	-fx-font-weight: bold;
+	-fx-pref-width: 160;
 }
 
 .balance-btn:hover {
@@ -215,6 +222,40 @@
 .trx-info-box .info {
 	-fx-text-fill: black;
 	-fx-font-size: 14;
+}
+
+/* Authentication */
+.auth-bg {
+	-fx-background-color: #26204e;
+}
+
+.auth-bg .text-field {
+	-fx-background-color: rgba(255, 255, 255, 0.7);
+	-fx-text-fill: #494949;
+	-fx-prompt-text-fill: #898989;
+	-fx-background-radius: 5;
+	-fx-padding: 7 15;
+	-fx-font-size: 16;
+}
+
+.auth-bg .button {
+	-fx-font-weight: bold;
+}
+
+.auth-bg .prompt {
+	-fx-text-fill: white;
+	-fx-font-size: 14;
+}
+
+.auth-bg .prompt-button {
+	-fx-background-color: transparent;
+	-fx-text-fill: #46a2d6;
+	-fx-font-size: 14;
+	-fx-font-weight: bold;
+}
+
+.auth-bg .prompt-button:hover {
+	-fx-text-fill: white;
 }
 
 .footer {

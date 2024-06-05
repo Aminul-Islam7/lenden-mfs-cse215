@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="550.0" styleClass="auth-bg" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.AuthenticationController">
+   <children>
+      <ImageView fitHeight="250.0" fitWidth="250.0" layoutX="150.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="nameField" layoutX="125.0" layoutY="325.0" onAction="#handleRegister" prefWidth="300.0" promptText="Name" />
+      <TextField fx:id="phoneField" layoutX="125.0" layoutY="369.0" onAction="#handleRegister" prefWidth="300.0" promptText="Phone number" />
+      <TextField fx:id="nidField" layoutX="125.0" layoutY="413.0" onAction="#handleRegister" prefWidth="300.0" promptText="NID / Passport No." />
+      <TextField fx:id="ageField" layoutX="126.0" layoutY="457.0" onAction="#handleRegister" prefHeight="39.0" prefWidth="146.0" promptText="Age" />
+      <PasswordField fx:id="pinField" layoutX="277.0" layoutY="457.0" onAction="#handleRegister" prefHeight="39.0" prefWidth="147.0" promptText="Set 4-digit PIN" />
+      <Button fx:id="loginButton" layoutX="125.0" layoutY="503.0" mnemonicParsing="false" onAction="#handleRegister" prefWidth="300.0" text="Create Account" />
+      <Label layoutX="152.0" layoutY="558.0" styleClass="prompt" text="Already have an account?" textAlignment="CENTER" />
+      <Button fx:id="loginPromptButton" layoutX="291.0" layoutY="551.0" mnemonicParsing="false" onAction="#switchToLoginScene" styleClass="prompt-button" text="Login here!" />
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="17.0" layoutY="591.0" prefHeight="20.0" prefWidth="519.0" styleClass="error-message-light" textAlignment="CENTER" />
+   </children>
+</AnchorPane>
