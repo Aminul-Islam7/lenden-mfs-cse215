@@ -88,6 +88,8 @@
 .balance-btn {
 	-fx-background-color: white;
 	-fx-text-fill: #26204e;
+	-fx-font-weight: bold;
+	-fx-pref-width: 160;
 }
 
 .balance-btn:hover {

@@ -5,11 +5,10 @@ import java.io.IOException;
 import com.notfound404.lenden.controllers.SceneController;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import com.notfound404.lenden.models.User;
+import com.notfound404.lenden.services.UserService;
 
 public class Main extends Application {
 

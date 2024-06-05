@@ -8,7 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="550.0" styleClass="auth-bg" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group8.folwala.controllers.AuthenticationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="550.0" styleClass="auth-bg" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.AuthenticationController">
    <children>
       <ImageView fitHeight="250.0" fitWidth="250.0" layoutX="149.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -16,7 +16,7 @@
          </image>
       </ImageView>
       <TextField fx:id="phoneField" alignment="CENTER" layoutX="126.0" layoutY="367.0" onAction="#handleLogin" prefWidth="300.0" promptText="Phone Number" />
-      <PasswordField fx:id="passwordField" alignment="CENTER" layoutX="126.0" layoutY="412.0" onAction="#handleLogin" prefWidth="300.0" promptText="PIN" />
+      <PasswordField fx:id="pinField" alignment="CENTER" layoutX="126.0" layoutY="412.0" onAction="#handleLogin" prefWidth="300.0" promptText="PIN" />
       <Button fx:id="loginButton" layoutX="125.0" layoutY="459.0" mnemonicParsing="false" onAction="#handleLogin" prefWidth="300.0" text="Login" />
       <Label layoutX="150.0" layoutY="517.0" styleClass="prompt" text="Don't have an account?" textAlignment="CENTER" />
       <Button fx:id="registerPromptButton" layoutX="274.0" layoutY="510.0" mnemonicParsing="false" onAction="#switchToRegisterScene" styleClass="prompt-button" text="Register here!" />

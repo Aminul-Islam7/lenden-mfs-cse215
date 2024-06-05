@@ -1,5 +1,8 @@
 package com.notfound404.lenden.controllers;
 
+import com.notfound404.lenden.services.UserService;
+
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -12,7 +15,7 @@ public class MainLayoutController {
   private AnchorPane contentPane;
 
   @FXML
-  private Button backButton, forwardButton;
+  private Button backButton, forwardButton, balanceButton;
 
   @FXML
   private Label sceneLabel;
@@ -41,4 +44,12 @@ public class MainLayoutController {
     backButton.setVisible(SceneController.viewList.size() > 1);
     forwardButton.setVisible(SceneController.visitedViewList.size() > 0);
   }
+
+  @FXML
+  private void logoutUser() {
+    UserService userService = new UserService();
+    userService.logoutUser();
+    SceneController.showAuthenticationStage();
+  }
+
 }
