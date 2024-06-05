@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css">
+         <children>
+            <BorderPane prefHeight="600.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <center>
+                  <AnchorPane prefHeight="520.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="contentPane" layoutY="50.0" prefHeight="462.0" prefWidth="600.0">
+                           <children>
+                              <Text fill="#26204e" layoutX="142.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="scene-label" text="Select Mode of Transportation" />
+                              <GridPane layoutX="76.0" layoutY="69.0" prefHeight="332.0" prefWidth="447.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#visitBookTicketBus" styleClass="feature-btn">
+                                       <graphic>
+                                          <ImageView fitHeight="116.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/feature_buttons/16.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#visitBookTicketTrain" styleClass="feature-btn" GridPane.columnIndex="1">
+                                       <graphic>
+                                          <ImageView fitHeight="116.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true" translateX="1.0">
+                                             <image>
+                                                <Image url="@../images/feature_buttons/17.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#visitBookTicketPlane" styleClass="feature-btn" GridPane.rowIndex="1">
+                                       <graphic>
+                                          <ImageView fitHeight="116.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true" translateX="1.0">
+                                             <image>
+                                                <Image url="@../images/feature_buttons/18.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#visitBookTicketLaunch" styleClass="feature-btn" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <graphic>
+                                          <ImageView fitHeight="116.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/feature_buttons/19.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
