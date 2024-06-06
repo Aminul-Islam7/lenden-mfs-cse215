@@ -46,7 +46,15 @@
 	-fx-padding: 7 30;
 	-fx-cursor: hand;
 }
-
+.calc-btn {
+	-fx-background-color: #d0efff;
+	-fx-text-fill: #85431e;
+	-fx-font-size: 18;
+	-fx-font-weight: bold;
+	-fx-background-radius: 100;
+	-fx-padding: 7 30;
+	-fx-cursor: hand;
+}
 .button:hover {
 	-fx-background-color: #3a8cb8;
 }
