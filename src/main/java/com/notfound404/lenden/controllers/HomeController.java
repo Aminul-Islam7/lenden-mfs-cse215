@@ -35,7 +35,7 @@ public class HomeController {
   }
 
   public void visitCalculators() {
-    SceneController.setScene("Calculators.fxml", "Calculators");
+    SceneController.setScene("Calculator.fxml", "Calculators");
   }
 
   public void visitTransactionHistory() {

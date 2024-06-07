@@ -12,12 +12,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.CalculatorController">
    <children>
       <VBox layoutX="34.0" layoutY="70.0" prefHeight="420.0" prefWidth="348.0" spacing="5.0" styleClass="form">
          <children>
-            <TextField minHeight="-Infinity" minWidth="-Infinity" prefHeight="59.0" prefWidth="262.0" translateY="10.0" />
-            <GridPane prefHeight="285.0" prefWidth="309.0" stylesheets="@../css/style.css" translateY="25.0">
+            <GridPane prefHeight="85.0" prefWidth="298.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="textField" alignment="CENTER_RIGHT" editable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="298.0" promptText="0" styleClass="calc-text-field" GridPane.rowIndex="1" />
+                  <Text fx:id="savedNumbers" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" GridPane.halignment="LEFT" />
+               </children>
+            </GridPane>
+            <GridPane prefHeight="285.0" prefWidth="309.0" stylesheets="@../css/style.css" translateY="10.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -32,33 +44,29 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Text fill="#85431e" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" textAlignment="CENTER" textOrigin="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-                     <font>
-                        <Font name="System Bold" size="22.0" />
-                     </font>
-                  </Text>
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" text="=" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" styleClass="calc-btn" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" styleClass="calc-btn" text="2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="7" GridPane.rowIndex="1" />
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="4" GridPane.rowIndex="2" />
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="0" GridPane.rowIndex="4" />
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" styleClass="calc-btn" text="." GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" styleClass="calc-btn" text="+" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="calc-btn" text="-" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" styleClass="calc-btn" text="/" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="x" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="C" GridPane.halignment="CENTER" />
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#calculate" text="=" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#numBtn1Clicked" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#numBtn3Clicked" styleClass="calc-btn" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#numBtn2Clicked" styleClass="calc-btn" text="2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#numBtn7Clicked" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="7" GridPane.rowIndex="1" />
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#numBtn5Clicked" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#numBtn6Clicked" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#numBtn4Clicked" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="4" GridPane.rowIndex="2" />
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#numBtn8Clicked" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#numBtn9Clicked" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#numBtn0Clicked" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="0" GridPane.rowIndex="4" />
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#numBtnDotClicked" styleClass="calc-btn" text="." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#addAction" styleClass="calc-btn" text="+" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#subtractAction" styleClass="calc-btn" text="-" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#divideAction" styleClass="calc-btn" text="/" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#multiplicationAction" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="x" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clearTextField" prefHeight="39.0" prefWidth="43.0" styleClass="calc-btn" stylesheets="@../css/style.css" text="C" GridPane.halignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#deleteDigit" styleClass="calc-btn" text="&lt;" GridPane.columnIndex="3" />
                </children>
             </GridPane>
          </children>
       </VBox>
-      <Button layoutX="428.0" layoutY="95.0" mnemonicParsing="false" onAction="#visitBookTicketsBus" styleClass="feature-btn">
+      <Button layoutX="428.0" layoutY="95.0" mnemonicParsing="false" onAction="#visitPercentageCalc" styleClass="feature-btn">
          <graphic>
             <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -72,7 +80,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Text>
-      <Button layoutX="428.0" layoutY="290.0" mnemonicParsing="false" onAction="#visitBookTicketsBus" styleClass="feature-btn">
+      <Button layoutX="428.0" layoutY="290.0" mnemonicParsing="false" onAction="#visitInterestCalc" styleClass="feature-btn">
          <graphic>
             <ImageView blendMode="HARD_LIGHT" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                <image>

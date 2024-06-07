@@ -12,6 +12,13 @@
 	-fx-padding: 7 10;
 	-fx-font-size: 16;
 }
+.calc-text-field {
+	-fx-background-color: #e0e0e0;
+	-fx-text-fill: #000000;
+	-fx-background-radius: 5;
+	-fx-padding: 7 10;
+	-fx-font-size: 20;
+}
 
 .choice-box {
 	-fx-background-color: #e0e0e0;
