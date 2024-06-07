@@ -218,7 +218,7 @@
 .trx-info-box {
 	-fx-background-color: white;
 	-fx-background-radius: 10;
-	-fx-padding: 10;
+	-fx-padding: 12;
 	-fx-effect: dropshadow(three-pass-box, rgb(38, 32, 78, 0.2), 30, 0, 3, 2);
 }
 

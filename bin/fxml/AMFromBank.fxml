@@ -27,6 +27,6 @@
       </VBox>
       <TextField alignment="CENTER" layoutX="132.0" layoutY="390.0" prefHeight="12.0" prefWidth="336.0" promptText="Lenden PIN" stylesheets="@../css/style.css" />
       <Button layoutX="132.0" layoutY="439.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="336.0" text="Add Money" />
-      <Label layoutX="59.0" layoutY="486.0" prefHeight="20.0" prefWidth="483.0" styleClass="error-message" />
+      <Label alignment="CENTER" layoutX="59.0" layoutY="486.0" prefHeight="20.0" prefWidth="483.0" styleClass="error-message" />
    </children>
 </AnchorPane>
