@@ -12,6 +12,13 @@
 	-fx-padding: 7 10;
 	-fx-font-size: 16;
 }
+.calc-text-field {
+	-fx-background-color: #e0e0e0;
+	-fx-text-fill: #000000;
+	-fx-background-radius: 5;
+	-fx-padding: 7 10;
+	-fx-font-size: 20;
+}
 
 .choice-box {
 	-fx-background-color: #e0e0e0;
@@ -46,7 +53,15 @@
 	-fx-padding: 7 30;
 	-fx-cursor: hand;
 }
-
+.calc-btn {
+	-fx-background-color: #d0efff;
+	-fx-text-fill: #85431e;
+	-fx-font-size: 18;
+	-fx-font-weight: bold;
+	-fx-background-radius: 100;
+	-fx-padding: 7 30;
+	-fx-cursor: hand;
+}
 .button:hover {
 	-fx-background-color: #3a8cb8;
 }
