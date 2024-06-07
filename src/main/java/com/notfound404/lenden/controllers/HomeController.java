@@ -25,4 +25,10 @@ public class HomeController {
     SceneController.setScene("SendMoney.fxml", "Send Money");
   }
 
+  
+
+  public void visitWithdrawCash(ActionEvent e) {
+    SceneController.setScene("WithdrawCash.fxml", "WithdrawCash");
+  }
+
 }
