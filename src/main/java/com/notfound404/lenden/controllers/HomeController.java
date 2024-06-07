@@ -20,4 +20,9 @@ public class HomeController {
     SceneController.setScene("AddMoney.fxml", "Add Money");
   }
 
+
+  public void visitSendMoney(ActionEvent e) {
+    SceneController.setScene("SendMoney.fxml", "Send Money");
+  }
+
 }
