@@ -1,5 +1,6 @@
 package com.notfound404.lenden.controllers;
 
+import com.notfound404.lenden.models.User;
 import com.notfound404.lenden.services.UserService;
 
 import javafx.concurrent.Task;
@@ -25,7 +26,13 @@ public class MainLayoutController {
   public void initialize() {
     SceneController.setContentPane(contentPane);
     SceneController.setMainLayoutController(this);
-    SceneController.setScene("Home.fxml", "Welcome, " + new UserService().getCurrentUser().getName());
+    AuthenticationController.setMainLayoutController(this);
+
+    String message = new UserService().getCurrentUser() == null ? "Welcome"
+        : "Welcome, " + new UserService().getCurrentUser().getName();
+
+    SceneController.setScene("Home.fxml", message);
+
     updateNavButtonsVisibility();
   }
 

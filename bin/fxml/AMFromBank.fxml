@@ -12,21 +12,21 @@
    <children>
       <VBox layoutX="132.0" layoutY="25.0" prefHeight="348.0" prefWidth="336.0" styleClass="form" stylesheets="@../css/style.css">
          <children>
-            <ChoiceBox prefHeight="41.0" prefWidth="424.0" />
-            <TextField alignment="TOP_LEFT" promptText="Account Holder Name" styleClass="text-field" stylesheets="@../css/style.css" translateY="10.0" />
-            <TextField alignment="TOP_LEFT" promptText="Account Number" stylesheets="@../css/style.css" translateY="20.0" />
-            <Label alignment="CENTER" prefHeight="53.0" prefWidth="286.0" styleClass="small" stylesheets="@../css/style.css" text="An OTP will be sent to the phone number&#10;that is registered to your Bank Account" textAlignment="CENTER" translateX="1.0" translateY="35.0" translateZ="1.0" />
+            <ChoiceBox fx:id="bankChoiceBox" prefHeight="41.0" prefWidth="424.0" />
+            <TextField fx:id="nameField" alignment="TOP_LEFT" promptText="Account Holder Name" styleClass="text-field" stylesheets="@../css/style.css" translateY="10.0" />
+            <TextField fx:id="numberField" alignment="TOP_LEFT" promptText="Account Number" stylesheets="@../css/style.css" translateY="20.0" />
+            <Label fx:id="otpLabel" alignment="CENTER" prefHeight="53.0" prefWidth="286.0" styleClass="small" stylesheets="@../css/style.css" text="An OTP will be sent to the phone number&#10;that is registered to your Bank Account" textAlignment="CENTER" translateX="1.0" translateY="35.0" translateZ="1.0" />
             <HBox prefHeight="38.0" prefWidth="286.0" translateY="40.0">
                <children>
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="132.0" text="Send OTP" textAlignment="CENTER" />
-                  <TextField alignment="TOP_LEFT" prefHeight="40.0" prefWidth="134.0" promptText="Enter the OTP" stylesheets="@../css/style.css" translateX="16.0" />
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#sendOtp" prefHeight="39.0" prefWidth="132.0" text="Send OTP" textAlignment="CENTER" />
+                  <TextField fx:id="otpField" alignment="TOP_LEFT" prefHeight="40.0" prefWidth="134.0" promptText="Enter the OTP" stylesheets="@../css/style.css" translateX="16.0" />
                </children>
             </HBox>
-            <TextField alignment="TOP_LEFT" prefHeight="39.0" prefWidth="268.0" promptText="Transfer Amount" stylesheets="@../css/style.css" translateY="50.0" />
+            <TextField fx:id="amountField" alignment="TOP_LEFT" prefHeight="39.0" prefWidth="268.0" promptText="Transfer Amount" stylesheets="@../css/style.css" translateY="50.0" />
          </children>
       </VBox>
-      <TextField alignment="CENTER" layoutX="132.0" layoutY="390.0" prefHeight="12.0" prefWidth="336.0" promptText="Lenden PIN" stylesheets="@../css/style.css" />
-      <Button layoutX="132.0" layoutY="439.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="336.0" text="Add Money" />
-      <Label layoutX="59.0" layoutY="486.0" prefHeight="20.0" prefWidth="483.0" styleClass="error-message" />
+      <TextField fx:id="pinField" alignment="CENTER" layoutX="132.0" layoutY="390.0" prefHeight="12.0" prefWidth="336.0" promptText="Lenden PIN" stylesheets="@../css/style.css" />
+      <Button layoutX="132.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleAddMoney" prefHeight="39.0" prefWidth="336.0" text="Add Money" />
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="59.0" layoutY="486.0" prefHeight="20.0" prefWidth="483.0" styleClass="error-message" />
    </children>
 </AnchorPane>

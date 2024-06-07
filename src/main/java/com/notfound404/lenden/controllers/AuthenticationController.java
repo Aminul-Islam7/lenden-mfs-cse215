@@ -30,8 +30,10 @@ public class AuthenticationController {
   @FXML
   public void initialize() {
     userService = new UserService();
+  }
 
-    userService.createFiles();
+  public static void setMainLayoutController(MainLayoutController controller) {
+    mainLayoutController = controller;
   }
 
   @FXML
@@ -87,8 +89,8 @@ public class AuthenticationController {
       return;
     }
 
-    if (pinField.getText().length() != 4) {
-      errorLabel.setText("PIN must be 4 digits long");
+    if (!pinField.getText().matches("\\d{4}")) {
+      errorLabel.setText("PIN must be a 4-digit number");
       return;
     }
 
@@ -113,7 +115,4 @@ public class AuthenticationController {
     SceneController.switchToScene("login.fxml");
   }
 
-  public static void setMainLayoutController(MainLayoutController controller) {
-    mainLayoutController = controller;
-  }
 }

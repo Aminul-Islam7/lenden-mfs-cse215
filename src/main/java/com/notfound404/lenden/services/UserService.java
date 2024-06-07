@@ -42,6 +42,12 @@ public class UserService {
   }
 
   public User getCurrentUser() {
+    loadUsers();
+    for (User user : users) {
+      if (user.equals(currentUser)) {
+        return user;
+      }
+    }
     return currentUser;
   }
 
@@ -108,8 +114,28 @@ public class UserService {
 
   public void updateUser(User user) {
     for (int i = 0; i < users.size(); i++) {
-      if (users.get(i).getPhone().equals(user.getPhone())) {
+      if (users.get(i).equals(user)) {
         users.set(i, user);
+        saveUsers();
+        break;
+      }
+    }
+  }
+
+  public void addBalance(User user, double amount) {
+    for (int i = 0; i < users.size(); i++) {
+      if (users.get(i).equals(user)) {
+        users.get(i).setBalance(users.get(i).getBalance() + amount);
+        saveUsers();
+        break;
+      }
+    }
+  }
+
+  public void deductBalance(User user, double amount) {
+    for (int i = 0; i < users.size(); i++) {
+      if (users.get(i).equals(user)) {
+        users.get(i).setBalance(users.get(i).getBalance() - amount);
         saveUsers();
         break;
       }
