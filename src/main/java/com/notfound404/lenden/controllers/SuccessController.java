@@ -17,12 +17,8 @@ public class SuccessController {
 
   @FXML
   private void initialize() {
-    AMFromBankController.setSuccessController(this);
-    WithdrawCashController.setSuccessController(this);
-
     List<Transaction> transactions = new TransactionService().loadTransactions();
     setTransactionDetails(transactions.get(transactions.size() - 1));
-
   }
 
   public void setTransactionDetails(Transaction transaction) {
@@ -45,7 +41,7 @@ public class SuccessController {
 
     String balance = "৳ " + String.format("%.2f", new UserService().getCurrentUser().getBalance());
 
-    balanceText.setText("৳ " + balance);
+    balanceText.setText(balance);
     if (referenceText != null)
       referenceText.setText(transaction.getReference().getInfo());
   }
