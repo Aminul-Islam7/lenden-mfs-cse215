@@ -9,12 +9,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.InterestCalcController">
    <children>
       <VBox fillWidth="false" layoutX="131.0" layoutY="50.0" minHeight="-Infinity" prefHeight="440.0" prefWidth="367.0" spacing="5.0" styleClass="form" stylesheets="@../css/style.css">
          <children>
-            <GridPane prefHeight="164.0" prefWidth="304.0" translateY="10.0">
+            <GridPane prefHeight="202.0" prefWidth="304.0" translateY="10.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="174.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="97.0" />
@@ -23,18 +22,21 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label prefHeight="39.0" prefWidth="108.0" text="Principle" textAlignment="CENTER" />
+                  <Label prefHeight="39.0" prefWidth="108.0" text="Principal" textAlignment="CENTER" />
                   <Label prefHeight="39.0" prefWidth="103.0" text="Interest Rate" textAlignment="CENTER" GridPane.rowIndex="1" />
                   <Label prefHeight="32.0" prefWidth="104.0" text="Time" textAlignment="CENTER" GridPane.rowIndex="2" />
-                  <TextField minWidth="-Infinity" prefHeight="39.0" prefWidth="65.0" GridPane.columnIndex="1" />
-                  <TextField minWidth="-Infinity" prefHeight="39.0" prefWidth="65.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField minWidth="-Infinity" prefHeight="39.0" prefWidth="65.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="inputTextField1" alignment="CENTER" minWidth="-Infinity" prefHeight="39.0" prefWidth="65.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="inputTextField2" alignment="CENTER" minWidth="-Infinity" prefHeight="39.0" prefWidth="65.0" promptText="in %" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="inputTextField3" alignment="CENTER" minWidth="-Infinity" prefHeight="39.0" prefWidth="65.0" promptText="in years" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label prefHeight="32.0" prefWidth="192.0" text="Compounding Frequency" textAlignment="CENTER" GridPane.rowIndex="3" />
+                  <TextField fx:id="inputTextField4" alignment="CENTER" minWidth="-Infinity" prefHeight="39.0" prefWidth="65.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
             </GridPane>
-            <Label prefHeight="37.0" prefWidth="57.0" text="Result" textAlignment="CENTER" translateX="220.0" translateY="10.0" />
-            <GridPane prefHeight="182.0" prefWidth="304.0" translateY="-10.0">
+            <Label prefHeight="37.0" prefWidth="57.0" text="Result" textAlignment="CENTER" translateX="220.0" translateY="15.0" />
+            <GridPane prefHeight="182.0" prefWidth="304.0" translateY="5.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="249.0" minWidth="10.0" prefWidth="185.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="119.0" />
@@ -44,14 +46,14 @@
                   <RowConstraints maxHeight="94.0" minHeight="0.0" prefHeight="91.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TextField minWidth="-Infinity" prefHeight="39.0" prefWidth="65.0" translateY="-7.0" GridPane.columnIndex="1" />
-                  <TextField minWidth="-Infinity" prefHeight="39.0" prefWidth="65.0" translateY="-7.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="127.0" text="Calculate" textAlignment="CENTER" translateY="20.0" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
+                  <TextField fx:id="resultTextField1" alignment="CENTER" editable="false" minWidth="-Infinity" prefHeight="39.0" prefWidth="65.0" translateY="-7.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="resultTextField2" alignment="CENTER" editable="false" minWidth="-Infinity" prefHeight="39.0" prefWidth="65.0" translateY="-7.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#calculateSimple" prefHeight="38.0" prefWidth="127.0" text="Calculate" textAlignment="CENTER" translateY="15.0" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
                   <Label prefHeight="41.0" prefWidth="106.0" text="Simple Interest" textAlignment="CENTER" translateY="30.0" GridPane.halignment="CENTER" />
-                  <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="127.0" text="Calculate" textAlignment="CENTER" translateY="20.0" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                  <Button mnemonicParsing="false" onAction="#calculateCompound" prefHeight="38.0" prefWidth="127.0" text="Calculate" textAlignment="CENTER" translateY="15.0" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
                   <Label prefHeight="41.0" prefWidth="146.0" text="Compound Interest" textAlignment="CENTER" translateY="30.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                  <Label text="=" translateX="-7.0" translateY="-4.0" GridPane.halignment="RIGHT" />
-                  <Label text="=" translateX="-7.0" translateY="-4.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                  <Label text="=" translateX="-8.0" translateY="-7.0" GridPane.halignment="RIGHT" />
+                  <Label text="=" translateX="-8.0" translateY="-7.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
                </children>
             </GridPane>
          </children>
