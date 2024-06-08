@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane layoutX="69.0" layoutY="92.0" prefHeight="336.0" prefWidth="462.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox maxHeight="130.0" maxWidth="190.0">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <children>
+                  <Label styleClass="title" text="Current Balance">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="balanceText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="value" text="0.00" />
+               </children>
+               <styleClass>
+                  <String fx:value="summary-box" />
+                  <String fx:value="current-balance" />
+               </styleClass>
+            </VBox>
+            <VBox maxHeight="130.0" maxWidth="190.0" GridPane.columnIndex="1">
+               <children>
+                  <Label styleClass="title" text="Utility Expenses">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="expensesText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="value" text="0.00" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <Label styleClass="duration" text="6 months" />
+                        <Label styleClass="duration" text="1 month" />
+                     </children>
+                  </HBox>
+               </children>
+               <styleClass>
+                  <String fx:value="summary-box" />
+                  <String fx:value="utility-expenses" />
+               </styleClass>
+            </VBox>
+            <VBox maxHeight="130.0" maxWidth="190.0" GridPane.rowIndex="1">
+               <children>
+                  <Label styleClass="title" text="Cash In">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="12.0">
+                     <children>
+                        <Text fx:id="cashInText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="value" text="0.00" />
+                        <FontAwesomeIcon glyphName="ARROW_UP" size="25" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <Label styleClass="duration" text="24 hours" />
+                        <Label styleClass="duration" text="1 month" />
+                     </children>
+                  </HBox>
+               </children>
+               <styleClass>
+                  <String fx:value="summary-box" />
+                  <String fx:value="cash-in" />
+               </styleClass>
+            </VBox>
+            <VBox maxHeight="130.0" maxWidth="190.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label styleClass="title" text="Cash Out">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="12.0">
+                     <children>
+                        <Text fx:id="cashOutText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="value" text="0.00" />
+                        <FontAwesomeIcon glyphName="ARROW_DOWN" size="25" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <Label styleClass="duration" text="24 hours" />
+                        <Label styleClass="duration" text="1 month" />
+                     </children>
+                  </HBox>
+               </children>
+               <styleClass>
+                  <String fx:value="summary-box" />
+                  <String fx:value="cash-out" />
+               </styleClass>
+            </VBox>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
