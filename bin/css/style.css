@@ -268,7 +268,53 @@
 }
 
 #transactionsFlowPane {
-	padding: 25;
+	-fx-padding: 25;
+}
+
+.transaction-box {
+	-fx-background-color: white;
+	-fx-background-radius: 10;
+	-fx-border-color: #dddddd;
+	-fx-border-width: 1;
+	-fx-border-radius: 10;
+	-fx-padding: 10;
+}
+
+.transaction-box .type {
+	-fx-text-fill: #26204e;
+	-fx-font-size: 16;
+	-fx-font-weight: bold;
+}
+
+.transaction-box .copy-btn {
+	-fx-background-color: transparent;
+	-fx-font-size: 14;
+	-fx-padding: 0;
+	-fx-pref-height: 25;
+}
+
+.transaction-box .copy-btn .glyph-icon {
+	-fx-fill: #505050;
+}
+
+.transaction-box .copy-btn:hover .glyph-icon {
+	-fx-fill: #46a2d6;
+}
+
+.transaction-box .amount {
+	-fx-text-fill: green;
+	-fx-font-size: 16;
+	-fx-font-weight: bold;
+}
+
+.transaction-box .detail {
+	-fx-text-fill: #505050;
+	-fx-font-size: 13;
+}
+
+.no-transactions {
+	-fx-text-fill: #505050;
+	-fx-font-size: 16;
 }
 
 .footer {

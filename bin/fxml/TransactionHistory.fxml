@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.TransactionHistoryController">
    <children>
       <ScrollPane prefHeight="520.0" prefWidth="600.0">
          <content>
-            <FlowPane fx:id="transactionosFlowPane" prefHeight="200.0" prefWidth="597.0" />
+            <FlowPane fx:id="transactionsFlowPane" prefWidth="597.0" styleClass="transactionsFlowPane" vgap="10.0">
+               <children>
+                  <VBox prefWidth="545.0" spacing="2.0" styleClass="transaction-box">
+                     <children>
+                        <HBox prefWidth="523.0">
+                           <children>
+                              <Label prefWidth="175.0" styleClass="type" text="Add Money" />
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="175.0" styleClass="detail" text="Trx ID: A23F94FFD0" />
+                              <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="173.0" styleClass="amount" text="+ ৳ 15000.00" />
+                           </children>
+                        </HBox>
+                        <HBox prefWidth="25.0">
+                           <children>
+                              <Label prefHeight="20.0" prefWidth="370.0" styleClass="detail" text="Eastern Bank PLC." />
+                              <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="153.0" styleClass="detail" text="Charge ৳ 0.00" />
+                           </children>
+                        </HBox>
+                        <HBox prefWidth="523.0">
+                           <children>
+                              <Label prefHeight="20.0" prefWidth="370.0" styleClass="detail" text="A/N: 2156354897852656" />
+                              <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="153.0" styleClass="detail" text="12:01 AM 01/06/2024" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children></FlowPane>
          </content>
       </ScrollPane>
    </children>

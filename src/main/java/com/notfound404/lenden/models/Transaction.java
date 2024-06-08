@@ -3,19 +3,20 @@ package com.notfound404.lenden.models;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Transaction implements Serializable {
+public class Transaction implements Serializable, Comparable<Transaction> {
 
   private String id;
   private User user;
   private TransactionType type;
-  private String destination;
+  private TransactionInfo destination;
   private double amount;
   private double charge;
   private Date date;
-  private String reference;
+  private TransactionInfo reference;
 
-  public Transaction(String id, User user, TransactionType type, String destination, double amount, double charge,
-      Date date, String reference) {
+  public Transaction(String id, User user, TransactionType type,
+      TransactionInfo destination, double amount, double charge,
+      Date date, TransactionInfo reference) {
     this.id = id;
     this.user = user;
     this.type = type;
@@ -38,7 +39,7 @@ public class Transaction implements Serializable {
     return type;
   }
 
-  public String getDestination() {
+  public TransactionInfo getDestination() {
     return destination;
   }
 
@@ -54,8 +55,13 @@ public class Transaction implements Serializable {
     return date;
   }
 
-  public String getReference() {
+  public TransactionInfo getReference() {
     return reference;
+  }
+
+  @Override
+  public int compareTo(Transaction other) {
+    return other.getDate().compareTo(this.date);
   }
 
   @Override

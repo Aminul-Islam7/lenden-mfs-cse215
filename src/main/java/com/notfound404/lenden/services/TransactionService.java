@@ -1,13 +1,14 @@
 package com.notfound404.lenden.services;
 
 import com.notfound404.lenden.models.Transaction;
+import com.notfound404.lenden.models.TransactionInfo;
 import com.notfound404.lenden.models.TransactionType;
 import com.notfound404.lenden.models.User;
 
 import java.io.*;
-import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Random;
 
 public class TransactionService {
   private ArrayList<Transaction> transactions;
@@ -18,8 +19,9 @@ public class TransactionService {
     transactions = loadTransactions();
   }
 
-  public void addTransaction(User user, TransactionType type, String destination, double amount, double charge,
-      String reference) {
+  public void addTransaction(User user, TransactionType type,
+      TransactionInfo destination, double amount, double charge,
+      TransactionInfo reference) {
     Transaction transaction = new Transaction(generateTransactionID(), user, type, destination, amount,
         charge, new Date(), reference);
     transactions.add(transaction);
@@ -29,15 +31,15 @@ public class TransactionService {
   private String generateTransactionID() {
     final char[] CHAR_POOL = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".toCharArray();
 
-    SecureRandom random = new SecureRandom();
-    random.setSeed(new Date().getTime());
-    String id = "";
+    Random random = new Random(System.currentTimeMillis());
+    StringBuilder id = new StringBuilder(10);
 
-    id += (char) ('A' + random.nextInt(26));
+    id.append(CHAR_POOL[random.nextInt(26)]);
+
     for (int i = 1; i < 10; i++) {
-      id += CHAR_POOL[random.nextInt(CHAR_POOL.length)];
+      id.append(CHAR_POOL[random.nextInt(CHAR_POOL.length)]);
     }
-    return id;
+    return id.toString();
   }
 
   public ArrayList<Transaction> getTransactionsByUser(User user) {
@@ -54,6 +56,8 @@ public class TransactionService {
     ArrayList<Transaction> transactions = new ArrayList<>();
     try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(TRANSACTION_FILE_PATH))) {
       transactions = (ArrayList<Transaction>) ois.readObject();
+    } catch (EOFException e) {
+      return transactions;
     } catch (IOException | ClassNotFoundException e) {
       e.printStackTrace();
     }

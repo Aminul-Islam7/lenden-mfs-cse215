@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 import com.notfound404.lenden.models.Transaction;
-import com.notfound404.lenden.models.User;
 import com.notfound404.lenden.services.TransactionService;
 import com.notfound404.lenden.services.UserService;
 
@@ -15,8 +14,6 @@ public class AMFromBankSuccessController {
 
   @FXML
   private Text dateText, transactionIdText, destinationText, amountText, balanceText, referenceText;
-
-  private UserService userService;
 
   @FXML
   private void initialize() {
@@ -31,7 +28,7 @@ public class AMFromBankSuccessController {
 
     dateText.setText(date);
     transactionIdText.setText(transaction.getId());
-    destinationText.setText(transaction.getDestination());
+    destinationText.setText(transaction.getDestination().getInfo());
 
     double totalAmount = transaction.getAmount() + transaction.getCharge();
     String amount = "৳ " + totalAmount + "\n";
@@ -42,7 +39,7 @@ public class AMFromBankSuccessController {
     amountText.setText(amount);
 
     balanceText.setText("৳ " + new UserService().getCurrentUser().getBalance());
-    referenceText.setText(transaction.getReference());
+    referenceText.setText(transaction.getReference().getInfo());
   }
 
 }

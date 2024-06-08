@@ -1,11 +1,10 @@
 package com.notfound404.lenden.controllers;
 
-import com.notfound404.lenden.models.Transaction;
+import com.notfound404.lenden.models.TransactionInfo;
 import com.notfound404.lenden.models.TransactionType;
 import com.notfound404.lenden.services.TransactionService;
 import com.notfound404.lenden.services.UserService;
 
-import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -96,9 +95,11 @@ public class AMFromBankController {
     }
 
     TransactionService transactionService = new TransactionService();
-    transactionService.addTransaction(userService.getCurrentUser(), TransactionType.ADD_MONEY,
-        bankChoiceBox.getValue().toString(), Double.parseDouble(amountField.getText()), 0.0,
-        numberField.getText());
+    TransactionInfo bankInfo = new TransactionInfo("Bank", bankChoiceBox.getValue().toString());
+    TransactionInfo accountInfo = new TransactionInfo("Account No.", numberField.getText());
+    transactionService.addTransaction(userService.getCurrentUser(), TransactionType.ADD_MONEY_BANK,
+        bankInfo, Double.parseDouble(amountField.getText()), 0.0,
+        accountInfo);
 
     userService.addBalance(userService.getCurrentUser(), Double.parseDouble(amountField.getText()));
 

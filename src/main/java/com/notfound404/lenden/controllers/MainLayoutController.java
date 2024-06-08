@@ -1,12 +1,10 @@
 package com.notfound404.lenden.controllers;
 
-import com.notfound404.lenden.models.User;
 import com.notfound404.lenden.services.UserService;
 
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
@@ -28,10 +26,7 @@ public class MainLayoutController {
     SceneController.setMainLayoutController(this);
     AuthenticationController.setMainLayoutController(this);
 
-    String message = new UserService().getCurrentUser() == null ? "Welcome"
-        : "Welcome, " + new UserService().getCurrentUser().getName();
-
-    SceneController.setScene("Home.fxml", message);
+    visitHome();
 
     updateNavButtonsVisibility();
   }
@@ -87,6 +82,19 @@ public class MainLayoutController {
     sleeper.setOnSucceeded(e -> balanceButton.setText("View Balance"));
 
     new Thread(sleeper).start();
+  }
+
+  @FXML
+  private void visitHome() {
+    String message = new UserService().getCurrentUser() == null ? "Welcome"
+        : "Welcome, " + new UserService().getCurrentUser().getName();
+
+    SceneController.setScene("Home.fxml", message);
+  }
+
+  @FXML
+  private void visitTransactionHistory() {
+    SceneController.setScene("TransactionHistory.fxml", "Transaction History");
   }
 
 }
