@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.AddMoneyController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.SuccessController">
    <children>
       <Label layoutX="190.0" layoutY="204.0" styleClass="success-text" text="Add Money Successful" />
       <ImageView fitHeight="170.0" fitWidth="170.0" layoutX="215.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">

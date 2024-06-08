@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.AddMoneyController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.AddMoneyController">
    <children>
       <Label layoutX="230.0" layoutY="148.0" styleClass="heading" text="Select a source" textAlignment="CENTER" />
       <GridPane layoutX="123.0" layoutY="203.0" prefHeight="135.0" prefWidth="354.0">

@@ -13,17 +13,17 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.AMFromCardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.AMFromCardController">
    <children>
       <Label layoutX="50.0" layoutY="52.0" styleClass="heading" text="Enter your Card Information" />
-      <VBox layoutX="50.0" layoutY="94.0" prefWidth="500.0" styleClass="form">
+      <VBox layoutX="50.0" layoutY="94.0" prefHeight="317.0" prefWidth="500.0" styleClass="form">
          <children>
             <Label text="Name on Card">
                <VBox.margin>
                   <Insets bottom="5.0" />
                </VBox.margin>
             </Label>
-            <TextField>
+            <TextField fx:id="nameField">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
@@ -43,7 +43,7 @@
                         <Image url="@../images/credit-card-networks.png" />
                      </image>
                   </ImageView>
-                  <TextField />
+                  <TextField fx:id="numberField" />
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" />
@@ -64,13 +64,13 @@
                         <Label text="Expiration Date" />
                         <HBox alignment="CENTER">
                            <children>
-                              <TextField promptText="MM" />
+                              <TextField fx:id="monthField" promptText="MM" />
                               <Label text="/">
                                  <HBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField promptText="YY" />
+                              <TextField fx:id="yrField" promptText="YY" />
                            </children>
                         </HBox>
                      </children>
@@ -78,31 +78,32 @@
                   <VBox maxWidth="120.0" GridPane.columnIndex="1">
                      <children>
                         <Label text="Security Code" />
-                        <TextField />
+                        <TextField fx:id="securityCodeField" />
                      </children>
                   </VBox>
                   <VBox maxWidth="120.0" GridPane.columnIndex="2">
                      <children>
                         <Label text="Postal Code" />
-                        <TextField />
+                        <TextField fx:id="postalCodeField" />
                      </children>
                   </VBox>
                </children>
             </GridPane>
+            <TextField fx:id="amountField" alignment="TOP_LEFT" prefHeight="39.0" prefWidth="268.0" promptText="Transfer Amount" stylesheets="@../css/style.css" translateY="20.0" />
          </children></VBox>
-      <GridPane layoutX="50.0" layoutY="392.0" prefWidth="500.0">
+      <GridPane layoutX="50.0" layoutY="439.0" prefWidth="500.0" translateY="-10.0">
         <columnConstraints>
-          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints fx:id="pinField" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField promptText="Enter your Lenden PIN" />
-            <Button mnemonicParsing="false" prefWidth="240.0" text="Add Money" GridPane.columnIndex="1" />
+            <TextField fx:id="pinField" accessibleRole="PASSWORD_FIELD" alignment="CENTER" promptText="Lenden PIN" stylesheets="@../css/style.css" />
+            <Button mnemonicParsing="false" onAction="#handleAddMoney" prefWidth="240.0" text="Add Money" GridPane.columnIndex="1" />
          </children>
       </GridPane>
-      <Label layoutX="50.0" layoutY="448.0" prefHeight="20.0" prefWidth="500.0" styleClass="error-message" />
+      <Label fx:id="errorLabel" layoutX="50.0" layoutY="478.0" prefHeight="20.0" prefWidth="500.0" styleClass="error-message" />
    </children>
 </AnchorPane>
