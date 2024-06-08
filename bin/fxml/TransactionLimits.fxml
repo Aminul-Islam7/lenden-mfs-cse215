@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane prefHeight="520.0" prefWidth="600.0">
+         <content>
+            <VBox alignment="CENTER" spacing="25.0" styleClass="transaction-limits">
+               <children>
+                  <VBox prefHeight="199.0" prefWidth="557.0" styleClass="transaction-limit-box">
+                     <children>
+                        <HBox prefHeight="28.0" prefWidth="517.0">
+                           <children>
+                              <Label prefHeight="25.0" prefWidth="258.0" styleClass="title" text="Send Money" />
+                              <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="260.0" styleClass="title" text="24 hours" textAlignment="RIGHT" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="517.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="sendMoneySpentLabel" styleClass="spent" text="0.00" />
+                              <Label styleClass="out-of" text="out of 50,000" />
+                           </children>
+                        </HBox>
+                        <ProgressBar prefHeight="18.0" prefWidth="514.0" progress="0.49">
+                           <VBox.margin>
+                              <Insets top="12.0" />
+                           </VBox.margin>
+                        </ProgressBar>
+                        <HBox prefHeight="31.0" prefWidth="517.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="sendMoneyRemainingLabel" alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="517.0" styleClass="remaining" text="50,000" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="12.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="535.0" styleClass="title" text="Remaining" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="199.0" prefWidth="557.0" styleClass="transaction-limit-box">
+                     <children>
+                        <HBox prefHeight="28.0" prefWidth="517.0">
+                           <children>
+                              <Label prefHeight="25.0" prefWidth="258.0" styleClass="title" text="Mobile Top-Up" />
+                              <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="260.0" styleClass="title" text="24 hours" textAlignment="RIGHT" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="517.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="mobileTopUpSpentLabel" styleClass="spent" text="0.00" />
+                              <Label styleClass="out-of" text="out of 50,000" />
+                           </children>
+                        </HBox>
+                        <ProgressBar prefHeight="18.0" prefWidth="514.0" progress="0.49">
+                           <VBox.margin>
+                              <Insets top="12.0" />
+                           </VBox.margin>
+                        </ProgressBar>
+                        <HBox prefHeight="31.0" prefWidth="517.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="mobileTopUpRemainingLabel" alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="517.0" styleClass="remaining" text="50,000" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="12.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="535.0" styleClass="title" text="Remaining" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="199.0" prefWidth="557.0" styleClass="transaction-limit-box">
+                     <children>
+                        <HBox prefHeight="28.0" prefWidth="517.0">
+                           <children>
+                              <Label prefHeight="25.0" prefWidth="258.0" styleClass="title" text="Add Money" />
+                              <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="260.0" styleClass="title" text="24 hours" textAlignment="RIGHT" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="517.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="addMoneySpentLabel" styleClass="spent" text="0.00" />
+                              <Label styleClass="out-of" text="out of 50,000" />
+                           </children>
+                        </HBox>
+                        <ProgressBar prefHeight="18.0" prefWidth="514.0" progress="0.49">
+                           <VBox.margin>
+                              <Insets top="12.0" />
+                           </VBox.margin>
+                        </ProgressBar>
+                        <HBox prefHeight="31.0" prefWidth="517.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="addMoneyRemainingLabel" alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="517.0" styleClass="remaining" text="50,000" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="12.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="535.0" styleClass="title" text="Remaining" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="199.0" prefWidth="557.0" styleClass="transaction-limit-box">
+                     <children>
+                        <HBox prefHeight="28.0" prefWidth="517.0">
+                           <children>
+                              <Label prefHeight="25.0" prefWidth="258.0" styleClass="title" text="Lenden to Bank" />
+                              <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="260.0" styleClass="title" text="24 hours" textAlignment="RIGHT" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="517.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="lendenToBankSpentLabel" styleClass="spent" text="0.00" />
+                              <Label styleClass="out-of" text="out of 50,000" />
+                           </children>
+                        </HBox>
+                        <ProgressBar prefHeight="18.0" prefWidth="514.0" progress="0.49">
+                           <VBox.margin>
+                              <Insets top="12.0" />
+                           </VBox.margin>
+                        </ProgressBar>
+                        <HBox prefHeight="31.0" prefWidth="517.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="lendenToBankRemainingLabel" alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="517.0" styleClass="remaining" text="50,000" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="12.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="535.0" styleClass="title" text="Remaining" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="199.0" prefWidth="557.0" styleClass="transaction-limit-box">
+                     <children>
+                        <HBox prefHeight="28.0" prefWidth="517.0">
+                           <children>
+                              <Label prefHeight="25.0" prefWidth="258.0" styleClass="title" text="Withdraw Cash" />
+                              <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="260.0" styleClass="title" text="24 hours" textAlignment="RIGHT" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="517.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="withdrawCashSpentLabel" styleClass="spent" text="0.00" />
+                              <Label styleClass="out-of" text="out of 50,000" />
+                           </children>
+                        </HBox>
+                        <ProgressBar prefHeight="18.0" prefWidth="514.0" progress="0.49">
+                           <VBox.margin>
+                              <Insets top="12.0" />
+                           </VBox.margin>
+                        </ProgressBar>
+                        <HBox prefHeight="31.0" prefWidth="517.0" spacing="5.0">
+                           <children>
+                              <Label fx:id="withdrawCashRemainingtLabel" alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="517.0" styleClass="remaining" text="50,000" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="12.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="535.0" styleClass="title" text="Remaining" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
