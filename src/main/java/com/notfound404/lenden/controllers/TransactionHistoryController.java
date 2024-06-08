@@ -149,7 +149,7 @@ public class TransactionHistoryController {
     Label noTransactionsLabel = new Label("You don't have any transactions yet.");
     noTransactionsLabel.setPrefWidth(545);
     noTransactionsLabel.setAlignment(javafx.geometry.Pos.CENTER);
-    noTransactionsLabel.getStyleClass().add("no-transactions");
+    noTransactionsLabel.getStyleClass().add("normal");
     transactionsFlowPane.getChildren().add(noTransactionsLabel);
     return;
   }
