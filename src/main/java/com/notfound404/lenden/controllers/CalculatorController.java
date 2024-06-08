@@ -149,7 +149,7 @@ public class CalculatorController {
     }
 
     @FXML
-    void numBtnDotClicked(ActionEvent event) {
+    void dotBtnClicked(ActionEvent event) {
         addNumber(".");
     }
 
