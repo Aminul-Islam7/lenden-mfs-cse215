@@ -17,12 +17,6 @@ public class WithdrawCashController {
   @FXML
   private TextField phoneField, amountField, pinField;
 
-  public static SuccessController successController;
-
-  public static void setSuccessController(SuccessController controller) {
-    successController = controller;
-  }
-
   @FXML
   private void handleWithdrawCash() {
 
@@ -31,7 +25,7 @@ public class WithdrawCashController {
       return;
     }
 
-    if (!phoneField.getText().matches("01[3-9]\\d{8}")) {
+    if (!phoneField.getText().matches("01[2-9]\\d{8}")) {
       errorLabel.setText("Invalid Phone Number");
       return;
     }

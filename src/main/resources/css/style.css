@@ -283,7 +283,12 @@
 }
 
 #transactionsFlowPane {
-	-fx-padding: 25;
+	-fx-padding: 30 20;
+}
+
+.scroll-pane .thumb {
+	-fx-background-color: #46a2d6;
+	-fx-background-radius: 10;
 }
 
 .transaction-box {

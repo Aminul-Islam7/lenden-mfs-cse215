@@ -58,7 +58,7 @@ public class AuthenticationController {
       return;
     }
 
-    if (!phone.matches("01[3-9]\\d{8}")) {
+    if (!phone.matches("01[2-9]\\d{8}")) {
       errorLabel.setText("Invalid phone number");
       return;
     }
