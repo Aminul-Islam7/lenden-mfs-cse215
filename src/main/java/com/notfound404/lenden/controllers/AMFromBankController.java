@@ -21,7 +21,7 @@ public class AMFromBankController {
   @FXML
   private TextField nameField, numberField, otpField, amountField, pinField;
 
-  public static AMFromBankSuccessController amFromBankSuccessController;
+  public static SuccessController successController;
 
   private String[] banks = {
       "AB Bank Limited",
@@ -47,8 +47,8 @@ public class AMFromBankController {
     bankChoiceBox.getItems().addAll(banks);
   }
 
-  public static void setAMFromBankSuccessController(AMFromBankSuccessController controller) {
-    amFromBankSuccessController = controller;
+  public static void setSuccessController(SuccessController controller) {
+    successController = controller;
   }
 
   @FXML
@@ -95,11 +95,13 @@ public class AMFromBankController {
     }
 
     TransactionService transactionService = new TransactionService();
-    TransactionInfo bankInfo = new TransactionInfo("Bank", bankChoiceBox.getValue().toString());
-    TransactionInfo accountInfo = new TransactionInfo("Account No.", numberField.getText());
+    TransactionInfo destination = new TransactionInfo("Bank", bankChoiceBox.getValue().toString());
+    TransactionInfo reference = new TransactionInfo("Account No.", numberField.getText());
+    double amount = Double.parseDouble(amountField.getText());
+
     transactionService.addTransaction(userService.getCurrentUser(), TransactionType.ADD_MONEY_BANK,
-        bankInfo, Double.parseDouble(amountField.getText()), 0.0,
-        accountInfo);
+        destination, amount, 0.0,
+        reference);
 
     userService.addBalance(userService.getCurrentUser(), Double.parseDouble(amountField.getText()));
 

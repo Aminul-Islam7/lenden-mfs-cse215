@@ -16,9 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
-import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -98,12 +96,12 @@ public class TransactionHistoryController {
     boolean isDeposit = transaction.getType().equals(TransactionType.ADD_MONEY_BANK)
         || transaction.getType().equals(TransactionType.ADD_MONEY_CARD);
 
-    String amount = (isDeposit ? "+ " : "- ") + "৳ " + (transaction.getAmount() - transaction.getCharge());
+    String amount = (isDeposit ? "+ " : "- ") + (transaction.getAmount() - transaction.getCharge()) + " BDT";
     Label amountLabel = new Label(amount);
     amountLabel.setAlignment(javafx.geometry.Pos.CENTER_RIGHT);
     amountLabel.setPrefWidth(174);
     amountLabel.setPrefHeight(25);
-    amountLabel.getStyleClass().add("amount");
+    amountLabel.getStyleClass().add(isDeposit ? "positive-amount" : "negative-amount");
 
     topBox.getChildren().addAll(typeLabel, trxIdBox, amountLabel);
 
@@ -125,8 +123,11 @@ public class TransactionHistoryController {
     HBox bottomBox = new HBox();
     bottomBox.setPrefWidth(523);
 
-    Label referenceLabel = new Label(
-        transaction.getReference().getPrefix() + ": " + transaction.getReference().getInfo());
+    Label referenceLabel = new Label();
+    if (transaction.getReference() != null)
+      referenceLabel.setText(transaction.getReference().getPrefix() + ": " + transaction.getReference().getInfo());
+    else
+      referenceLabel.setText("");
     referenceLabel.setPrefWidth(370);
     referenceLabel.getStyleClass().add("detail");
 

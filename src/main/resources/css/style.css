@@ -316,8 +316,14 @@
 	-fx-fill: #46a2d6;
 }
 
-.transaction-box .amount {
+.transaction-box .positive-amount {
 	-fx-text-fill: green;
+	-fx-font-size: 16;
+	-fx-font-weight: bold;
+}
+
+.transaction-box .negative-amount {
+	-fx-text-fill: red;
 	-fx-font-size: 16;
 	-fx-font-weight: bold;
 }
