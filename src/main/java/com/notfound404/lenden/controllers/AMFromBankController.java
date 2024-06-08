@@ -97,10 +97,11 @@ public class AMFromBankController {
     TransactionService transactionService = new TransactionService();
     TransactionInfo destination = new TransactionInfo("Bank", bankChoiceBox.getValue().toString());
     TransactionInfo reference = new TransactionInfo("Account No.", numberField.getText());
-    double amount = Double.parseDouble(amountField.getText());
+    double charge = 0.0;
+    double amount = Double.parseDouble(amountField.getText()) + charge;
 
     transactionService.addTransaction(userService.getCurrentUser(), TransactionType.ADD_MONEY_BANK,
-        destination, amount, 0.0,
+        destination, amount, charge,
         reference);
 
     userService.addBalance(userService.getCurrentUser(), Double.parseDouble(amountField.getText()));

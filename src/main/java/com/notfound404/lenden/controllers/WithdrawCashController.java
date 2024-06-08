@@ -6,7 +6,6 @@ import com.notfound404.lenden.services.TransactionService;
 import com.notfound404.lenden.services.UserService;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -52,7 +51,7 @@ public class WithdrawCashController {
 
     TransactionService transactionService = new TransactionService();
     TransactionInfo destination = new TransactionInfo("Agent Number", phoneField.getText());
-    double charge = 0.002 * Double.parseDouble(amountField.getText());
+    double charge = 0.02 * Double.parseDouble(amountField.getText());
     double amount = Double.parseDouble(amountField.getText()) + charge;
 
     transactionService.addTransaction(userService.getCurrentUser(), TransactionType.WITHDRAW_CASH,

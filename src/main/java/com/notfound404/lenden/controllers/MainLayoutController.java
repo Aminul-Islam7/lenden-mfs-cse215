@@ -65,8 +65,9 @@ public class MainLayoutController {
   @FXML
   private void viewBalance() {
     UserService userService = new UserService();
+
     double balance = userService.getCurrentUser().getBalance();
-    balanceButton.setText("৳ " + balance);
+    balanceButton.setText("৳ " + String.format("%.2f", balance));
 
     Task<Void> sleeper = new Task<Void>() {
       @Override

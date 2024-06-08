@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -14,8 +15,17 @@
                         <HBox prefWidth="523.0">
                            <children>
                               <Label prefWidth="175.0" styleClass="type" text="Add Money" />
-                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="175.0" styleClass="detail" text="Trx ID: A23F94FFD0" />
-                              <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="173.0" styleClass="amount" text="+ ৳ 15000.00" />
+                              <HBox alignment="CENTER" prefWidth="175.0">
+                                 <children>
+                                    <Label prefHeight="25.0" prefWidth="130.0" styleClass="detail" text="Trx ID: A23F94FFD0" />
+                                    <Button mnemonicParsing="false" styleClass="copy-btn">
+                                       <graphic>
+                                          <FontAwesomeIcon glyphName="COPY" />
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="173.0" styleClass="positive-amount" text="+ ৳ 15000.00" />
                            </children>
                         </HBox>
                         <HBox prefWidth="25.0">
@@ -27,7 +37,7 @@
                         <HBox prefWidth="523.0">
                            <children>
                               <Label prefHeight="20.0" prefWidth="370.0" styleClass="detail" text="A/N: 2156354897852656" />
-                              <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="153.0" styleClass="detail" text="12:01 AM 01/06/2024" />
+                              <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="153.0" styleClass="detail" text="12:01 AM 01/06/24" />
                            </children>
                         </HBox>
                      </children>

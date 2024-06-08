@@ -96,7 +96,8 @@ public class TransactionHistoryController {
     boolean isDeposit = transaction.getType().equals(TransactionType.ADD_MONEY_BANK)
         || transaction.getType().equals(TransactionType.ADD_MONEY_CARD);
 
-    String amount = (isDeposit ? "+ " : "- ") + (transaction.getAmount() - transaction.getCharge()) + " BDT";
+    String amount = (isDeposit ? "+ " : "- ") + String.format("%.2f", transaction.getAmount() - transaction.getCharge())
+        + " BDT";
     Label amountLabel = new Label(amount);
     amountLabel.setAlignment(javafx.geometry.Pos.CENTER_RIGHT);
     amountLabel.setPrefWidth(174);
@@ -113,7 +114,7 @@ public class TransactionHistoryController {
     destinationLabel.setPrefWidth(370);
     destinationLabel.getStyleClass().add("detail");
 
-    Label chargeLabel = new Label("Charge: ৳ " + transaction.getCharge());
+    Label chargeLabel = new Label("Charge: ৳ " + String.format("%.2f", transaction.getCharge()));
     chargeLabel.setAlignment(javafx.geometry.Pos.CENTER_RIGHT);
     chargeLabel.setPrefWidth(153);
     chargeLabel.getStyleClass().add("detail");
