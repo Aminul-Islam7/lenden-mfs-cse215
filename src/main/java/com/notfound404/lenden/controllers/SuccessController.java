@@ -34,15 +34,18 @@ public class SuccessController {
     transactionIdText.setText(transaction.getId());
     destinationText.setText(transaction.getDestination().getInfo());
 
-    double totalAmount = transaction.getAmount() + transaction.getCharge();
-    String amount = "৳ " + totalAmount + "\n";
+    double charge = transaction.getCharge();
+    double totalAmount = transaction.getAmount();
+    String amount = "৳ " + String.format("%.2f", totalAmount) + "\n";
     amount += transaction.getCharge() > 0
-        ? "৳ " + transaction.getAmount() + "৳ " + transaction.getCharge()
+        ? "৳ " + String.format("%.2f", totalAmount - charge) + "৳ " +  String.format("%.2f", charge)
         : "+ No charge";
 
     amountText.setText(amount);
 
-    balanceText.setText("৳ " + new UserService().getCurrentUser().getBalance());
+    String balance = String.format("%.2f", new UserService().getCurrentUser().getBalance());
+
+    balanceText.setText("৳ " + balance);
     if (referenceText != null)
       referenceText.setText(transaction.getReference().getInfo());
   }

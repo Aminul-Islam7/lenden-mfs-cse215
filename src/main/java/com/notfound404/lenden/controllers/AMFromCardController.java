@@ -17,6 +17,7 @@ public class AMFromCardController {
 
   @FXML
   private TextField nameField, numberField, monthField, yrField, securityCodeField, postalCodeField, amountField;
+
   @FXML
   private PasswordField pinField;
   
@@ -40,12 +41,12 @@ public class AMFromCardController {
       return;
     }
 
-    if (!monthField.getText().matches("[1-12]+")) {
+    if (!monthField.getText().matches("^[1-9]|1[1-2]$")) {
       errorLabel.setText("Invalid Month");
       return;
     }
 
-    if (!yrField.getText().matches("[0-9]+")) {
+    if (!yrField.getText().matches("^\\d{2}$")) {
       errorLabel.setText("Invalid Year");
       return;
     }
@@ -76,8 +77,9 @@ public class AMFromCardController {
     TransactionService transactionService = new TransactionService();
     TransactionInfo destination = new TransactionInfo("Card","Debit/Credit/Prepaid");
     TransactionInfo reference = new TransactionInfo("Card Number", numberField.getText());
-    double amount = Double.parseDouble(amountField.getText());
-
+    double charge = 0.0;
+    double amount = Double.parseDouble(amountField.getText()) + charge;
+    
     transactionService.addTransaction(userService.getCurrentUser(), TransactionType.ADD_MONEY_CARD,
         destination, amount, 0.0, reference);
 
