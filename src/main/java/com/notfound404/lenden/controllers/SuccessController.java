@@ -18,6 +18,7 @@ public class SuccessController {
   @FXML
   private void initialize() {
     AMFromBankController.setSuccessController(this);
+    AMFromCardController.setSuccessController(this);
     WithdrawCashController.setSuccessController(this);
 
     List<Transaction> transactions = new TransactionService().loadTransactions();
