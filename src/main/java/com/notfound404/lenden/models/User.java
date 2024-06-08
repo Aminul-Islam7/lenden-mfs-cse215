@@ -65,6 +65,15 @@ public class User implements Serializable {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof User) {
+            User user = (User) obj;
+            return user.getPhone().equals(phone);
+        }
+        return false;
+    }
+
+    @Override
     public String toString() {
         return name + " (" + phone + ")";
     }
