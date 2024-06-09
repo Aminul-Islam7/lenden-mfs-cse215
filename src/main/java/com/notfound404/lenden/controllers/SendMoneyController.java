@@ -9,7 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 
-public class SendMoneyController {
+public class SendMoneyController implements Payable {
 
   @FXML
   private Label errorLabel;
@@ -18,7 +18,8 @@ public class SendMoneyController {
   private TextField phoneField, amountField, referenceField, pinField;
 
   @FXML
-  private void handleSendMoney() {
+  @Override
+  public void processOutgoingTransaction() {
 
     if (phoneField.getText().isEmpty() || amountField.getText().isEmpty() || referenceField.getText().isEmpty()
         || pinField.getText().isEmpty()) {

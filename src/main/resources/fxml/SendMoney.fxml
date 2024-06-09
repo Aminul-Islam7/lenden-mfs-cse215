@@ -14,7 +14,7 @@
             <Label prefHeight="19.0" prefWidth="77.0" text="Reference" translateY="20.0" />
             <TextField fx:id="referenceField" prefHeight="38.0" prefWidth="248.0" translateY="20.0" />
          </children></VBox>
-      <Button layoutX="150.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleSendMoney" prefHeight="38.0" prefWidth="300.0" text="Send Money" />
+      <Button layoutX="150.0" layoutY="400.0" mnemonicParsing="false" onAction="#processOutgoingTransaction" prefHeight="38.0" prefWidth="300.0" text="Send Money" />
       <Label fx:id="errorLabel" alignment="CENTER" layoutX="59.0" layoutY="453.0" prefHeight="20.0" prefWidth="483.0" styleClass="error-message" />
       <PasswordField fx:id="pinField" alignment="CENTER" layoutX="151.0" layoutY="351.0" prefHeight="39.0" prefWidth="300.0" promptText="Lenden PIN" />
    </children>

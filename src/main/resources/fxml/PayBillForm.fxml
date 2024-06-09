@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.PayBillController">
+   <children>
+      <VBox layoutX="146.0" layoutY="58.0" prefHeight="285.0" prefWidth="300.0" spacing="1.0" styleClass="form">
+         <children>
+            <Label text="Name of Provider" />
+            <TextField fx:id="nameField" />
+            <Label text="Customer ID">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="idField" />
+            <Label text="Bill Amount">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="amountField" promptText="৳" />
+         </children>
+      </VBox>
+      <Button layoutX="146.0" layoutY="410.0" mnemonicParsing="false" onAction="#processOutgoingTransaction" prefHeight="38.0" prefWidth="300.0" text="Pay Bill" />
+      <Label fx:id="errorLabel" layoutX="76.0" layoutY="463.0" prefHeight="20.0" prefWidth="440.0" styleClass="error-message" />
+      <PasswordField fx:id="pinField" alignment="CENTER" layoutX="146.0" layoutY="363.0" prefHeight="39.0" prefWidth="300.0" promptText="Lenden PIN" />
+   </children>
+</AnchorPane>

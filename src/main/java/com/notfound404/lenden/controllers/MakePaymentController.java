@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class MakePaymentController {
+public class MakePaymentController implements Payable {
 
     @FXML
     private TextField phoneNumberTextField, amountTextField, referenceTextField;
@@ -22,7 +22,8 @@ public class MakePaymentController {
     private Label errorLabel;
 
     @FXML
-    private void handleMakePayment() {
+    @Override
+    public void processOutgoingTransaction() {
 
         UserService userService = new UserService();
 

@@ -9,7 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class WithdrawCashController {
+public class WithdrawCashController implements Payable {
 
   @FXML
   private Label errorLabel;
@@ -18,7 +18,7 @@ public class WithdrawCashController {
   private TextField phoneField, amountField, pinField;
 
   @FXML
-  private void handleWithdrawCash() {
+  public void processOutgoingTransaction() {
 
     if (phoneField.getText().isEmpty() || amountField.getText().isEmpty() || pinField.getText().isEmpty()) {
       errorLabel.setText("Please fill in all the fields");

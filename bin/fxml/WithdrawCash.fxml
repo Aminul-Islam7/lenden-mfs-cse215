@@ -14,7 +14,7 @@
          </children>
       </VBox>
       <TextField fx:id="pinField" layoutX="151.0" layoutY="323.0" prefHeight="38.0" prefWidth="299.0" promptText="Enter your Lenden PIN" styleClass="text" stylesheets="@../css/style.css" />
-      <Button layoutX="150.0" layoutY="373.0" mnemonicParsing="false" onAction="#handleWithdrawCash" prefHeight="38.0" prefWidth="300.0" text="Withdraw Cash" />
+      <Button layoutX="150.0" layoutY="373.0" mnemonicParsing="false" onAction="#processOutgoingTransaction" prefHeight="38.0" prefWidth="300.0" text="Withdraw Cash" />
       <Label fx:id="errorLabel" alignment="CENTER" layoutX="28.0" layoutY="424.0" prefHeight="20.0" prefWidth="546.0" styleClass="error-message" stylesheets="@../css/style.css" />
    </children>
 </AnchorPane>
