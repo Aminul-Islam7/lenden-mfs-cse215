@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class AMFromCardController extends AddMoneyController {
+public class AMFromCardController extends AddMoney {
 
   @FXML
   private Label errorLabel;
@@ -22,6 +22,7 @@ public class AMFromCardController extends AddMoneyController {
   private PasswordField pinField;
 
   @FXML
+  @Override
   public void handleAddMoney() {
 
     if (nameField.getText().isEmpty() || numberField.getText().isEmpty() || monthField.getText().isEmpty()

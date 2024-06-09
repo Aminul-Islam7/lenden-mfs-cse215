@@ -10,7 +10,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class AMFromBankController extends AddMoneyController {
+public class AMFromBankController extends AddMoney {
 
   @FXML
   private ChoiceBox<String> bankChoiceBox;
