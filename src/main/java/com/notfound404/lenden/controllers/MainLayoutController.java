@@ -35,7 +35,7 @@ public class MainLayoutController {
     sceneLabel.setText(label);
   }
 
-  public Label getSceneLabel(){
+  public Label getSceneLabel() {
     return sceneLabel;
   }
 

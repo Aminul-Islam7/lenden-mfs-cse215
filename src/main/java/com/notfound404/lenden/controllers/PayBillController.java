@@ -16,7 +16,7 @@ public class PayBillController implements Payable {
 
     @FXML
     private Label errorLabel;
-    
+
     private String billType;
 
     @FXML
@@ -26,7 +26,7 @@ public class PayBillController implements Payable {
 
     @FXML
     public void visitPayBillGas() {
-        SceneController.setScene("PayBillForm.fxml", "Pay Bill - Gas");  
+        SceneController.setScene("PayBillForm.fxml", "Pay Bill - Gas");
     }
 
     @FXML
@@ -41,10 +41,10 @@ public class PayBillController implements Payable {
 
     @FXML
     @Override
-    public void processOutgoingTransaction(){
+    public void processOutgoingTransaction() {
 
         if (nameField.getText().isEmpty() || idField.getText().isEmpty() || amountField.getText().isEmpty()
-            || pinField.getText().isEmpty()) {
+                || pinField.getText().isEmpty()) {
             errorLabel.setText("Please fill in all the fields.");
             return;
         }
@@ -55,7 +55,7 @@ public class PayBillController implements Payable {
         }
 
         if (!amountField.getText().matches("[0-9]+(\\.\\d+)?") || Double.parseDouble(amountField.getText()) <= 0.0
-            || Double.parseDouble(amountField.getText()) > 1000000.0) {
+                || Double.parseDouble(amountField.getText()) > 1000000.0) {
             errorLabel.setText("Invalid Amount");
             return;
         }
@@ -75,10 +75,10 @@ public class PayBillController implements Payable {
         billType = SceneController.getMainLayoutController().getSceneLabel().getText().split(" - ")[1];
 
         transactionService.addTransaction(userService.getCurrentUser(), TransactionType.PAY_BILL,
-        destination, amount, charge, new TransactionInfo("Customer ID", idField.getText()));
+                destination, amount, charge, new TransactionInfo("Customer ID", idField.getText()));
 
         userService.deductBalance(userService.getCurrentUser(), amount);
 
-        SceneController.setScene("PayBillSuccess.fxml", "Pay Bill - "+billType);
+        SceneController.setScene("PayBillSuccess.fxml", "Pay Bill - " + billType);
     }
 }

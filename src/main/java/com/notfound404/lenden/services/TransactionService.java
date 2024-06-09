@@ -12,7 +12,8 @@ import java.util.Random;
 
 public class TransactionService {
   private ArrayList<Transaction> transactions;
-  private static final String TRANSACTION_FILE_PATH = "src/main/resources/data/transactions.dat";
+  private final String TRANSACTION_FILE_PATH = "src/main/resources/data/transactions.dat";
+  private final long ONE_DAY = 24 * 60 * 60 * 1000;
 
   public TransactionService() {
     createFiles();
@@ -79,6 +80,18 @@ public class TransactionService {
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
+
+  public double getSpentAmount(User user, String transactionType) {
+    double spent = 0.0;
+    for (Transaction transaction : transactions) {
+      if (transaction.getUser().equals(user)
+          && transaction.getType().getType().equals(transactionType)
+          && transaction.getDate().getTime() > System.currentTimeMillis() - ONE_DAY) {
+        spent += transaction.getAmount();
+      }
+    }
+    return spent;
   }
 
 }
