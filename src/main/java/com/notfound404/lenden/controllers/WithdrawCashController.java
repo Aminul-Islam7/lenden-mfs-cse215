@@ -53,6 +53,6 @@ public class WithdrawCashController implements Payable {
 
     userService.deductBalance(userService.getCurrentUser(), amount);
 
-    SceneController.setScene("WithdrawCashSuccess.fxml", "Withdraw Cash");
+    SceneController.setScene("WithdrawCashSuccess.fxml", "Withdraw Cash", null);
   }
 }

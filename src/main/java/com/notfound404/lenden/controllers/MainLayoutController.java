@@ -20,6 +20,8 @@ public class MainLayoutController {
   @FXML
   private Label sceneLabel;
 
+  private String billType; 
+
   @FXML
   public void initialize() {
     SceneController.setContentPane(contentPane);
@@ -90,22 +92,22 @@ public class MainLayoutController {
     String message = new UserService().getCurrentUser() == null ? "Welcome"
         : "Welcome, " + new UserService().getCurrentUser().getName();
 
-    SceneController.setScene("Home.fxml", message);
+    SceneController.setScene("Home.fxml", message,null);
   }
 
   @FXML
   private void visitTransactionHistory() {
-    SceneController.setScene("TransactionHistory.fxml", "Transaction History");
+    SceneController.setScene("TransactionHistory.fxml", "Transaction History",null);
   }
 
   @FXML
   private void visitAccountSummary() {
-    SceneController.setScene("AccountSummary.fxml", "Account Summary");
+    SceneController.setScene("AccountSummary.fxml", "Account Summary",null);
   }
 
   @FXML
   private void visitTransactionLimits() {
-    SceneController.setScene("TransactionLimits.fxml", "Transaction Limits");
+    SceneController.setScene("TransactionLimits.fxml", "Transaction Limits",null);
   }
 
 }

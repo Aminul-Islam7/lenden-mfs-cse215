@@ -48,7 +48,7 @@ public class SceneController {
       String currentView = viewList.remove(viewList.size() - 1);
       visitedViewList.add(currentView);
       String previousView = viewList.get(viewList.size() - 1);
-      loadScene(previousView, sceneLabels.get(previousView));
+      loadScene(previousView, sceneLabels.get(previousView), null);
     }
     mainLayoutController.updateNavButtonsVisibility();
   }
@@ -59,7 +59,7 @@ public class SceneController {
     } else if (visitedViewList.size() > 0) {
       String nextView = visitedViewList.remove(visitedViewList.size() - 1);
       viewList.add(nextView);
-      loadScene(nextView, sceneLabels.get(nextView));
+      loadScene(nextView, sceneLabels.get(nextView), null);
     }
     mainLayoutController.updateNavButtonsVisibility();
   }
@@ -68,7 +68,7 @@ public class SceneController {
     return viewList.get(viewList.size() - 1);
   }
 
-  public static void setScene(String fxmlFile, String sceneLabel) {
+  public static void setScene(String fxmlFile, String sceneLabel, String billType) {
     if (!viewList.isEmpty() && !viewList.get(viewList.size() - 1).equals(fxmlFile)) {
       viewList.add(fxmlFile);
     } else if (viewList.isEmpty()) {
@@ -76,17 +76,25 @@ public class SceneController {
     }
     visitedViewList.clear();
     sceneLabels.put(fxmlFile, sceneLabel);
-    loadScene(fxmlFile, sceneLabel);
+    loadScene(fxmlFile, sceneLabel, billType);
     mainLayoutController.updateNavButtonsVisibility();
   }
 
-  private static void loadScene(String fxmlFile, String sceneLabel) {
+  private static void loadScene(String fxmlFile, String sceneLabel, String billType) {
     try {
       FXMLLoader loader = new FXMLLoader();
       loader.setLocation(SceneController.class.getResource("/fxml/" + fxmlFile));
       AnchorPane view = loader.load();
       contentPane.getChildren().setAll(view);
       mainLayoutController.setSceneLabel(sceneLabel);
+
+      if ("PayBillSuccess.fxml".equals(fxmlFile) && billType != null) {
+        SuccessController controller = loader.getController();
+        if (controller != null) {
+          controller.setBillType(billType);
+        }
+      }
+
     } catch (IOException e) {
       e.printStackTrace();
     }

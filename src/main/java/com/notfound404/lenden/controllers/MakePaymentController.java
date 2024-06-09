@@ -66,7 +66,7 @@ public class MakePaymentController implements Payable {
 
         userService.deductBalance(userService.getCurrentUser(), amount);
 
-        SceneController.setScene("MakePaymentSuccess.fxml", "Make Payment");
+        SceneController.setScene("MakePaymentSuccess.fxml", "Make Payment",null);
 
     }
 

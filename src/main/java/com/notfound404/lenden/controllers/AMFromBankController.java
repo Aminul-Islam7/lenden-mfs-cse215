@@ -101,7 +101,7 @@ public class AMFromBankController extends AddMoney {
 
     userService.addBalance(userService.getCurrentUser(), Double.parseDouble(amountField.getText()));
 
-    SceneController.setScene("AMFromBankSuccess.fxml", "Add Money from Bank");
+    SceneController.setScene("AMFromBankSuccess.fxml", "Add Money from Bank",null);
 
   }
 
