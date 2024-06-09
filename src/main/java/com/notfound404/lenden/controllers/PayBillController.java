@@ -17,6 +17,8 @@ public class PayBillController implements Payable {
     @FXML
     private Label errorLabel;
 
+    private String billType;
+
     @FXML
     public void visitPayBillElectricity() {
         SceneController.setScene("PayBillForm.fxml", "Pay Bill - Electricity");
@@ -40,6 +42,43 @@ public class PayBillController implements Payable {
     @FXML
     @Override
     public void processOutgoingTransaction() {
-        String billType = SceneController.getMainLayoutController().getSceneLabel().split(" - ")[1];
+
+        if (nameField.getText().isEmpty() || idField.getText().isEmpty() || amountField.getText().isEmpty()
+                || pinField.getText().isEmpty()) {
+            errorLabel.setText("Please fill in all the fields.");
+            return;
+        }
+
+        if (!idField.getText().matches("\\d{6}")) {
+            errorLabel.setText("Invalid ID");
+            return;
+        }
+
+        if (!amountField.getText().matches("[0-9]+(\\.\\d+)?") || Double.parseDouble(amountField.getText()) <= 0.0
+                || Double.parseDouble(amountField.getText()) > 1000000.0) {
+            errorLabel.setText("Invalid Amount");
+            return;
+        }
+
+        UserService userService = new UserService();
+        int currentUserPin = userService.getCurrentUser().getPin();
+        if (!pinField.getText().equals(String.valueOf(currentUserPin))) {
+            errorLabel.setText("Invalid PIN");
+            return;
+        }
+
+        TransactionService transactionService = new TransactionService();
+        TransactionInfo destination = new TransactionInfo("Provider", nameField.getText());
+        double charge = 5.0;
+        double amount = Double.parseDouble(amountField.getText()) + charge;
+
+        billType = SceneController.getMainLayoutController().getSceneLabel().getText().split(" - ")[1];
+
+        transactionService.addTransaction(userService.getCurrentUser(), TransactionType.PAY_BILL,
+                destination, amount, charge, new TransactionInfo("Customer ID", idField.getText()));
+
+        userService.deductBalance(userService.getCurrentUser(), amount);
+
+        SceneController.setScene("PayBillSuccess.fxml", "Pay Bill - " + billType);
     }
 }

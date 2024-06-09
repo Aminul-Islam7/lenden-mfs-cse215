@@ -8,12 +8,16 @@ import com.notfound404.lenden.services.TransactionService;
 import com.notfound404.lenden.services.UserService;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 
 public class SuccessController {
 
   @FXML
   private Text dateText, transactionIdText, destinationText, amountText, balanceText, referenceText;
+
+  @FXML
+  private Label successLabel; 
 
   @FXML
   private void initialize() {
