@@ -1,6 +1,7 @@
 package com.notfound404.lenden.controllers;
 
 import com.notfound404.lenden.models.TransactionInfo;
+import com.notfound404.lenden.models.TransactionLimit;
 import com.notfound404.lenden.models.TransactionType;
 import com.notfound404.lenden.services.TransactionService;
 import com.notfound404.lenden.services.UserService;
@@ -50,6 +51,8 @@ public class LendenToBankController {
     }
 
     public void handleBankTransfer() {
+        UserService userService = new UserService();
+        TransactionService transactionService = new TransactionService();
 
         if (selectBankChoiceBox.getValue().equals("Select a Bank")) {
             errorLabel.setText("Please select a Bank");
@@ -63,9 +66,20 @@ public class LendenToBankController {
         }
 
         if (!transferAmountTextField.getText().matches("[0-9]+(\\.\\d+)?")
-                || Double.parseDouble(transferAmountTextField.getText()) <= 0.0
-                || Double.parseDouble(transferAmountTextField.getText()) > 1000000.0) {
+                || Double.parseDouble(transferAmountTextField.getText()) <= 0.0) {
             errorLabel.setText("Invalid Amount");
+            return;
+        }
+
+        double amountSpent = transactionService.getSpentAmount(userService.getCurrentUser(), "Lenden to Bank");
+        if (amountSpent + Double.parseDouble(transferAmountTextField.getText()) > TransactionLimit.LENDEN_TO_BANK
+                .getLimit()) {
+            errorLabel.setText("You have reached your daily limit for Lenden to Bank");
+            return;
+        }
+
+        if (Double.parseDouble(transferAmountTextField.getText()) > userService.getCurrentUser().getBalance()) {
+            errorLabel.setText("Insufficient Balance");
             return;
         }
 
@@ -79,19 +93,12 @@ public class LendenToBankController {
             return;
         }
 
-        UserService userService = new UserService();
         int currentUserPin = userService.getCurrentUser().getPin();
         if (!pinPasswordField.getText().equals(String.valueOf(currentUserPin))) {
             errorLabel.setText("Invalid PIN");
             return;
         }
 
-        if (Double.parseDouble(transferAmountTextField.getText()) > userService.getCurrentUser().getBalance()) {
-            errorLabel.setText("Insufficient Balance");
-            return;
-        }
-
-        TransactionService transactionService = new TransactionService();
         TransactionInfo destination = new TransactionInfo("Bank", selectBankChoiceBox.getValue().toString());
         TransactionInfo reference = new TransactionInfo("Account Number", accountNumberTextField.getText());
         double charge = 0.02 * (Double.parseDouble(transferAmountTextField.getText()));

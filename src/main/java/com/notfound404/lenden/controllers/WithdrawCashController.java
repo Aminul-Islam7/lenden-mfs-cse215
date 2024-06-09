@@ -8,6 +8,7 @@ import com.notfound404.lenden.services.UserService;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class WithdrawCashController implements Payable {
@@ -16,7 +17,10 @@ public class WithdrawCashController implements Payable {
   private Label errorLabel;
 
   @FXML
-  private TextField phoneField, amountField, pinField;
+  private TextField phoneField, amountField;
+
+  @FXML
+  private PasswordField pinField;
 
   @FXML
   public void processOutgoingTransaction() {
