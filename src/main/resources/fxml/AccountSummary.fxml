@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
-<?import java.lang.String?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" styleClass="account-summary" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.AccountSummaryController">
    <children>
-      <GridPane layoutX="69.0" layoutY="92.0" prefHeight="336.0" prefWidth="462.0">
+      <GridPane hgap="30.0" layoutX="60.0" layoutY="147.0" prefHeight="310.0" prefWidth="480.0" vgap="40.0">
         <columnConstraints>
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" prefWidth="100.0" />
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -25,7 +19,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <VBox maxHeight="130.0" maxWidth="190.0">
+            <VBox>
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -35,34 +29,29 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Text fx:id="balanceText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="value" text="0.00" />
+                  <Label fx:id="balanceLabel" styleClass="value" text="0.00" />
                </children>
                <styleClass>
                   <String fx:value="summary-box" />
                   <String fx:value="current-balance" />
                </styleClass>
             </VBox>
-            <VBox maxHeight="130.0" maxWidth="190.0" GridPane.columnIndex="1">
+            <VBox GridPane.columnIndex="1">
                <children>
                   <Label styleClass="title" text="Utility Expenses">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Text fx:id="expensesText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="value" text="0.00" />
-                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
-                     <children>
-                        <Label styleClass="duration" text="6 months" />
-                        <Label styleClass="duration" text="1 month" />
-                     </children>
-                  </HBox>
+                  <Label fx:id="expensesLabel" styleClass="value" text="0.00" />
+                  <Label fx:id="expensesPeriodLabel" styleClass="duration" text="24 hours" />
                </children>
                <styleClass>
                   <String fx:value="summary-box" />
                   <String fx:value="utility-expenses" />
                </styleClass>
             </VBox>
-            <VBox maxHeight="130.0" maxWidth="190.0" GridPane.rowIndex="1">
+            <VBox GridPane.rowIndex="1">
                <children>
                   <Label styleClass="title" text="Cash In">
                      <font>
@@ -71,23 +60,18 @@
                   </Label>
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="12.0">
                      <children>
-                        <Text fx:id="cashInText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="value" text="0.00" />
+                        <Label fx:id="cashInLabel" styleClass="value" text="0.00" />
                         <FontAwesomeIcon glyphName="ARROW_UP" size="25" />
                      </children>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
-                     <children>
-                        <Label styleClass="duration" text="24 hours" />
-                        <Label styleClass="duration" text="1 month" />
-                     </children>
-                  </HBox>
+                  <Label fx:id="cashInPeriodLabel" styleClass="duration" text="24 hours" />
                </children>
                <styleClass>
                   <String fx:value="summary-box" />
                   <String fx:value="cash-in" />
                </styleClass>
             </VBox>
-            <VBox maxHeight="130.0" maxWidth="190.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <Label styleClass="title" text="Cash Out">
                      <font>
@@ -96,16 +80,11 @@
                   </Label>
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="12.0">
                      <children>
-                        <Text fx:id="cashOutText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="value" text="0.00" />
+                        <Label fx:id="cashOutLabel" styleClass="value" text="0.00" />
                         <FontAwesomeIcon glyphName="ARROW_DOWN" size="25" />
                      </children>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
-                     <children>
-                        <Label styleClass="duration" text="24 hours" />
-                        <Label styleClass="duration" text="1 month" />
-                     </children>
-                  </HBox>
+                  <Label fx:id="cashOutPeriodLabel" styleClass="duration" text="24 hours" />
                </children>
                <styleClass>
                   <String fx:value="summary-box" />
@@ -114,5 +93,14 @@
             </VBox>
          </children>
       </GridPane>
+      <HBox layoutX="82.0" layoutY="54.0" styleClass="button-box">
+         <children>
+            <Button fx:id="button24Hours" mnemonicParsing="false" onAction="#handle24Hours" text="24 hours" />
+            <Button fx:id="button7Days" mnemonicParsing="false" onAction="#handle7Days" styleClass="unselected" text="7 days" />
+            <Button fx:id="button30Days" mnemonicParsing="false" onAction="#handle30Days" styleClass="unselected" text="30 days" />
+            <Button fx:id="button6Months" mnemonicParsing="false" onAction="#handle6Months" styleClass="unselected" text="6 months" />
+            <Button fx:id="button1Year" mnemonicParsing="false" onAction="#handle1Year" styleClass="unselected" text="1 year" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
