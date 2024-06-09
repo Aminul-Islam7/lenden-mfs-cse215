@@ -6,6 +6,13 @@
       "name": "Main",
       "request": "launch",
       "mainClass": "com.notfound404.lenden.Main",
+      "projectName": "lenden-mfs-cse215_7551050e"
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "com.notfound404.lenden.Main",
       "projectName": "lenden-mfs-cse215_645638b0"
     },
     {
