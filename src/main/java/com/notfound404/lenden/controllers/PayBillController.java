@@ -16,35 +16,27 @@ public class PayBillController implements Payable {
 
     @FXML
     private Label errorLabel;
-
+    
     private String billType;
-
-    private void setBillType(String billType) {
-        this.billType = billType;
-    }
 
     @FXML
     public void visitPayBillElectricity() {
-        setBillType("Electricity");
-        SceneController.setScene("PayBillForm.fxml", "Pay Bill - "+billType,billType);
+        SceneController.setScene("PayBillForm.fxml", "Pay Bill - Electricity");
     }
 
     @FXML
     public void visitPayBillGas() {
-        setBillType("Gas");
-        SceneController.setScene("PayBillForm.fxml", "Pay Bill - "+billType,billType);  
+        SceneController.setScene("PayBillForm.fxml", "Pay Bill - Gas");  
     }
 
     @FXML
     public void visitPayBillWater() {
-        setBillType("Water");
-        SceneController.setScene("PayBillForm.fxml", "Pay Bill - "+billType,billType);
+        SceneController.setScene("PayBillForm.fxml", "Pay Bill - Water");
     }
 
     @FXML
     public void visitPayBillInternet() {
-        setBillType("Internet");
-        SceneController.setScene("PayBillForm.fxml", "Pay Bill - "+billType,billType);
+        SceneController.setScene("PayBillForm.fxml", "Pay Bill - Internet");
     }
 
     @FXML
@@ -57,7 +49,7 @@ public class PayBillController implements Payable {
             return;
         }
 
-        if (!idField.getText().matches("\\d{8}")) {
+        if (!idField.getText().matches("\\d{6}")) {
             errorLabel.setText("Invalid ID");
             return;
         }
@@ -76,15 +68,17 @@ public class PayBillController implements Payable {
         }
 
         TransactionService transactionService = new TransactionService();
-        TransactionInfo destination = new TransactionInfo(billType + " Provider", nameField.getText());
+        TransactionInfo destination = new TransactionInfo("Provider", nameField.getText());
         double charge = 5.0;
         double amount = Double.parseDouble(amountField.getText()) + charge;
 
-        transactionService.addTransaction(userService.getCurrentUser(), TransactionType.SEND_MONEY,
+        billType = SceneController.getMainLayoutController().getSceneLabel().getText().split(" - ")[1];
+
+        transactionService.addTransaction(userService.getCurrentUser(), TransactionType.PAY_BILL,
         destination, amount, charge, new TransactionInfo("Customer ID", idField.getText()));
 
         userService.deductBalance(userService.getCurrentUser(), amount);
-        //setBillType("Electricity");
-        SceneController.setScene("PayBillSuccess.fxml", "Pay Bill - " + billType,billType);
+
+        SceneController.setScene("PayBillSuccess.fxml", "Pay Bill - "+billType);
     }
 }

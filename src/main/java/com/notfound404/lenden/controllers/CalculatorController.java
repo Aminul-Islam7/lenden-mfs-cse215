@@ -8,11 +8,11 @@ import javafx.scene.text.Text;
 public class CalculatorController {
     
     public void visitPercentageCalc() {
-        SceneController.setScene("PercentageCalc.fxml", "Calculator-Percentage",null);
+        SceneController.setScene("PercentageCalc.fxml", "Calculator-Percentage");
     }
     
     public void visitInterestCalc() {
-        SceneController.setScene("InterestCalc.fxml", "Calculator-Interest",null);
+        SceneController.setScene("InterestCalc.fxml", "Calculator-Interest");
     }
 
     @FXML

@@ -6,22 +6,22 @@ public class BookTicketsController {
 
   @FXML
   private void visitBookTicketsBus() {
-    SceneController.setScene("BookTicketsBus.fxml", "Book Tickets - Bus",null);
+    SceneController.setScene("BookTicketsBus.fxml", "Book Tickets - Bus");
   }
 
   @FXML
   private void visitBookTicketsTrain() {
-    SceneController.setScene("BookTicketsTrain.fxml", "Book Tickets - Train",null);
+    SceneController.setScene("BookTicketsTrain.fxml", "Book Tickets - Train");
   }
 
   @FXML
   private void visitBookTicketsPlane() {
-    SceneController.setScene("BookTicketsPlane.fxml", "Book Tickets - Plane",null);
+    SceneController.setScene("BookTicketsPlane.fxml", "Book Tickets - Plane");
   }
 
   @FXML
   private void visitBookTicketsLaunch() {
-    SceneController.setScene("BookTicketsLaunch.fxml", "Book Tickets - Launch",null);
+    SceneController.setScene("BookTicketsLaunch.fxml", "Book Tickets - Launch");
   }
 
 }

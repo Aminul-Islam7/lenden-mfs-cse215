@@ -81,7 +81,7 @@ public class AMFromCardController extends AddMoney {
 
     userService.addBalance(userService.getCurrentUser(), Double.parseDouble(amountField.getText()));
 
-    SceneController.setScene("AMFromCardSuccess.fxml", "Add Money from Card", null);
+    SceneController.setScene("AMFromCardSuccess.fxml", "Add Money from Card");
   }
 
 }

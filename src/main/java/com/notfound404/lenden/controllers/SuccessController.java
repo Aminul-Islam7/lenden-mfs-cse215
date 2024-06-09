@@ -19,12 +19,6 @@ public class SuccessController {
   @FXML
   private Label successLabel; 
 
-  private String billType;
-  
-  public void setBillType(String billType) {
-    this.billType = billType;
-  }
-
   @FXML
   private void initialize() {
     List<Transaction> transactions = new TransactionService().loadTransactions();
