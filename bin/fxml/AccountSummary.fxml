@@ -19,7 +19,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <VBox>
+            <VBox spacing="2.0">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -30,13 +30,14 @@
                      </font>
                   </Label>
                   <Label fx:id="balanceLabel" styleClass="value" text="0.00" />
+                  <Label prefWidth="85.0" styleClass="duration" text="BDT" />
                </children>
                <styleClass>
                   <String fx:value="summary-box" />
                   <String fx:value="current-balance" />
                </styleClass>
             </VBox>
-            <VBox GridPane.columnIndex="1">
+            <VBox spacing="2.0" GridPane.columnIndex="1">
                <children>
                   <Label styleClass="title" text="Utility Expenses">
                      <font>
@@ -44,47 +45,62 @@
                      </font>
                   </Label>
                   <Label fx:id="expensesLabel" styleClass="value" text="0.00" />
-                  <Label fx:id="expensesPeriodLabel" styleClass="duration" text="24 hours" />
+                  <HBox prefHeight="20.0">
+                     <children>
+                        <Label prefWidth="85.0" styleClass="duration" text="BDT" />
+                        <Label fx:id="expensesPeriodLabel" alignment="CENTER_RIGHT" prefWidth="100.0" styleClass="duration" text="24 hours" />
+                     </children>
+                  </HBox>
                </children>
                <styleClass>
                   <String fx:value="summary-box" />
                   <String fx:value="utility-expenses" />
                </styleClass>
             </VBox>
-            <VBox GridPane.rowIndex="1">
+            <VBox spacing="2.0" GridPane.rowIndex="1">
                <children>
-                  <Label styleClass="title" text="Cash In">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="12.0">
+                  <HBox alignment="CENTER_LEFT" spacing="8.0">
                      <children>
-                        <Label fx:id="cashInLabel" styleClass="value" text="0.00" />
-                        <FontAwesomeIcon glyphName="ARROW_UP" size="25" />
+                        <Label styleClass="title" text="Cash In">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIcon glyphName="ARROW_UP" size="22" />
                      </children>
                   </HBox>
-                  <Label fx:id="cashInPeriodLabel" styleClass="duration" text="24 hours" />
+                  <Label fx:id="cashInLabel" styleClass="value" text="0.00" />
+                  <HBox prefHeight="20.0">
+                     <children>
+                        <Label prefWidth="85.0" styleClass="duration" text="BDT" />
+                        <Label fx:id="cashInPeriodLabel1" alignment="CENTER_RIGHT" prefWidth="100.0" styleClass="duration" text="24 hours" />
+                     </children>
+                  </HBox>
                </children>
                <styleClass>
                   <String fx:value="summary-box" />
                   <String fx:value="cash-in" />
                </styleClass>
             </VBox>
-            <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <VBox spacing="2.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Label styleClass="title" text="Cash Out">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="12.0">
+                  <HBox alignment="CENTER_LEFT" spacing="8.0">
                      <children>
-                        <Label fx:id="cashOutLabel" styleClass="value" text="0.00" />
-                        <FontAwesomeIcon glyphName="ARROW_DOWN" size="25" />
+                        <Label styleClass="title" text="Cash Out">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIcon glyphName="ARROW_DOWN" size="22" />
                      </children>
                   </HBox>
-                  <Label fx:id="cashOutPeriodLabel" styleClass="duration" text="24 hours" />
+                  <Label fx:id="cashOutLabel" styleClass="value" text="0.00" />
+                  <HBox prefHeight="20.0">
+                     <children>
+                        <Label prefWidth="85.0" styleClass="duration" text="BDT" />
+                        <Label fx:id="cashOutPeriodLabel" alignment="CENTER_RIGHT" prefWidth="100.0" styleClass="duration" text="24 hours" />
+                     </children>
+                  </HBox>
                </children>
                <styleClass>
                   <String fx:value="summary-box" />
