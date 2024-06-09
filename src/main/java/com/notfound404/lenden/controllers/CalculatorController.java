@@ -1,18 +1,17 @@
 package com.notfound404.lenden.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 public class CalculatorController {
-    
+
     public void visitPercentageCalc() {
-        SceneController.setScene("PercentageCalc.fxml", "Calculator-Percentage");
+        SceneController.setScene("PercentageCalc.fxml", "Percentage Calculator");
     }
-    
+
     public void visitInterestCalc() {
-        SceneController.setScene("InterestCalc.fxml", "Calculator-Interest");
+        SceneController.setScene("InterestCalc.fxml", "Interest Calculator");
     }
 
     @FXML
@@ -25,26 +24,26 @@ public class CalculatorController {
     private String calculationType;
 
     @FXML
-    void addAction(ActionEvent event) {
+    void addAction() {
         calculationSetup("+");
     }
 
     @FXML
-    void subtractAction(ActionEvent event) {
+    void subtractAction() {
         calculationSetup("-");
     }
 
     @FXML
-    void divideAction(ActionEvent event) {
+    void divideAction() {
         calculationSetup("/");
     }
 
     @FXML
-    void multiplicationAction(ActionEvent event) {
+    void multiplicationAction() {
         calculationSetup("x");
     }
 
-    public void calculationSetup(String calculationType){
+    public void calculationSetup(String calculationType) {
         this.calculationType = calculationType;
         initialNumber = currentNumber;
         currentNumber = "";
@@ -52,7 +51,7 @@ public class CalculatorController {
     }
 
     @FXML
-    void calculate(ActionEvent event) {
+    void calculate() {
         double firstNumberInt = Double.parseDouble(initialNumber);
         double secondNumberInt = Double.parseDouble(currentNumber);
 
@@ -68,7 +67,7 @@ public class CalculatorController {
                 textField.setText(String.valueOf(calculatedNumber));
             }
             case "/" -> {
-                double calculatedNumber = firstNumberInt / (double)secondNumberInt;
+                double calculatedNumber = firstNumberInt / (double) secondNumberInt;
                 savedNumbers.setText(initialNumber + " / " + currentNumber + " = " + calculatedNumber);
                 textField.setText(String.valueOf(calculatedNumber));
             }
@@ -81,87 +80,86 @@ public class CalculatorController {
     }
 
     @FXML
-    void clearTextField(ActionEvent event) {
+    void clearTextField() {
         currentNumber = "";
         textField.setText("");
         savedNumbers.setText("");
     }
 
     @FXML
-    void deleteDigit(ActionEvent event) {       
+    void deleteDigit() {
         currentNumber = "";
-        if(!currentNumber.isEmpty()){
-            textField.setText(currentNumber.substring(0,currentNumber.length()-1));
+        if (!currentNumber.isEmpty()) {
+            textField.setText(currentNumber.substring(0, currentNumber.length() - 1));
         }
         updateTextField();
     }
 
     @FXML
-    void numBtn0Clicked(ActionEvent event) {
-        if(!currentNumber.equals("") || !textField.getText().equals("0")){
+    void numBtn0Clicked() {
+        if (!currentNumber.equals("") || !textField.getText().equals("0")) {
             addNumber("0");
         }
     }
 
     @FXML
-    void numBtn1Clicked(ActionEvent event) {
+    void numBtn1Clicked() {
         addNumber("1");
     }
 
     @FXML
-    void numBtn2Clicked(ActionEvent event) {
+    void numBtn2Clicked() {
         addNumber("2");
     }
 
     @FXML
-    void numBtn3Clicked(ActionEvent event) {
+    void numBtn3Clicked() {
         addNumber("3");
     }
 
     @FXML
-    void numBtn4Clicked(ActionEvent event) {
+    void numBtn4Clicked() {
         addNumber("4");
     }
 
     @FXML
-    void numBtn5Clicked(ActionEvent event) {
+    void numBtn5Clicked() {
         addNumber("5");
     }
 
     @FXML
-    void numBtn6Clicked(ActionEvent event) {
+    void numBtn6Clicked() {
         addNumber("6");
     }
 
     @FXML
-    void numBtn7Clicked(ActionEvent event) {
+    void numBtn7Clicked() {
         addNumber("7");
     }
 
     @FXML
-    void numBtn8Clicked(ActionEvent event) {
+    void numBtn8Clicked() {
         addNumber("8");
     }
 
     @FXML
-    void numBtn9Clicked(ActionEvent event) {
+    void numBtn9Clicked() {
         addNumber("9");
     }
 
     @FXML
-    void dotBtnClicked(ActionEvent event) {
+    void dotBtnClicked() {
         addNumber(".");
     }
 
-    public void updateTextField(){
+    public void updateTextField() {
         textField.setText(currentNumber);
     }
 
-    public void addNumber(String number){
-        if(!currentNumber.isEmpty() && currentNumber.equals("0")){
+    public void addNumber(String number) {
+        if (!currentNumber.isEmpty() && currentNumber.equals("0")) {
             currentNumber = number;
-        }
-        else{
+        } else {
             currentNumber += number;
         }
         updateTextField();

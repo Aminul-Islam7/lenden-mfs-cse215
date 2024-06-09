@@ -1,7 +1,6 @@
 package com.notfound404.lenden.controllers;
 
 import javafx.fxml.FXML;
-import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
 
 public class InterestCalcController {
@@ -25,47 +24,51 @@ public class InterestCalcController {
     private String compoundFreq = "";
 
     @FXML
-    void calculateSimple(ActionEvent event){
-        try{
+    private void calculateInterest() {
+        calculateSimple();
+        calculateCompound();
+    }
+
+    private void calculateSimple() {
+        try {
             principalNum = inputTextField1.getText();
             interestRate = inputTextField2.getText();
             time = inputTextField3.getText();
 
             double principle = Double.parseDouble(principalNum);
-            double rate = Double.parseDouble(interestRate)/100;
+            double rate = Double.parseDouble(interestRate) / 100;
             double t = Double.parseDouble(time);
 
-            double simpleInterest = principle*rate*t;
-            
-            String formatCalculatedNum = String.format("%.2f",simpleInterest);
+            double simpleInterest = principle * rate * t;
+
+            String formatCalculatedNum = String.format("%.2f", simpleInterest);
             resultTextField1.setText(String.valueOf(formatCalculatedNum));
 
-        }catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             resultTextField1.setText("Invalid!");
         }
     }
-    
-    @FXML
-    void calculateCompound(ActionEvent event){
-        try{
+
+    private void calculateCompound() {
+        try {
             principalNum = inputTextField1.getText();
             interestRate = inputTextField2.getText();
             time = inputTextField3.getText();
             compoundFreq = inputTextField4.getText();
 
             double principal = Double.parseDouble(principalNum);
-            double rate = Double.parseDouble(interestRate)/100;
+            double rate = Double.parseDouble(interestRate) / 100;
             double t = Double.parseDouble(time);
             double freq = Double.parseDouble(compoundFreq);
 
-            double compoundInterest = principal * Math.pow(1 + (rate/freq),(freq*t));
-                        
-            String formatCalculatedNum = String.format("%.2f",compoundInterest);
+            double compoundInterest = principal * Math.pow(1 + (rate / freq), (freq * t));
+
+            String formatCalculatedNum = String.format("%.2f", compoundInterest);
             resultTextField2.setText(String.valueOf(formatCalculatedNum));
 
-        }catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             resultTextField2.setText("Invalid!");
         }
     }
-    
+
 }

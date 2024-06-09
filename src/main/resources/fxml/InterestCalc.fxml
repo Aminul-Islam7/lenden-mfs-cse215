@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.InterestCalcController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.InterestCalcController">
    <children>
-      <VBox fillWidth="false" layoutX="131.0" layoutY="50.0" minHeight="-Infinity" prefHeight="440.0" prefWidth="367.0" spacing="5.0" styleClass="form" stylesheets="@../css/style.css">
+      <Pane layoutX="111.0" layoutY="52.0" prefHeight="417.0" prefWidth="378.0" styleClass="form">
          <children>
-            <GridPane prefHeight="202.0" prefWidth="304.0" translateY="10.0">
+            <GridPane layoutX="37.0" layoutY="21.0" prefHeight="202.0" prefWidth="304.0" translateY="10.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="174.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="97.0" />
@@ -35,28 +29,12 @@
                   <TextField fx:id="inputTextField4" alignment="CENTER" minWidth="-Infinity" prefHeight="39.0" prefWidth="65.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
             </GridPane>
-            <Label prefHeight="37.0" prefWidth="57.0" text="Result" textAlignment="CENTER" translateX="220.0" translateY="15.0" />
-            <GridPane prefHeight="182.0" prefWidth="304.0" translateY="5.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="249.0" minWidth="10.0" prefWidth="185.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="119.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="91.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="94.0" minHeight="0.0" prefHeight="91.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <TextField fx:id="resultTextField1" alignment="CENTER" editable="false" minWidth="-Infinity" prefHeight="39.0" prefWidth="65.0" translateY="-7.0" GridPane.columnIndex="1" />
-                  <TextField fx:id="resultTextField2" alignment="CENTER" editable="false" minWidth="-Infinity" prefHeight="39.0" prefWidth="65.0" translateY="-7.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" onAction="#calculateSimple" prefHeight="38.0" prefWidth="127.0" text="Calculate" textAlignment="CENTER" translateY="15.0" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
-                  <Label prefHeight="41.0" prefWidth="106.0" text="Simple Interest" textAlignment="CENTER" translateY="30.0" GridPane.halignment="CENTER" />
-                  <Button mnemonicParsing="false" onAction="#calculateCompound" prefHeight="38.0" prefWidth="127.0" text="Calculate" textAlignment="CENTER" translateY="15.0" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
-                  <Label prefHeight="41.0" prefWidth="146.0" text="Compound Interest" textAlignment="CENTER" translateY="30.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                  <Label text="=" translateX="-8.0" translateY="-7.0" GridPane.halignment="RIGHT" />
-                  <Label text="=" translateX="-8.0" translateY="-7.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
+            <TextField fx:id="resultTextField1" alignment="CENTER" editable="false" layoutX="37.0" layoutY="312.0" minWidth="-Infinity" prefHeight="39.0" prefWidth="146.0" />
+            <TextField fx:id="resultTextField2" alignment="CENTER" editable="false" layoutX="195.0" layoutY="312.0" minWidth="-Infinity" prefHeight="39.0" prefWidth="146.0" />
+            <Label layoutX="200.0" layoutY="351.0" prefHeight="41.0" text="Compound Interest" textAlignment="CENTER" />
+            <Label layoutX="57.0" layoutY="351.0" prefHeight="41.0" text="Simple Interest" textAlignment="CENTER" />
+            <Button layoutX="98.0" layoutY="255.0" mnemonicParsing="false" onAction="#calculateInterest" text="Calculate Interest" />
          </children>
-      </VBox>
+      </Pane>
    </children>
 </AnchorPane>
