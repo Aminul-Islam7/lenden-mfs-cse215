@@ -72,7 +72,7 @@ public class AMFromCardController extends AddMoney {
 
     TransactionService transactionService = new TransactionService();
     TransactionInfo destination = new TransactionInfo("Card", "Debit/Credit/Prepaid");
-    TransactionInfo reference = new TransactionInfo("Card Number", numberField.getText());
+    TransactionInfo reference = new TransactionInfo("Source Card No.", numberField.getText());
     double charge = 0.0;
     double amount = Double.parseDouble(amountField.getText()) + charge;
 
