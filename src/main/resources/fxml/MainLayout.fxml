@@ -32,11 +32,11 @@
                            <graphic>
                               <FontAwesomeIcon glyphName="TH_LIST" size="25" />
                            </graphic></Button>
-                        <Button mnemonicParsing="false" styleClass="menu-btn" text="Account Summary">
+                        <Button mnemonicParsing="false" onAction="#visitAccountSummary" styleClass="menu-btn" text="Account Summary">
                            <graphic>
                               <FontAwesomeIcon glyphName="PIE_CHART" size="25" />
                            </graphic></Button>
-                        <Button mnemonicParsing="false" styleClass="menu-btn" text="Transaction Limits">
+                        <Button mnemonicParsing="false" onAction="#visitTransactionLimits" styleClass="menu-btn" text="Transaction Limits">
                            <graphic>
                               <FontAwesomeIcon glyphName="DASHBOARD" size="25" />
                            </graphic></Button>

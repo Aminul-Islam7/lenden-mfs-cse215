@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ScrollPane prefHeight="520.0" prefWidth="600.0">
+      <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="520.0" prefWidth="600.0">
          <content>
-            <VBox alignment="CENTER" spacing="25.0" styleClass="transaction-limits">
+            <VBox alignment="CENTER" maxWidth="585.0" spacing="25.0" styleClass="transaction-limits">
                <children>
-                  <VBox prefHeight="199.0" prefWidth="557.0" styleClass="transaction-limit-box">
+                  <VBox prefHeight="199.0" prefWidth="552.0" styleClass="transaction-limit-box">
                      <children>
                         <HBox prefHeight="28.0" prefWidth="517.0">
                            <children>

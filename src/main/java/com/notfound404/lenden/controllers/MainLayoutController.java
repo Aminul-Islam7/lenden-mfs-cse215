@@ -98,4 +98,14 @@ public class MainLayoutController {
     SceneController.setScene("TransactionHistory.fxml", "Transaction History");
   }
 
+  @FXML
+  private void visitAccountSummary() {
+    SceneController.setScene("AccountSummary.fxml", "Account Summary");
+  }
+
+  @FXML
+  private void visitTransactionLimits() {
+    SceneController.setScene("TransactionLimits.fxml", "Transaction Limits");
+  }
+
 }
