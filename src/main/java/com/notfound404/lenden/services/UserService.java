@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public class UserService {
   private ArrayList<User> users;
   private User currentUser;
-  private static final String USER_FILE_PATH = "src/main/resources/data/users.dat";
-  private static final String SESSION_FILE_PATH = "src/main/resources/data/session.dat";
+  private final String USER_FILE_PATH = "src/main/resources/data/users.dat";
+  private final String SESSION_FILE_PATH = "src/main/resources/data/session.dat";
 
   public UserService() {
     users = loadUsers();

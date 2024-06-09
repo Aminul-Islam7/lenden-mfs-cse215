@@ -37,6 +37,10 @@ public class SceneController {
     SceneController.mainLayoutController = controller;
   }
 
+  public static MainLayoutController getMainLayoutController() {
+    return mainLayoutController;
+  }
+
   public static void setBookTicketsWebViewController(BookTicketsWebViewController controller) {
     SceneController.bookTicketsWebViewController = controller;
   }

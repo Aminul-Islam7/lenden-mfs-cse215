@@ -40,6 +40,6 @@ public class PayBillController implements Payable {
     @FXML
     @Override
     public void processOutgoingTransaction() {
-
+        String billType = SceneController.getMainLayoutController().getSceneLabel().split(" - ")[1];
     }
 }
