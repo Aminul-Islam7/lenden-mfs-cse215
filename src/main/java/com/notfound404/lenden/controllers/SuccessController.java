@@ -44,6 +44,7 @@ public class SuccessController {
     balanceText.setText(balance);
     if (referenceText != null)
       referenceText.setText(transaction.getReference().getInfo());
+
   }
 
 }

@@ -3,32 +3,33 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.MakePaymentController">
    <children>
       <VBox layoutX="146.0" layoutY="53.0" prefHeight="287.0" prefWidth="309.0" spacing="5.0" styleClass="form">
          <children>
             <Label text="Merchant Number" />
-            <TextField promptText="01XXXXXXXXX" />
+            <TextField fx:id="phoneNumberTextField" promptText="01XXXXXXXXX" />
             <Label text="Amount">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
             </Label>
-            <TextField promptText="৳" />
+            <TextField fx:id="amountTextField" promptText="৳" />
             <Label text="Reference">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
             </Label>
-            <TextField />
+            <TextField fx:id="referenceTextField" />
          </children>
       </VBox>
-      <TextField alignment="CENTER" layoutX="146.0" layoutY="359.0" prefHeight="39.0" prefWidth="309.0" promptText="Lenden PIN" />
-      <Button layoutX="146.0" layoutY="413.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="309.0" text="Make Payment" />
-      <Label alignment="CENTER" layoutX="81.0" layoutY="464.0" prefHeight="20.0" prefWidth="440.0" styleClass="error-message" />
+      <Button layoutX="146.0" layoutY="413.0" mnemonicParsing="false" onAction="#handleMakePayment" prefHeight="39.0" prefWidth="309.0" text="Make Payment" />
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="81.0" layoutY="464.0" prefHeight="20.0" prefWidth="440.0" styleClass="error-message" />
+      <PasswordField fx:id="pinPasswordField" layoutX="146.0" layoutY="356.0" prefWidth="309.0" promptText="Lenden PIN" />
    </children>
 </AnchorPane>

@@ -44,7 +44,7 @@ public class WithdrawCashController {
     }
 
     TransactionService transactionService = new TransactionService();
-    TransactionInfo destination = new TransactionInfo("Agent Number", phoneField.getText());
+    TransactionInfo destination = new TransactionInfo("Paid To", phoneField.getText());
     double charge = 0.02 * Double.parseDouble(amountField.getText());
     double amount = Double.parseDouble(amountField.getText()) + charge;
 
