@@ -18,6 +18,7 @@
 
 /* Effects */
 .shadow {
+	-fx-background-color: white;
 	-fx-effect: dropshadow(three-pass-box, -fx-shadow-color, 30, 0, 3, 2);
 }
 

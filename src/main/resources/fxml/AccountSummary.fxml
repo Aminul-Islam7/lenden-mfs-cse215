@@ -73,7 +73,7 @@
                   <HBox prefHeight="20.0">
                      <children>
                         <Label prefWidth="85.0" styleClass="duration" text="BDT" />
-                        <Label fx:id="cashInPeriodLabel1" alignment="CENTER_RIGHT" prefWidth="100.0" styleClass="duration" text="24 hours" />
+                        <Label fx:id="cashInPeriodLabel" alignment="CENTER_RIGHT" prefWidth="100.0" styleClass="duration" text="24 hours" />
                      </children>
                   </HBox>
                </children>

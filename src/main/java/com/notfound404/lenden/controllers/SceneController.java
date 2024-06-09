@@ -174,9 +174,5 @@ public class SceneController {
         || getCurrentView() == "BookTicketsPlane.fxml"
         || getCurrentView() == "BookTicketsLaunch.fxml";
   }
-  
-  public static MainLayoutController getMainLayoutController() {
-    return mainLayoutController;
-  }
 
 }
