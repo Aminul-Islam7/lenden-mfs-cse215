@@ -10,7 +10,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class AMFromBankController {
+public class AMFromBankController extends AddMoneyController {
 
   @FXML
   private ChoiceBox<String> bankChoiceBox;
@@ -20,8 +20,6 @@ public class AMFromBankController {
 
   @FXML
   private TextField nameField, numberField, otpField, amountField, pinField;
-
-  public static SuccessController successController;
 
   private String[] banks = {
       "AB Bank Limited",
@@ -47,10 +45,6 @@ public class AMFromBankController {
     bankChoiceBox.getItems().addAll(banks);
   }
 
-  public static void setSuccessController(SuccessController controller) {
-    successController = controller;
-  }
-
   @FXML
   private void sendOtp() {
     otpLabel.setText("An OTP has been sent to the phone number\nthat is registered to your Bank Account");
@@ -58,7 +52,8 @@ public class AMFromBankController {
   }
 
   @FXML
-  private void handleAddMoney() {
+  @Override
+  public void handleAddMoney() {
 
     if (bankChoiceBox.getValue().equals("Select a Bank")) {
       errorLabel.setText("Please select a Bank");

@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class AMFromCardController {
+public class AMFromCardController extends AddMoneyController {
 
   @FXML
   private Label errorLabel;
@@ -20,18 +20,13 @@ public class AMFromCardController {
 
   @FXML
   private PasswordField pinField;
-  
-  public static SuccessController successController;
-
-  public static void setSuccessController(SuccessController controller) {
-    successController = controller;
-  }
 
   @FXML
-  private void handleAddMoney() {
+  public void handleAddMoney() {
 
     if (nameField.getText().isEmpty() || numberField.getText().isEmpty() || monthField.getText().isEmpty()
-        || yrField.getText().isEmpty() || securityCodeField.getText().isEmpty() || postalCodeField.getText().isEmpty() || pinField.getText().isEmpty()) {
+        || yrField.getText().isEmpty() || securityCodeField.getText().isEmpty() || postalCodeField.getText().isEmpty()
+        || pinField.getText().isEmpty()) {
       errorLabel.setText("Please fill in all the fields");
       return;
     }
@@ -75,11 +70,11 @@ public class AMFromCardController {
     }
 
     TransactionService transactionService = new TransactionService();
-    TransactionInfo destination = new TransactionInfo("Card","Debit/Credit/Prepaid");
+    TransactionInfo destination = new TransactionInfo("Card", "Debit/Credit/Prepaid");
     TransactionInfo reference = new TransactionInfo("Card Number", numberField.getText());
     double charge = 0.0;
     double amount = Double.parseDouble(amountField.getText()) + charge;
-    
+
     transactionService.addTransaction(userService.getCurrentUser(), TransactionType.ADD_MONEY_CARD,
         destination, amount, 0.0, reference);
 

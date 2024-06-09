@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class PayBillGasController {
+public class PayBillGasController implements Payable {
 
     @FXML
     private TextField nameField, idField, amountField, pinField;
@@ -13,8 +13,8 @@ public class PayBillGasController {
     private Label errorLabel;
 
     @FXML
-    private void handlePayBill() {
+    @Override
+    public void handlePayBill() {
 
     }
-
 }
