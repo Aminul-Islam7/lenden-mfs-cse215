@@ -1,5 +1,5 @@
 **/desktop.ini
 bin/
-resources/data/session.dat
-resources/data/transactions.dat
-resources/data/users.dat
+session.dat
+transactions.dat
+users.dat
