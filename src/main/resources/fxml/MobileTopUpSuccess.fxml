@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.SuccessController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.SuccessController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="174.0" layoutY="214.0" prefHeight="37.0" prefWidth="253.0" styleClass="success-text" stylesheets="@../css/style.css" text="Mobile Top-Up Successful" textAlignment="CENTER" />
       <GridPane layoutX="48.0" layoutY="260.0" prefHeight="126.0" prefWidth="525.0">
@@ -46,7 +41,7 @@
             </VBox>
             <VBox maxHeight="90.0" maxWidth="162.0" styleClass="trx-info-box" GridPane.columnIndex="2">
                <children>
-                  <Label styleClass="info-title" text="Recharge Number">
+                  <Label styleClass="info-title" text="Top-up Number">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>

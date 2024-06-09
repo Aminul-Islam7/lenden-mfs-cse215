@@ -6,12 +6,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.TransactionLimits">
    <children>
-      <Pane prefHeight="50.0" prefWidth="600.0" styleClass="shadow">
-         <children>
-            <Label layoutX="108.0" layoutY="12.0" styleClass="sub-heading" text="* Your limits will reset tomorrow at 12:00 AM" />
-         </children>
-      </Pane>
-      <ScrollPane hbarPolicy="NEVER" layoutY="50.0" pannable="true" prefHeight="471.0" prefWidth="600.0">
+      <ScrollPane hbarPolicy="NEVER" layoutY="1.0" pannable="true" prefHeight="520.0" prefWidth="600.0">
          <content>
             <VBox alignment="CENTER" maxWidth="585.0" spacing="25.0" styleClass="transaction-limits">
                <children>

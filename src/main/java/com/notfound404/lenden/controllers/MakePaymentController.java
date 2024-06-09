@@ -24,8 +24,8 @@ public class MakePaymentController implements Payable {
     @FXML
     @Override
     public void processOutgoingTransaction() {
-
         UserService userService = new UserService();
+        TransactionService transactionService = new TransactionService();
 
         if (phoneNumberTextField.getText().isEmpty() || amountTextField.getText().isEmpty()
                 || pinPasswordField.getText().isEmpty() || referenceTextField.getText().isEmpty()) {
@@ -56,7 +56,6 @@ public class MakePaymentController implements Payable {
             return;
         }
 
-        TransactionService transactionService = new TransactionService();
         TransactionInfo destination = new TransactionInfo("Merchant Number", phoneNumberTextField.getText());
         TransactionInfo reference = new TransactionInfo("Reference", referenceTextField.getText());
         double charge = 0.0;

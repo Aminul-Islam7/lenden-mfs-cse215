@@ -1,6 +1,7 @@
 package com.notfound404.lenden.controllers;
 
 import com.notfound404.lenden.models.TransactionInfo;
+import com.notfound404.lenden.models.TransactionLimit;
 import com.notfound404.lenden.models.TransactionType;
 import com.notfound404.lenden.services.TransactionService;
 import com.notfound404.lenden.services.UserService;
@@ -24,6 +25,8 @@ public class AMFromCardController extends AddMoney {
   @FXML
   @Override
   public void handleAddMoney() {
+    UserService userService = new UserService();
+    TransactionService transactionService = new TransactionService();
 
     if (nameField.getText().isEmpty() || numberField.getText().isEmpty() || monthField.getText().isEmpty()
         || yrField.getText().isEmpty() || securityCodeField.getText().isEmpty() || postalCodeField.getText().isEmpty()
@@ -57,20 +60,23 @@ public class AMFromCardController extends AddMoney {
       return;
     }
 
-    if (!amountField.getText().matches("[0-9]+(\\.\\d+)?") || Double.parseDouble(amountField.getText()) <= 0.0
-        || Double.parseDouble(amountField.getText()) > 1000000.0) {
+    if (!amountField.getText().matches("[0-9]+(\\.\\d+)?") || Double.parseDouble(amountField.getText()) <= 0.0) {
       errorLabel.setText("Invalid Amount");
       return;
     }
 
-    UserService userService = new UserService();
+    double amountSpent = transactionService.getSpentAmount(userService.getCurrentUser(), "Add Money");
+    if (amountSpent + Double.parseDouble(amountField.getText()) > TransactionLimit.ADD_MONEY.getLimit()) {
+      errorLabel.setText("You have reached your daily limit for adding money");
+      return;
+    }
+
     int currentUserPin = userService.getCurrentUser().getPin();
     if (!pinField.getText().equals(String.valueOf(currentUserPin))) {
       errorLabel.setText("Invalid PIN");
       return;
     }
 
-    TransactionService transactionService = new TransactionService();
     TransactionInfo destination = new TransactionInfo("Card", "Debit/Credit/Prepaid");
     TransactionInfo reference = new TransactionInfo("Source Card No.", numberField.getText());
     double charge = 0.0;

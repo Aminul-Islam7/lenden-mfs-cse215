@@ -36,7 +36,7 @@ public class TransactionLimits {
         TransactionService transactionService = new TransactionService();
         double addMoneySpent = transactionService.getSpentAmount(currentUser, "Add Money");
         double sendMoneySpent = transactionService.getSpentAmount(currentUser, "Send Money");
-        double mobileTopUpSpent = transactionService.getSpentAmount(currentUser, "Mobile Top-Up");
+        double mobileTopUpSpent = transactionService.getSpentAmount(currentUser, "Mobile Top-up");
         double lendenToBankSpent = transactionService.getSpentAmount(currentUser, "Lenden to Bank");
         double withdrawCashSpent = transactionService.getSpentAmount(currentUser, "Withdraw Cash");
 
