@@ -86,6 +86,12 @@
 	-fx-font-weight: bold;
 }
 
+.sub-heading {
+	-fx-text-fill: -fx-dark-gray-color;
+	-fx-font-size: 18;
+	-fx-font-weight: bold;
+}
+
 .normal {
 	-fx-font-size: 16;
 	-fx-text-fill: -fx-dark-gray-color;
@@ -131,7 +137,7 @@
 
 .sidebar {
 	-fx-background-color: -fx-deep-blue-color;
-	-fx-effect: dropshadow(three-pass-box, -fx-shadow-color, 15, 0, 5, 0);
+	/* -fx-effect: dropshadow(three-pass-box, -fx-shadow-color, 15, 0, 5, 0); */
 }
 
 .balance-btn {

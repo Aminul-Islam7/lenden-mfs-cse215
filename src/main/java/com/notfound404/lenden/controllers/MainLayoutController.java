@@ -108,4 +108,9 @@ public class MainLayoutController {
     SceneController.setScene("TransactionLimits.fxml", "Transaction Limits");
   }
 
+  @FXML
+  private void visitWithdrawLocations() {
+    SceneController.setScene("WithdrawLocations.fxml", "Lenden Agent Locations");
+  }
+
 }

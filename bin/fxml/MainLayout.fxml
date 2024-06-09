@@ -40,7 +40,7 @@
                            <graphic>
                               <FontAwesomeIcon glyphName="DASHBOARD" size="25" />
                            </graphic></Button>
-                        <Button mnemonicParsing="false" styleClass="menu-btn" text="Withdraw Locations">
+                        <Button mnemonicParsing="false" onAction="#visitWithdrawLocations" styleClass="menu-btn" text="Withdraw Locations">
                            <graphic>
                               <FontAwesomeIcon glyphName="LOCATION_ARROW" size="30" />
                            </graphic></Button>
