@@ -117,4 +117,9 @@ public class MainLayoutController {
     SceneController.setScene("WithdrawLocations.fxml", "Lenden Agent Locations");
   }
 
+  @FXML
+  private void visitMyAccount() {
+    SceneController.setScene("MyAccount.fxml", "My Account");
+  }
+
 }
