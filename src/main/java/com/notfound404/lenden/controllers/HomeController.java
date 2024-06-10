@@ -48,4 +48,5 @@ public class HomeController {
   private void visitCalculators() {
     SceneController.setScene("Calculator.fxml", "Calculators");
   }
+
 }

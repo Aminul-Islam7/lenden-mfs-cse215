@@ -141,4 +141,19 @@ public class UserService {
       }
     }
   }
+
+  public void updateUserPin(User user) {
+    for (int i = 0; i < users.size(); i++) {
+      if (users.get(i).getPhone().equals(user.getPhone())) {
+
+        users.get(i).setName(user.getName());
+        users.get(i).setNid(user.getNid());
+        users.get(i).setPin(user.getPin());
+
+        saveUsers();
+        break;
+      }
+    }
+  }
+
 }
