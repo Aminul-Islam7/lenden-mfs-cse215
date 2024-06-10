@@ -15,7 +15,8 @@ public class MainLayoutController {
   private AnchorPane contentPane;
 
   @FXML
-  private Button backButton, forwardButton, balanceButton;
+  private Button backButton, forwardButton, balanceButton, homeButton, transactionsButton, accountSummaryButton,
+      transactionLimitsButton, withdrawLocationsButton, myAccountButton;
 
   @FXML
   private Label sceneLabel;
@@ -29,6 +30,7 @@ public class MainLayoutController {
     visitHome();
 
     updateNavButtonsVisibility();
+    updateMenuButtons();
   }
 
   public void setSceneLabel(String label) {
@@ -57,6 +59,41 @@ public class MainLayoutController {
       backButton.setVisible(SceneController.viewList.size() > 1);
       forwardButton.setVisible(SceneController.visitedViewList.size() > 0);
     }
+  }
+
+  public void updateMenuButtons() {
+    removeSelectedStyleClasses();
+
+    String currentView = SceneController.getCurrentView();
+    switch (currentView) {
+      case "Home.fxml":
+        homeButton.getStyleClass().add("selected");
+        break;
+      case "TransactionHistory.fxml":
+        transactionsButton.getStyleClass().add("selected");
+        break;
+      case "AccountSummary.fxml":
+        accountSummaryButton.getStyleClass().add("selected");
+        break;
+      case "TransactionLimits.fxml":
+        transactionLimitsButton.getStyleClass().add("selected");
+        break;
+      case "WithdrawLocations.fxml":
+        withdrawLocationsButton.getStyleClass().add("selected");
+        break;
+      case "MyAccount.fxml":
+        myAccountButton.getStyleClass().add("selected");
+        break;
+    }
+  }
+
+  private void removeSelectedStyleClasses() {
+    homeButton.getStyleClass().remove("selected");
+    transactionsButton.getStyleClass().remove("selected");
+    accountSummaryButton.getStyleClass().remove("selected");
+    transactionLimitsButton.getStyleClass().remove("selected");
+    withdrawLocationsButton.getStyleClass().remove("selected");
+    myAccountButton.getStyleClass().remove("selected");
   }
 
   @FXML
@@ -120,6 +157,11 @@ public class MainLayoutController {
   @FXML
   private void visitMyAccount() {
     SceneController.setScene("MyAccount.fxml", "My Account");
+  }
+
+  @FXML
+  private void exitApp() {
+    System.exit(0);
   }
 
 }

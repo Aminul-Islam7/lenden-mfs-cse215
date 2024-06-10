@@ -43,24 +43,30 @@ public class PayBillController implements Payable {
     @Override
     public void processOutgoingTransaction() {
 
+        UserService userService = new UserService();
+
         if (nameField.getText().isEmpty() || idField.getText().isEmpty() || amountField.getText().isEmpty()
                 || pinField.getText().isEmpty()) {
             errorLabel.setText("Please fill in all the fields.");
             return;
         }
 
-        if (!idField.getText().matches("\\d{6}")) {
-            errorLabel.setText("Invalid ID");
+        if (!idField.getText().matches("\\d+")) {
+            errorLabel.setText("Invalid Customer ID");
             return;
         }
 
         if (!amountField.getText().matches("[0-9]+(\\.\\d+)?") || Double.parseDouble(amountField.getText()) <= 0.0
-                || Double.parseDouble(amountField.getText()) > 1000000.0) {
+                || Double.parseDouble(amountField.getText()) > 100000.0) {
             errorLabel.setText("Invalid Amount");
             return;
         }
 
-        UserService userService = new UserService();
+        if (Double.parseDouble(amountField.getText()) > userService.getCurrentUser().getBalance()) {
+            errorLabel.setText("Insufficient Balance");
+            return;
+        }
+
         int currentUserPin = userService.getCurrentUser().getPin();
         if (!pinField.getText().equals(String.valueOf(currentUserPin))) {
             errorLabel.setText("Invalid PIN");
@@ -69,7 +75,7 @@ public class PayBillController implements Payable {
 
         TransactionService transactionService = new TransactionService();
         TransactionInfo destination = new TransactionInfo("Provider", nameField.getText());
-        double charge = 5.0;
+        double charge = 0.0;
         double amount = Double.parseDouble(amountField.getText()) + charge;
 
         billType = SceneController.getMainLayoutController().getSceneLabel().getText().split(" - ")[1];

@@ -1,54 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.MyAccountController">
    <children>
-      <VBox layoutX="64.0" layoutY="45.0" prefHeight="301.0" prefWidth="473.0" styleClass="my-account-box">
+      <VBox layoutX="86.0" layoutY="44.0" prefWidth="431.0" spacing="25.0" styleClass="my-account-box">
          <children>
-            <HBox prefHeight="52.0" prefWidth="433.0" spacing="182.0">
+            <GridPane vgap="25.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="125.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="289.0" minWidth="240.0" prefWidth="246.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
                <children>
-                  <Label styleClass="title" text="Name" />
-                  <TextField fx:id="userNameTextField" promptText="username" />
+                  <HBox alignment="CENTER_LEFT" spacing="5.0">
+                     <children>
+                        <Label styleClass="title" text="Name" />
+                        <Label styleClass="error-message-light" text="*" />
+                     </children>
+                  </HBox>
+                  <TextField fx:id="userNameTextField" GridPane.columnIndex="1" />
+                  <Label styleClass="title" text="Phone" GridPane.rowIndex="1" />
+                  <TextField fx:id="phoneNumberTextField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="nidOrPassportTextField" prefWidth="235.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <PasswordField fx:id="currentPinPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label prefHeight="25.0" prefWidth="210.0" styleClass="title" text="New PIN" GridPane.rowIndex="3" />
+                  <PasswordField fx:id="newPinPasswordField" promptText="Leave blank to keep current PIN" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <HBox alignment="CENTER_LEFT" prefWidth="157.0" spacing="5.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label styleClass="title" text="NID / Passport" />
+                        <Label styleClass="error-message-light" text="*" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.rowIndex="5">
+                     <children>
+                        <Label styleClass="title" text="Current PIN" />
+                        <Label styleClass="error-message-light" text="*" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.rowIndex="4">
+                     <children>
+                        <Label styleClass="title" text="Age" />
+                        <Label styleClass="error-message-light" text="*" />
+                     </children>
+                  </HBox>
+                  <TextField fx:id="ageTextField" prefWidth="235.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                </children>
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="52.0" prefWidth="433.0" spacing="180.0">
-               <children>
-                  <Label styleClass="title" text="Phone" />
-                  <TextField fx:id="phoneNumberTextField" />
-               </children>
-            </HBox>
-            <HBox prefHeight="52.0" prefWidth="433.0" spacing="15.0">
-               <children>
-                  <Label prefHeight="25.0" prefWidth="210.0" styleClass="title" text="NID / Passport" />
-                  <TextField fx:id="nidOrPassportTextField" />
-               </children>
-            </HBox>
-            <HBox prefHeight="52.0" prefWidth="433.0" spacing="2.0">
-               <children>
-                  <Label prefHeight="25.0" prefWidth="223.0" styleClass="title" text="Current Password" />
-                  <PasswordField fx:id="currentPasswordField" />
-               </children>
-            </HBox>
-            <HBox prefHeight="52.0" prefWidth="433.0" spacing="25.0">
-               <children>
-                  <Label prefHeight="25.0" prefWidth="200.0" styleClass="title" text="New Password" />
-                  <PasswordField fx:id="newPasswordField" />
-               </children>
-            </HBox>
+            </GridPane>
+            <Button mnemonicParsing="false" onAction="#handleUpdateProfile" prefHeight="39.0" prefWidth="473.0" styleClass="update-profile-button" text="Update Profile" />
          </children>
       </VBox>
-      <Button layoutX="220.0" layoutY="370.0" mnemonicParsing="false" onAction="#handleUpdateProfile" styleClass="update-profile-button" text="Update Profile" />
-      <Label fx:id="errorLabel" layoutX="20.0" layoutY="431.0" prefHeight="20.0" prefWidth="562.0" styleClass="error-message" />
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="47.0" layoutY="473.0" prefHeight="20.0" prefWidth="508.0" styleClass="error-message" />
    </children>
 </AnchorPane>

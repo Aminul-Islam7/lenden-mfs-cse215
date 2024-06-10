@@ -13,15 +13,15 @@
             <Label fx:id="otpLabel" alignment="CENTER" prefHeight="53.0" prefWidth="286.0" styleClass="small" stylesheets="@../css/style.css" text="An OTP will be sent to the phone number&#10;that is registered to your Bank Account" textAlignment="CENTER" translateX="1.0" translateY="35.0" translateZ="1.0" />
             <HBox prefHeight="38.0" prefWidth="286.0" translateY="40.0">
                <children>
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#sendOtp" prefHeight="39.0" prefWidth="132.0" text="Send OTP" textAlignment="CENTER" />
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#sendOtp" prefHeight="39.0" prefWidth="133.0" text="Send OTP" textAlignment="CENTER" />
                   <TextField fx:id="otpField" alignment="TOP_LEFT" prefHeight="40.0" prefWidth="134.0" promptText="Enter the OTP" stylesheets="@../css/style.css" translateX="16.0" />
                </children>
             </HBox>
             <TextField fx:id="amountField" alignment="TOP_LEFT" prefHeight="39.0" prefWidth="268.0" promptText="Transfer Amount" stylesheets="@../css/style.css" translateY="50.0" />
          </children>
       </VBox>
-      <TextField fx:id="pinField" alignment="CENTER" layoutX="132.0" layoutY="390.0" prefHeight="12.0" prefWidth="336.0" promptText="Lenden PIN" stylesheets="@../css/style.css" />
       <Button layoutX="132.0" layoutY="439.0" mnemonicParsing="false" onAction="#processIncomingTransaction" prefHeight="39.0" prefWidth="336.0" text="Add Money" />
       <Label fx:id="errorLabel" alignment="CENTER" layoutX="59.0" layoutY="486.0" prefHeight="20.0" prefWidth="483.0" styleClass="error-message" />
+      <PasswordField fx:id="pinField" alignment="CENTER" layoutX="132.0" layoutY="391.0" prefHeight="39.0" prefWidth="336.0" promptText="Lenden PIN" />
    </children>
 </AnchorPane>

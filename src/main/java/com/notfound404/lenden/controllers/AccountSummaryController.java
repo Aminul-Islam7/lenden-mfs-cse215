@@ -42,22 +42,7 @@ public class AccountSummaryController {
         removeSelectedStyleClasses();
         button24Hours.getStyleClass().add("selected");
 
-        double cashIn = 0.0, cashOut = 0.0, expenses = 0.0;
-        for (Transaction transaction : transactions) {
-            if (transaction.getDate().getTime() > System.currentTimeMillis() - ONE_DAY) {
-                if (transaction.getType().getType().equals("Add Money")) {
-                    cashIn += transaction.getAmount();
-                } else if (transaction.getType().getType().equals("Pay Bill")) {
-                    expenses += transaction.getCharge();
-                } else {
-                    cashOut += transaction.getAmount();
-                }
-            }
-        }
-
-        cashInLabel.setText(String.format("%.2f", cashIn));
-        cashOutLabel.setText(String.format("%.2f", cashOut));
-        expensesLabel.setText(String.format("%.2f", expenses));
+        calculatePeriodValues(ONE_DAY);
     }
 
     @FXML
@@ -67,22 +52,7 @@ public class AccountSummaryController {
         removeSelectedStyleClasses();
         button7Days.getStyleClass().add("selected");
 
-        double cashIn = 0.0, cashOut = 0.0, expenses = 0.0;
-        for (Transaction transaction : transactions) {
-            if (transaction.getDate().getTime() > System.currentTimeMillis() - ONE_WEEK) {
-                if (transaction.getType().getType().equals("Add Money")) {
-                    cashIn += transaction.getAmount();
-                } else if (transaction.getType().getType().equals("Pay Bill")) {
-                    expenses += transaction.getCharge();
-                } else {
-                    cashOut += transaction.getAmount();
-                }
-            }
-        }
-
-        cashInLabel.setText(String.format("%.2f", cashIn));
-        cashOutLabel.setText(String.format("%.2f", cashOut));
-        expensesLabel.setText(String.format("%.2f", expenses));
+        calculatePeriodValues(ONE_WEEK);
     }
 
     @FXML
@@ -92,22 +62,7 @@ public class AccountSummaryController {
         removeSelectedStyleClasses();
         button30Days.getStyleClass().add("selected");
 
-        double cashIn = 0.0, cashOut = 0.0, expenses = 0.0;
-        for (Transaction transaction : transactions) {
-            if (transaction.getDate().getTime() > System.currentTimeMillis() - ONE_MONTH) {
-                if (transaction.getType().getType().equals("Add Money")) {
-                    cashIn += transaction.getAmount();
-                } else if (transaction.getType().getType().equals("Pay Bill")) {
-                    expenses += transaction.getCharge();
-                } else {
-                    cashOut += transaction.getAmount();
-                }
-            }
-        }
-
-        cashInLabel.setText(String.format("%.2f", cashIn));
-        cashOutLabel.setText(String.format("%.2f", cashOut));
-        expensesLabel.setText(String.format("%.2f", expenses));
+        calculatePeriodValues(ONE_MONTH);
     }
 
     @FXML
@@ -117,22 +72,7 @@ public class AccountSummaryController {
         removeSelectedStyleClasses();
         button6Months.getStyleClass().add("selected");
 
-        double cashIn = 0.0, cashOut = 0.0, expenses = 0.0;
-        for (Transaction transaction : transactions) {
-            if (transaction.getDate().getTime() > System.currentTimeMillis() - ONE_YEAR) {
-                if (transaction.getType().getType().equals("Add Money")) {
-                    cashIn += transaction.getAmount();
-                } else if (transaction.getType().getType().equals("Pay Bill")) {
-                    expenses += transaction.getCharge();
-                } else {
-                    cashOut += transaction.getAmount();
-                }
-            }
-        }
-
-        cashInLabel.setText(String.format("%.2f", cashIn));
-        cashOutLabel.setText(String.format("%.2f", cashOut));
-        expensesLabel.setText(String.format("%.2f", expenses));
+        calculatePeriodValues(6 * ONE_MONTH);
     }
 
     @FXML
@@ -142,13 +82,17 @@ public class AccountSummaryController {
         removeSelectedStyleClasses();
         button1Year.getStyleClass().add("selected");
 
+        calculatePeriodValues(ONE_YEAR);
+    }
+
+    private void calculatePeriodValues(long period) {
         double cashIn = 0.0, cashOut = 0.0, expenses = 0.0;
         for (Transaction transaction : transactions) {
-            if (transaction.getDate().getTime() > System.currentTimeMillis() - ONE_YEAR) {
+            if (transaction.getDate().getTime() > System.currentTimeMillis() - period) {
                 if (transaction.getType().getType().equals("Add Money")) {
                     cashIn += transaction.getAmount();
                 } else if (transaction.getType().getType().equals("Pay Bill")) {
-                    expenses += transaction.getCharge();
+                    expenses += transaction.getAmount();
                 } else {
                     cashOut += transaction.getAmount();
                 }

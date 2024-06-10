@@ -111,7 +111,6 @@ public class LendenToBankController {
         userService.deductBalance(userService.getCurrentUser(), amount);
 
         SceneController.setScene("LendenToBankSuccess.fxml", "Lenden to Bank");
-
     }
 
 }

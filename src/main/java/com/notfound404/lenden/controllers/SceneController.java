@@ -53,6 +53,7 @@ public class SceneController {
       visitedViewList.add(currentView);
       String previousView = viewList.get(viewList.size() - 1);
       loadScene(previousView, sceneLabels.get(previousView));
+      mainLayoutController.updateMenuButtons();
     }
     mainLayoutController.updateNavButtonsVisibility();
   }
@@ -66,6 +67,7 @@ public class SceneController {
       loadScene(nextView, sceneLabels.get(nextView));
     }
     mainLayoutController.updateNavButtonsVisibility();
+    mainLayoutController.updateMenuButtons();
   }
 
   public static String getCurrentView() {
@@ -82,6 +84,7 @@ public class SceneController {
     sceneLabels.put(fxmlFile, sceneLabel);
     loadScene(fxmlFile, sceneLabel);
     mainLayoutController.updateNavButtonsVisibility();
+    mainLayoutController.updateMenuButtons();
   }
 
   private static void loadScene(String fxmlFile, String sceneLabel) {

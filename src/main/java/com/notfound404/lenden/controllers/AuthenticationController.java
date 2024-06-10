@@ -41,14 +41,25 @@ public class AuthenticationController {
     String name = nameField.getText();
     String phone = phoneField.getText();
     String nid = nidField.getText();
-    int age = Integer.parseInt(ageField.getText());
-    int pin = Integer.parseInt(pinField.getText());
 
     if (name.isEmpty() || phone.isEmpty() || nid.isEmpty() || ageField.getText().isEmpty()
         || pinField.getText().isEmpty()) {
       errorLabel.setText("Please fill all fields");
       return;
     }
+
+    if (!ageField.getText().matches("\\d{1,3}")) {
+      errorLabel.setText("Invalid age");
+      return;
+    }
+
+    if (!pinField.getText().matches("\\d{4}")) {
+      errorLabel.setText("PIN must be a 4-digit number");
+      return;
+    }
+
+    int age = Integer.parseInt(ageField.getText());
+    int pin = Integer.parseInt(pinField.getText());
 
     if (age < 18) {
       errorLabel.setText("You must be at least 18 years old to register");
@@ -60,11 +71,6 @@ public class AuthenticationController {
 
     if (!phone.matches("01[2-9]\\d{8}")) {
       errorLabel.setText("Invalid phone number");
-      return;
-    }
-
-    if (pinField.getText().length() != 4) {
-      errorLabel.setText("PIN must be 4 digits long");
       return;
     }
 
@@ -84,6 +90,11 @@ public class AuthenticationController {
   private void handleLogin() {
     String phone = phoneField.getText();
 
+    if (phone.isEmpty() || pinField.getText().isEmpty()) {
+      errorLabel.setText("Please fill all the fields");
+      return;
+    }
+
     if (!phone.matches("01[3-9]\\d{8}")) {
       errorLabel.setText("Invalid phone number");
       return;
@@ -101,7 +112,7 @@ public class AuthenticationController {
       SceneController.showMainStage();
       mainLayoutController.initialize();
     } else
-      errorLabel.setText("Invalid phone number or PIN");
+      errorLabel.setText("Incorrect phone number or PIN");
 
   }
 

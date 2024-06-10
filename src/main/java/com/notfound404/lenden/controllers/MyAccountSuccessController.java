@@ -9,26 +9,22 @@ import javafx.scene.control.TextField;
 public class MyAccountSuccessController {
 
     @FXML
-    private TextField userNameTextField, phoneNumberTextField, nidOrPassportTextField;
+    private TextField userNameTextField, phoneNumberTextField, nidOrPassportTextField, ageTextField;
 
     @FXML
     private PasswordField passwordField;
 
-    UserService userService = new UserService();
-
     @FXML
     private void initialize() {
+        UserService userService = new UserService();
+
         userNameTextField.setText(userService.getCurrentUser().getName());
-        userNameTextField.setEditable(false);
 
         phoneNumberTextField.setText(userService.getCurrentUser().getPhone());
-        phoneNumberTextField.setEditable(false);
 
         nidOrPassportTextField.setText(userService.getCurrentUser().getNid());
-        nidOrPassportTextField.setEditable(false);
 
-        passwordField.setText(String.valueOf(userService.getCurrentUser().getPin()));
-        passwordField.setEditable(false);
+        ageTextField.setText(String.valueOf(userService.getCurrentUser().getAge()));
     }
 
 }

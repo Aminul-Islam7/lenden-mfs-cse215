@@ -9,6 +9,7 @@ import com.notfound404.lenden.services.UserService;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class AMFromBankController extends AddMoney {
@@ -20,7 +21,10 @@ public class AMFromBankController extends AddMoney {
   private Label otpLabel, errorLabel;
 
   @FXML
-  private TextField nameField, numberField, otpField, amountField, pinField;
+  private TextField nameField, numberField, otpField, amountField;
+
+  @FXML
+  private PasswordField pinField;
 
   private String[] banks = {
       "AB Bank Limited",

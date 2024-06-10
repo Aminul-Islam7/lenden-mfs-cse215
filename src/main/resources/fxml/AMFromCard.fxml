@@ -8,7 +8,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notfound404.lenden.controllers.AMFromCardController">
    <children>
       <Label layoutX="50.0" layoutY="52.0" styleClass="heading" text="Enter your Card Information" />
-      <VBox layoutX="50.0" layoutY="94.0" prefHeight="317.0" prefWidth="500.0" styleClass="form">
+      <VBox layoutX="50.0" layoutY="94.0" prefWidth="500.0" styleClass="form">
          <children>
             <Label text="Name on Card">
                <VBox.margin>
@@ -81,9 +81,8 @@
                   </VBox>
                </children>
             </GridPane>
-            <TextField fx:id="amountField" alignment="TOP_LEFT" prefHeight="39.0" prefWidth="268.0" promptText="Transfer Amount" stylesheets="@../css/style.css" translateY="20.0" />
          </children></VBox>
-      <GridPane layoutX="50.0" layoutY="439.0" prefWidth="500.0" translateY="-10.0">
+      <GridPane hgap="5.0" layoutX="50.0" layoutY="387.0" prefWidth="500.0" translateY="-10.0">
         <columnConstraints>
           <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -92,10 +91,11 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" onAction="#processIncomingTransaction" prefWidth="240.0" text="Add Money" GridPane.columnIndex="1" />
-            <PasswordField fx:id="pinField" alignment="CENTER" promptText="Lenden PIN" />
+            <PasswordField fx:id="pinField" alignment="CENTER" promptText="Lenden PIN" GridPane.columnIndex="1" />
+            <TextField fx:id="amountField" alignment="CENTER" prefHeight="39.0" prefWidth="268.0" promptText="Transfer Amount" stylesheets="@../css/style.css" />
          </children>
       </GridPane>
-      <Label fx:id="errorLabel" layoutX="50.0" layoutY="478.0" prefHeight="20.0" prefWidth="500.0" styleClass="error-message" />
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="50.0" layoutY="463.0" prefHeight="20.0" prefWidth="500.0" styleClass="error-message" textAlignment="CENTER" />
+      <Button layoutX="50.0" layoutY="417.0" mnemonicParsing="false" onAction="#processIncomingTransaction" prefHeight="39.0" prefWidth="500.0" text="Add Money" />
    </children>
 </AnchorPane>
