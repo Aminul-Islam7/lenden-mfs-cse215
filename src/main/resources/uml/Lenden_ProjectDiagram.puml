@@ -1,0 +1,469 @@
+@startuml
+
+' Models
+class User {
+    +int id
+    +String name
+    +String phone
+    +String nid
+    +double balance
+    +int pin
+    +int getPin()
+    +double getBalance()
+    +String getPhone()
+    +String getName()
+    +String getNid()
+    +int getAge()
+}
+
+class Transaction {
+    +Date date
+    +TransactionType type
+    +double amount
+    +double charge
+    +Date getDate()
+    +TransactionType getType()
+    +double getAmount()
+    +double getCharge()
+}
+
+class TransactionType {
+    +String type
+    +String getType()
+}
+
+class TransactionLimit {
+    +double limit
+    +double getLimit()
+}
+
+class TransactionInfo {
+    +String key
+    +String value
+}
+
+' Services
+class UserService {
+    +User getCurrentUser()
+    +void addBalance(User user, double amount)
+    +void updateUser(User user)
+    +void deductBalance(User user, double amount)
+    +void logoutUser()
+}
+
+class TransactionService {
+    +List<Transaction> getTransactionsByUser(User user)
+    +double getSpentAmount(User user, String type)
+    +void addTransaction(User user, TransactionType type, TransactionInfo destination, double amount, double charge, TransactionInfo reference)
+}
+
+' Controllers
+class AccountSummaryController {
+    -Label balanceLabel
+    -Label expensesLabel
+    -Label cashInLabel
+    -Label cashOutLabel
+    -Label expensesPeriodLabel
+    -Label cashInPeriodLabel
+    -Label cashOutPeriodLabel
+    -Button button24Hours
+    -Button button7Days
+    -Button button30Days
+    -Button button6Months
+    -Button button1Year
+    -List<Transaction> transactions
+    -final long ONE_DAY
+    -final long ONE_WEEK
+    -final long ONE_MONTH
+    -final long ONE_YEAR
+    +void initialize()
+    +void handle24Hours()
+    +void handle7Days()
+    +void handle30Days()
+    +void handle6Months()
+    +void handle1Year()
+    -void updatePeriodLabels(String period)
+    -void removeSelectedStyleClasses()
+}
+
+class AddMoney {
+    +void processIncomingTransaction()
+    +abstract void handleAddMoney()
+}
+
+class AddMoneyController {
+    +void visitAMFromBank()
+    +void visitAMFromCard()
+}
+
+class AMFromBankController {
+    -ChoiceBox<String> bankChoiceBox
+    -Label otpLabel
+    -Label errorLabel
+    -TextField nameField
+    -TextField numberField
+    -TextField otpField
+    -TextField amountField
+    -TextField pinField
+    -String[] banks
+    +void initialize()
+    +void sendOtp()
+    +void handleAddMoney()
+}
+
+class AMFromCardController {
+    -Label errorLabel
+    -TextField nameField
+    -TextField numberField
+    -TextField monthField
+    -TextField yrField
+    -TextField securityCodeField
+    -TextField postalCodeField
+    -TextField amountField
+    -PasswordField pinField
+    +void handleAddMoney()
+}
+
+interface Receivable {
+    +void processIncomingTransaction()
+}
+
+' AuthenticationController
+class AuthenticationController {
+    -TextField nameField
+    -TextField phoneField
+    -TextField nidField
+    -TextField ageField
+    -PasswordField pinField
+    -Button registerButton
+    -Button loginButton
+    -Label errorLabel
+    -UserService userService
+    -static MainLayoutController mainLayoutController
+    +void initialize()
+    +static void setMainLayoutController(MainLayoutController controller)
+    -void handleRegister()
+    -void handleLogin()
+    -void switchToRegisterScene()
+    -void switchToLoginScene()
+}
+
+' BookTicketsController
+class BookTicketsController {
+    +void visitBookTicketsBus()
+    +void visitBookTicketsTrain()
+    +void visitBookTicketsPlane()
+    +void visitBookTicketsLaunch()
+}
+
+' BookTicketsWebViewController
+class BookTicketsWebViewController {
+    -WebView shohozWebView
+    -ImageView loaderImageView
+    -WebEngine webEngine
+    -WebHistory webHistory
+    +void initialize()
+    +void goBack()
+    +void goForward()
+}
+
+' CalculatorController
+class CalculatorController {
+    +void visitPercentageCalc()
+    +void visitInterestCalc()
+    -TextField textField
+    -Text savedNumbers
+    -String initialNumber
+    -String currentNumber
+    -String calculationType
+    +void addAction()
+    +void subtractAction()
+    +void divideAction()
+    +void multiplicationAction()
+    +void calculationSetup(String calculationType)
+    +void calculate()
+    +void clearTextField()
+    +void deleteDigit()
+    +void numBtn0Clicked()
+    +void numBtn1Clicked()
+    +void numBtn2Clicked()
+    +void numBtn3Clicked()
+    +void numBtn4Clicked()
+    +void numBtn5Clicked()
+    +void numBtn6Clicked()
+    +void numBtn7Clicked()
+    +void numBtn8Clicked()
+    +void numBtn9Clicked()
+    +void dotBtnClicked()
+    +void updateTextField()
+    +void addNumber(String number)
+}
+
+' HomeController
+class HomeController {
+    +void visitAddMoney()
+    +void visitMakePayment()
+    +void visitSendMoney()
+    +void visitMobileTopUp()
+    +void visitLendenToBank()
+    +void visitWithdrawCash()
+    +void visitPayBill()
+    +void visitBookTickets()
+    +void visitCalculators()
+}
+
+' InterestCalcController
+class InterestCalcController {
+    -TextField inputTextField1
+    -TextField inputTextField2
+    -TextField inputTextField3
+    -TextField inputTextField4
+    -TextField resultTextField1
+    -TextField resultTextField2
+    -String principalNum
+    -String interestRate
+    -String time
+    -String compoundFreq
+    +void calculateInterest()
+    -void calculateSimple()
+    -void calculateCompound()
+}
+
+' LendenToBankController
+class LendenToBankController {
+    -ChoiceBox<String> selectBankChoiceBox
+    -TextField accountHolderNameTextField
+    -TextField accountNumberTextField
+    -TextField transferAmountTextField
+    -PasswordField pinPasswordField
+    -Label errorLabel
+    -String[] banks
+    +void initialize()
+    +void handleBankTransfer()
+}
+
+' MainLayoutController
+class MainLayoutController {
+    -AnchorPane contentPane
+    -Button backButton
+    -Button forwardButton
+    -Button balanceButton
+    -Label sceneLabel
+    +void initialize()
+    +void setSceneLabel(String label)
+    +Label getSceneLabel()
+    +void goBack(ActionEvent e)
+    +void goForward(ActionEvent e)
+    +void updateNavButtonsVisibility()
+    +void logoutUser()
+    +void viewBalance()
+    +void visitHome()
+    +void visitTransactionHistory()
+    +void visitAccountSummary()
+    +void visitTransactionLimits()
+    +void visitWithdrawLocations()
+    +void visitMyAccount()
+}
+
+' MakePaymentController
+class MakePaymentController implements Payable {
+    -TextField phoneNumberTextField
+    -TextField amountTextField
+    -TextField referenceTextField
+    -PasswordField pinPasswordField
+    -Label errorLabel
+    +void processOutgoingTransaction()
+}
+
+' MobileTopUpController
+class MobileTopUpController implements Payable {
+    -Label errorLabel
+    -TextField phoneField
+    -TextField amountField
+    -PasswordField pinField
+    +void processOutgoingTransaction()
+}
+
+' MyAccountController
+class MyAccountController {
+    -TextField userNameTextField
+    -TextField phoneNumberTextField
+    -TextField nidOrPassportTextField
+    -PasswordField currentPasswordField
+    -PasswordField newPasswordField
+    -Label errorLabel
+    -UserService userService
+    +void initialize()
+    +void handleUpdateProfile()
+}
+
+' MyAccountSuccessController
+class MyAccountSuccessController {
+    -TextField userNameTextField
+    -TextField phoneNumberTextField
+    -TextField nidOrPassportTextField
+    -PasswordField passwordField
+    -UserService userService
+    +void initialize()
+}
+
+' PayBillController
+class PayBillController implements Payable {
+    -TextField nameField
+    -TextField idField
+    -TextField amountField
+    -PasswordField pinField
+    -Label errorLabel
+    -String billType
+    +void visitPayBillElectricity()
+    +void visitPayBillGas()
+    +void visitPayBillWater()
+    +void visitPayBillInternet()
+    +void processOutgoingTransaction()
+}
+
+' PercentageCalcController
+class PercentageCalcController {
+    -TextField inputTextField1
+    -TextField inputTextField2
+    -TextField resultTextField1
+    -TextField inputTextField3
+    -TextField inputTextField4
+    -TextField resultTextField2
+    -String firstNumber
+    -String secondNumber
+    +void calculate(ActionEvent event)
+    +void calculateChange(ActionEvent event)
+}
+
+class SceneController {
+    -static Stage authenticationStage
+    -static Stage mainStage
+    -static Stage currentStage
+    -static Stage secondaryStage
+    -static AnchorPane contentPane
+    -static ArrayList<String> viewList
+    -static ArrayList<String> visitedViewList
+    -static HashMap<String, String> sceneLabels
+    -static MainLayoutController mainLayoutController
+    -static BookTicketsWebViewController bookTicketsWebViewController
+    +static Stage getStage()
+    +static void setContentPane(AnchorPane contentPane)
+    +static void setMainLayoutController(MainLayoutController controller)
+    +static MainLayoutController getMainLayoutController()
+    +static void setBookTicketsWebViewController(BookTicketsWebViewController controller)
+    +static void back()
+    +static void forward()
+    +static String getCurrentView()
+    +static void setScene(String fxmlFile, String sceneLabel)
+    -static void loadScene(String fxmlFile, String sceneLabel)
+    +static void setSceneLabel(String label)
+    +static void setStages()
+    +static void showAuthenticationStage()
+    +static void showMainStage()
+    +static void switchToScene(String string)
+    +static void closeSecondaryStage()
+    +static boolean isBookTicketsWebView()
+}
+
+' SendMoneyController
+class SendMoneyController implements Payable {
+    -Label errorLabel
+    -TextField phoneField
+    -TextField amountField
+    -TextField referenceField
+    -PasswordField pinField
+    +void processOutgoingTransaction()
+}
+
+' SuccessController
+class SuccessController {
+    -Text dateText
+    -Text transactionIdText
+    -Text destinationText
+    -Text amountText
+    -Text balanceText
+    -Text referenceText
+    -Label successLabel
+    +void initialize()
+    +void setTransactionDetails(Transaction transaction)
+}
+
+' TransactionHistoryController
+class TransactionHistoryController {
+    -FlowPane transactionsFlowPane
+    -TransactionService transactionService
+    -UserService userService
+    -User currentUser
+    -List<Transaction> transactions
+    +void initialize()
+    -void loadTransactions()
+    -VBox createTransactionBox(Transaction transaction)
+    -void handleNoTransactions()
+}
+
+' TransactionLimits
+class TransactionLimits {
+    -Label addMoneySpentLabel
+    -Label sendMoneySpentLabel
+    -Label mobileTopUpSpentLabel
+    -Label lendenToBankSpentLabel
+    -Label withdrawCashSpentLabel
+    -Label addMoneyRemainingLabel
+    -Label sendMoneyRemainingLabel
+    -Label mobileTopUpRemainingLabel
+    -Label lendenToBankRemainingLabel
+    -Label withdrawCashRemainingLabel
+    -ProgressBar addMoneyProgressBar
+    -ProgressBar sendMoneyProgressBar
+    -ProgressBar mobileTopUpProgressBar
+    -ProgressBar lendenToBankProgressBar
+    -ProgressBar withdrawCashProgressBar
+    +void initialize()
+}
+
+' WithdrawCashController
+class WithdrawCashController implements Payable {
+    -Label errorLabel
+    -TextField phoneField
+    -TextField amountField
+    -PasswordField pinField
+    +void processOutgoingTransaction()
+}
+
+' WithdrawLocationsController
+class WithdrawLocationsController {
+    -WebView mapWebView
+    -WebEngine engine
+    +void initialize()
+}
+
+interface Payable {
+    +void processOutgoingTransaction()
+}
+
+interface Receivable {
+    +void processIncomingTransaction()
+}
+
+' Relationships
+UserService --> User
+TransactionService --> Transaction
+Transaction --> TransactionType
+AccountSummaryController --> UserService
+AccountSummaryController --> TransactionService
+AccountSummaryController --> Transaction
+AddMoney <|-- AMFromBankController
+AddMoney <|-- AMFromCardController
+AddMoneyController --> AddMoney
+Receivable <|-- AddMoney
+Payable <|-- MakePaymentController
+Payable <|-- MobileTopUpController
+Payable <|-- PayBillController
+Payable <|-- SendMoneyController
+Payable <|-- WithdrawCashController
+SceneController --> MainLayoutController
+SceneController --> BookTicketsWebViewController
+SceneController --> SuccessController
+
+@enduml
