@@ -72,11 +72,13 @@ public class MyAccountController {
         }
 
         if (!newPinPasswordField.getText().isEmpty()) {
-            if (!newPinPasswordField.getText().matches("\\d{4}"))
+            if (!newPinPasswordField.getText().matches("\\d{4}")) {
                 errorLabel.setText("New PIN must be a 4-digit number");
-            if (!newPinPasswordField.getText().equals(String.valueOf(currentUser.getPin())))
+                return;
+            } else if (newPinPasswordField.getText().equals(String.valueOf(currentUser.getPin()))) {
                 errorLabel.setText("New PIN cannot be the same as the current PIN");
-            return;
+                return;
+            }
         }
 
         int newPin = newPinPasswordField.getText().isEmpty() ? currentUser.getPin()
