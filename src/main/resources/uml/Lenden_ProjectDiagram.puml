@@ -465,5 +465,27 @@ Payable <|-- WithdrawCashController
 SceneController --> MainLayoutController
 SceneController --> BookTicketsWebViewController
 SceneController --> SuccessController
+AuthenticationController --> UserService
+HomeController --> UserService
+HomeController --> TransactionService
+BookTicketsController --> SceneController
+BookTicketsWebViewController --> SceneController
+CalculatorController --> HomeController
+InterestCalcController --> CalculatorController
+LendenToBankController --> UserService
+MainLayoutController --> UserService
+MakePaymentController --> UserService
+MobileTopUpController --> UserService
+MyAccountController --> UserService
+MyAccountSuccessController --> UserService
+PayBillController --> UserService
+PercentageCalcController --> CalculatorController
+SendMoneyController --> UserService
+SuccessController --> Transaction
+TransactionHistoryController --> UserService
+TransactionHistoryController --> TransactionService
+TransactionLimits --> UserService
+WithdrawCashController --> UserService
+WithdrawLocationsController --> UserService
 
 @enduml
