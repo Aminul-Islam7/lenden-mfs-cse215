@@ -1,4 +1,4 @@
-# Lenden
+# Project Lenden
 
 <p align="center">
   <img src="src/main/resources/images/logo.png" width="200" alt="Lenden Logo">
@@ -9,7 +9,7 @@
 Lenden is a simulated Mobile Financial System (MFS) desktop application, developed in JavaFX for a CSE215 Java course project. It provides a comprehensive platform for financial management and transactions, utilizing key OOP concepts like encapsulation, inheritance, polymorphism, and abstraction to ensure code modularity and maintainability. The intuitive GUI enhances user experience by enabling smooth navigation and usability. Additionally, the project incorporates file operations to securely store user information, transactions, and settings.
 </p>
 
-# Table of Contents
+## Table of Contents
 
 - [Installation](#installation)
 - [Requirements](#requirements)
@@ -17,18 +17,20 @@ Lenden is a simulated Mobile Financial System (MFS) desktop application, develop
 - [Features](#features)
 - [Screenshots](#screenshots)
 
-# Installation
+## Installation
 
 - Download the installer: [LendenSetup-1.0.0.exe](https://google.com)
 - Run the installer and follow the on-screen instructions.
 
-# Requirements
+## Requirements
 
-**Operating System**: Windows 7 or above.
+**Operating System:** Windows 7 or above (supports both 32-bit and 64-bit systems).
 
-The application supports both 32-bit and 64-bit systems.
+**Storage:** Requires at least 330 MB of free space.
 
-# Project Details
+Note: The high space requirement is due to the setup also installing Java (JRE) required for running the application.
+
+## Project Details
 
 - **Project Group**: Group 2 (404 Not Found)
 - **Course:** CSE215L (Section 7)
@@ -36,7 +38,7 @@ The application supports both 32-bit and 64-bit systems.
 - **Lab Instructor:** Kazi Tanvir Akter
 - **Faculty:** Dr. Mohammad Shifat-E-Rabbi (MSRb)
 
-  ## Group Members
+  ### Group Members
 
   |           Name           |   NSU ID   |               Email               |
   | :----------------------: | :--------: | :-------------------------------: |
@@ -45,7 +47,7 @@ The application supports both 32-bit and 64-bit systems.
   | Md. Shahriar Rakib Rabbi | 2321937642 | shahriar.rabbi.232@northsouth.edu |
   |     Ahnaf Akib Ahmed     | 2312304642 |   ahnaf.ahmed09@northsouth.edu    |
 
-# Features
+## Features
 
 - **User Registration:** Create and manage user accounts.
 - **Account Management:** View and update account details.
@@ -58,13 +60,13 @@ The application supports both 32-bit and 64-bit systems.
 - **Transaction History:** View past transactions.
 - **Calculators:** Use financial calculators for interest and percentages.
 
-# Screenshots
+## Screenshots
 
 Some screenshots of the key features and app interface:
 
 ### User Authentication
 
-|        Login Screen        |         Register Screen          |
+|        Login Screen        |       Registration Screen        |
 | :------------------------: | :------------------------------: |
 | ![login](assets/login.png) | ![register](assets/register.png) |
 
