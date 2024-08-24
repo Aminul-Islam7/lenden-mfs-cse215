@@ -16,6 +16,7 @@ Lenden is a simulated Mobile Financial System (MFS) desktop application, develop
 - [Project Details](#project-details)
 - [Features](#features)
 - [Screenshots](#screenshots)
+- [Conclusion](#conclusion)
 
 ## Installation
 
@@ -131,3 +132,7 @@ Some screenshots of the key features and app interface:
 |             Lenden to Bank form              |           Send Money form            |
 | :------------------------------------------: | :----------------------------------: |
 | ![lenden-to-bank](assets/lenden-to-bank.png) | ![send-money](assets/send-money.png) |
+
+## Conclusion
+
+Thank you for checking out the Lenden project! We appreciate your interest and welcome any feedback or contributions. Have a great day! :)
