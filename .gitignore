@@ -1,5 +1,7 @@
+.idea
+.vscode
 **/desktop.ini
 bin/
-session.dat
-transactions.dat
-users.dat
+Lenden.exe
+lenden-mfs-cse215.jar
+launch4j.log
